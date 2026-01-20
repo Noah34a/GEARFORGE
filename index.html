@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <!-- ================= META / BASE ================= -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gearforge</title>
+
+  <!-- ================= FONTS (CHARTE) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Skip link : utile pour l’accessibilité clavier -->
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <!-- Brand / Logo -->
+      <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
+        <img class="brand__logo" src="logo2.png" alt="Logo Gearforge" />
+      </a>
+
+      <!-- Navigation principale -->
+      <nav class="radio-inputs" aria-label="Navigation principale">
+        <!-- Note: garder .is-active uniquement sur la page courante -->
+        <a class="radio" href="index.html" aria-current="page">
+          <span class="name is-active">Accueil</span>
+        </a>
+        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
+        <a class="radio" href="prototypage.html"><span class="name">Prototypage</span></a>
+        <a class="radio" href="formation.html"><span class="name">Formation</span></a>
+        <a class="radio" href="articles.html"><span class="name">Articles</span></a>
+      </nav>
+
+      <!-- CTA -->
+      <a href="contact.html" class="nav-cta">
+        <span>Demander un devis</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main id="main-content">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero section" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+
+        <!-- Contenu texte -->
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">Gearforge</h1>
+          <p class="hero__subtitle">Forgeons vos idées en solutions concrètes.</p>
+
+          <a class="button" href="contact.html">
+            <span>30 min de consultation offerte</span>
+          </a>
+        </div>
+
+        <!-- Visuel -->
+        <div class="hero__visual">
+          <img
+            src="maquette.webp"
+            alt="Maquette 3D représentant un exemple de réalisation Gearforge"
+            class="hero__img"
+            loading="eager"
+          />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container services__inner">
+        <h2 class="services__title" id="services-title">Nos services</h2>
+        <p class="services__subtitle">Réponse gratuite en 24h</p>
+
+        <div class="services__grid">
+          <!-- Service 1 : Consulting -->
+          <article class="service-card service-card--fx">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h3 class="service-card__title">Consulting</h3>
+
+            <ul class="service-card__list">
+              <li>Analyse technique & stratégique de vos projets</li>
+              <li>Aide à la prise de décision (choix technologiques)</li>
+              <li>Résolution de problématiques complexes</li>
+              <li>Accompagnement ponctuel ou long terme</li>
+            </ul>
+
+            <a class="service-card__more" href="services.html">En savoir plus</a>
+          </article>
+
+          <!-- Service 2 : Prototypage -->
+          <article class="service-card service-card--fx">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h3 class="service-card__title">Prototypage</h3>
+
+            <ul class="service-card__list">
+              <li>Conception et développement de prototypes</li>
+              <li>Validation technique avant industrialisation</li>
+              <li>Prototypage rapide et sur mesure</li>
+              <li>Intégration mécanique, électronique et logiciel</li>
+            </ul>
+
+            <a class="service-card__more" href="services.html">En savoir plus</a>
+          </article>
+
+          <!-- Service 3 : Formation -->
+          <article class="service-card service-card--fx">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h3 class="service-card__title">Formation</h3>
+
+            <ul class="service-card__list">
+              <li>Formations techniques sur mesure</li>
+              <li>Approche concrète, orientée terrain et projets réels</li>
+              <li>Adaptées aux étudiants, enseignants, entreprises et équipes R&amp;D</li>
+              <li>Présentiel ou accompagnement personnalisé</li>
+            </ul>
+
+            <a class="service-card__more" href="services.html">En savoir plus</a>
+          </article>
+        </div>
+
+        <div class="services__cta">
+          <a class="pill pill--dark" href="contact.html">Demandez votre devis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TRUST / PARTENAIRES ================= -->
+    <section class="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <h2 class="trust__title" id="trust-title">Ils nous ont fait confiance</h2>
+
+        <div class="trust__marquee" aria-label="Défilement des entreprises partenaires">
+          <div class="trust__track">
+            <!-- Série 1 -->
+            <a class="trust__logo" href="https://exemple1.com" target="_blank" rel="noopener">
+              <img src="1.png" alt="Logo Entreprise 1" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple2.com" target="_blank" rel="noopener">
+              <img src="2.png" alt="Logo Entreprise 2" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple3.com" target="_blank" rel="noopener">
+              <img src="3.png" alt="Logo Entreprise 3" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple4.com" target="_blank" rel="noopener">
+              <img src="4.png" alt="Logo Entreprise 4" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple5.com" target="_blank" rel="noopener">
+              <img src="5.png" alt="Logo Entreprise 5" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple6.com" target="_blank" rel="noopener">
+              <img src="6.png" alt="Logo Entreprise 6" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple7.com" target="_blank" rel="noopener">
+              <img src="7.png" alt="Logo Entreprise 7" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple8.com" target="_blank" rel="noopener">
+              <img src="8.png" alt="Logo Entreprise 8" loading="lazy">
+            </a>
+
+            <!-- Série 2 : duplication pour boucle infinie -->
+            <a class="trust__logo" href="https://exemple1.com" target="_blank" rel="noopener">
+              <img src="1.png" alt="Logo Entreprise 1" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple2.com" target="_blank" rel="noopener">
+              <img src="2.png" alt="Logo Entreprise 2" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple3.com" target="_blank" rel="noopener">
+              <img src="3.png" alt="Logo Entreprise 3" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple4.com" target="_blank" rel="noopener">
+              <img src="4.png" alt="Logo Entreprise 4" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple5.com" target="_blank" rel="noopener">
+              <img src="5.png" alt="Logo Entreprise 5" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple6.com" target="_blank" rel="noopener">
+              <img src="6.png" alt="Logo Entreprise 6" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple7.com" target="_blank" rel="noopener">
+              <img src="7.png" alt="Logo Entreprise 7" loading="lazy">
+            </a>
+            <a class="trust__logo" href="https://exemple8.com" target="_blank" rel="noopener">
+              <img src="8.png" alt="Logo Entreprise 8" loading="lazy">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STATS (COMPTEURS) ================= -->
+    <section class="section stats" aria-labelledby="stats-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="stats-title">Statistiques</h2>
+
+        <div class="stats__inner">
+          <article class="stat">
+            <div class="stat__icon" aria-hidden="true">
+              <img src="probleme.png" alt="" loading="lazy">
+            </div>
+            <div class="stat__number" data-count="108">0</div>
+            <div class="stat__label">Problèmes résolus</div>
+          </article>
+
+          <article class="stat">
+            <div class="stat__icon" aria-hidden="true">
+              <img src="bug.png" alt="" loading="lazy">
+            </div>
+            <div class="stat__number" data-count="1131">0</div>
+            <div class="stat__label">Bugs corrigés</div>
+          </article>
+
+          <article class="stat">
+            <div class="stat__icon" aria-hidden="true">
+              <img src="temps.png" alt="" loading="lazy">
+            </div>
+            <div class="stat__number" data-count="220">0</div>
+            <div class="stat__label">Heures de formation</div>
+          </article>
+
+          <article class="stat">
+            <div class="stat__icon" aria-hidden="true">
+              <img src="imprimante.png" alt="" loading="lazy">
+            </div>
+            <div class="stat__number" data-count="584">0</div>
+            <div class="stat__label">Impressions 3D</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= SCRIPTS ================= -->
+  <!-- Defer : le script se charge en parallèle et s’exécute après le parsing HTML -->
+  <script src="script.js" defer></script>
+</body>
+</html>
