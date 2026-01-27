@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation — Gearforge</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="formation.css">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <!-- HEADER (tu peux garder le même que sur index) -->
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
+        <img class="brand__logo" src="assets/logo2.png" alt="Logo Gearforge" />
+      </a>
+
+      <nav class="radio-inputs" aria-label="Navigation principale">
+        <a class="radio" href="index.html"><span class="name">Accueil</span></a>
+        <a class="radio" href="formation.html"><span class="name">Formation</span></a>
+        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
+        <a class="radio" href="r&d.html"><span class="name">R&D</span></a>
+        <a class="radio" href="articles.html"><span class="name">Articles</span></a>
+      </nav>
+
+      <a href="contact.html" class="nav-cta"><span>Demander un devis</span></a>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO “Angi-like” -->
+    <section class="section f-hero f-hero--clean" aria-labelledby="f-hero-title">
+  <div class="container f-hero__inner f-hero__inner--clean">
+
+    <!-- GAUCHE -->
+    <div class="f-hero__content f-hero__content--clean">
+      <h1 class="f-hero__title f-hero__title--clean" id="f-hero-title">Gearforge</h1>
+      <p class="f-hero__subtitle f-hero__subtitle--clean">
+        Forgeons vos idées en solutions concrètes.
+      </p>
+
+      <!-- Barre de recherche -->
+      <form class="f-search f-search--clean" action="#catalogue" method="get" aria-label="Rechercher une formation">
+        <label class="sr-only" for="q">Rechercher</label>
+        <input id="q" name="q" type="search" placeholder="" autocomplete="off" />
+
+        <button class="f-search__icon" type="submit" aria-label="Rechercher">
+          <!-- icône loupe -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10.5 3a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Zm8.9 14.5 2.6 2.6-1.4 1.4-2.6-2.6 1.4-1.4Z"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- DROITE -->
+    <div class="f-hero__visual f-hero__visual--clean">
+      <img
+        src="assets/maquette.webp"
+        alt="Formation — exemple de réalisation Gearforge"
+        class="f-hero__img"
+        loading="eager"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
+          <img src="assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
+        </a>
+
+        <p class="footer__hint" id="footer-title">Gearforge — Bureau d’étude en ingénierie mécatronique.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Services">
+        <h3 class="footer__title">Use cases</h3>
+        <a class="footer__link" href="consulting.html">Consulting</a>
+        <a class="footer__link" href="prototypage.html">Prototypage</a>
+        <a class="footer__link" href="formation.html">Formation</a>
+        <a class="footer__link" href="articles.html">Articles</a>
+        <a class="footer__link" href="contact.html">Devis & contact</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Explorer">
+        <h3 class="footer__title">Explore</h3>
+        <a class="footer__link" href="#about">À propos</a>
+        <a class="footer__link" href="#services">Nos services</a>
+        <a class="footer__link" href="#trust">Partenaires</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Ressources">
+        <h3 class="footer__title">Resources</h3>
+        <a class="footer__link" href="contact.html">Support</a>
+        <a class="footer__link" href="contact.html">FAQ</a>
+      </nav>
+
+      <div class="footer__newsletter" aria-label="Newsletter">
+        <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
+        <p class="footer__sub">Avec notre newsletter quotidienne</p>
+
+        <form class="footer__form" action="#" method="post">
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
+          <button type="submit">Soumettre</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="footer__copy">© <span id="year"></span> Gearforge. Tous droits réservés.</p>
+
+      <nav class="footer__legal" aria-label="Liens légaux">
+        <a href="#" class="footer__legal-link">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="footer__legal-link">Politique de confidentialité</a>
+        <a href="politique-vente.html" class="footer__legal-link">Politique de vente</a>
+      </nav>
+    </div>
+  </footer>
+
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -28,18 +28,17 @@
 
       <!-- Brand / Logo -->
       <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
-        <img class="brand__logo" src="logo2.png" alt="Logo Gearforge" />
+        <img class="brand__logo" src="assets/logo2.png" alt="Logo Gearforge" />
       </a>
 
       <!-- Navigation principale -->
       <nav class="radio-inputs" aria-label="Navigation principale">
-        <!-- Note: garder .is-active uniquement sur la page courante -->
         <a class="radio" href="index.html" aria-current="page">
           <span class="name is-active">Accueil</span>
         </a>
-        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
-        <a class="radio" href="prototypage.html"><span class="name">Prototypage</span></a>
         <a class="radio" href="formation.html"><span class="name">Formation</span></a>
+        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
+        <a class="radio" href="r&d.html"><span class="name">R&D</span></a>
         <a class="radio" href="articles.html"><span class="name">Articles</span></a>
       </nav>
 
@@ -58,7 +57,6 @@
     <section class="hero section" aria-labelledby="hero-title">
       <div class="container hero__inner">
 
-        <!-- Contenu texte -->
         <div class="hero__content">
           <h1 class="hero__title" id="hero-title">Gearforge</h1>
           <p class="hero__subtitle">Forgeons vos idées en solutions concrètes.</p>
@@ -68,10 +66,9 @@
           </a>
         </div>
 
-        <!-- Visuel -->
         <div class="hero__visual">
           <img
-            src="maquette.webp"
+            src="assets/maquette.webp"
             alt="Maquette 3D représentant un exemple de réalisation Gearforge"
             class="hero__img"
             loading="eager"
@@ -88,49 +85,6 @@
         <p class="services__subtitle">Réponse gratuite en 24h</p>
 
         <div class="services__grid">
-          <!-- Service 1 : Consulting -->
-          <article class="service-card service-card--fx">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-            <h3 class="service-card__title">Consulting</h3>
-
-            <ul class="service-card__list">
-              <li>Analyse technique & stratégique de vos projets</li>
-              <li>Aide à la prise de décision (choix technologiques)</li>
-              <li>Résolution de problématiques complexes</li>
-              <li>Accompagnement ponctuel ou long terme</li>
-            </ul>
-
-            <a class="service-card__more" href="services.html">En savoir plus</a>
-          </article>
-
-          <!-- Service 2 : Prototypage -->
-          <article class="service-card service-card--fx">
-            <div class="service-card__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-
-            <h3 class="service-card__title">Prototypage</h3>
-
-            <ul class="service-card__list">
-              <li>Conception et développement de prototypes</li>
-              <li>Validation technique avant industrialisation</li>
-              <li>Prototypage rapide et sur mesure</li>
-              <li>Intégration mécanique, électronique et logiciel</li>
-            </ul>
-
-            <a class="service-card__more" href="services.html">En savoir plus</a>
-          </article>
-
-          <!-- Service 3 : Formation -->
           <article class="service-card service-card--fx">
             <div class="service-card__icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -140,15 +94,67 @@
             </div>
 
             <h3 class="service-card__title">Formation</h3>
+            <p class="service-card__subtitle">
+            <span class="service-card__kicker">Pour les particuliers et les professionnels</span>
+            <span class="service-card__desc">Montez en compétences techniques et en autonomie</span>
+            </p>
 
             <ul class="service-card__list">
-              <li>Formations techniques sur mesure</li>
-              <li>Approche concrète, orientée terrain et projets réels</li>
-              <li>Adaptées aux étudiants, enseignants, entreprises et équipes R&amp;D</li>
-              <li>Présentiel ou accompagnement personnalisé</li>
+              <li>Utilisation de logiciel (Fusion, Eagle...)</li>
+              <li>Conception de systèmes robotisés ou mécatroniques</li>
+              <li>Prototypage et réalisation de produits optimisés</li>
+              <li>Implémentation de système IoT ou domotiques</li>
             </ul>
 
-            <a class="service-card__more" href="services.html">En savoir plus</a>
+            <a class="service-card__more" href="formation.html">En savoir plus</a>
+          </article>
+
+          <article class="service-card service-card--fx">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h3 class="service-card__title">Consulting</h3>
+            <p class="service-card__subtitle">
+            <span class="service-card__kicker">Pour les particuliers et les professionnels</span>
+            <span class="service-card__desc">Montez en compétences techniques et en autonomie</span>
+            </p>
+
+            <ul class="service-card__list">
+              <li>Résolution de vos défis techniques</li>
+              <li>Pilotage de projet IT</li>
+              <li>Audit et amélioration de la qualité de vos produits</li>
+              <li>Réalisation de veille technique sur mesure</li>
+            </ul>
+
+            <a class="service-card__more" href="consulting.html">En savoir plus</a>
+          </article>
+
+          <article class="service-card service-card--fx">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.7222 9.04435V6.71102C23.7222 5.42235 22.6775 4.37769 21.3888 4.37769L6.61106 4.37769C5.32239 4.37769 4.27773 5.42235 4.27773 6.71102V9.04435C4.27773 10.333 5.32239 11.3777 6.61106 11.3777H21.3888C22.6775 11.3777 23.7222 10.333 23.7222 9.04435Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M23.7222 21.4888V19.1555C23.7222 17.8668 22.6775 16.8221 21.3888 16.8221H15.9444C14.6557 16.8221 13.6111 17.8668 13.6111 19.1555V21.4888C13.6111 22.7775 14.6557 23.8221 15.9444 23.8221H21.3888C22.6775 23.8221 23.7222 22.7775 23.7222 21.4888Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h3 class="service-card__title">R&amp;D</h3>
+            <p class="service-card__subtitle">
+            <span class="service-card__kicker">Pour les particuliers et les professionnels</span>
+            <span class="service-card__desc">Montez en compétences techniques et en autonomie</span>
+            </p>
+
+            <ul class="service-card__list">
+              <li>Prototypage de produit sur-mesure</li>
+              <li>Conception de systèmes robotisés ou mécatroniques</li>
+              <li>Intégration de technologies avancées (IoT, Domotique...)</li>
+              <li>Optimisation de systèmes existants</li>
+            </ul>
+
+            <a class="service-card__more" href="prototypage.html">En savoir plus</a>
           </article>
         </div>
 
@@ -159,62 +165,35 @@
     </section>
 
     <!-- ================= TRUST / PARTENAIRES ================= -->
-    <section class="trust" aria-labelledby="trust-title">
+    <section class="trust" id="trust" aria-labelledby="trust-title">
       <div class="container">
         <h2 class="trust__title" id="trust-title">Ils nous ont fait confiance</h2>
 
         <div class="trust__marquee" aria-label="Défilement des entreprises partenaires">
           <div class="trust__track">
-            <!-- Série 1 -->
-            <a class="trust__logo" href="https://exemple1.com" target="_blank" rel="noopener">
-              <img src="1.png" alt="Logo Entreprise 1" loading="lazy">
+            <a class="trust__logo" href="https://www.metavonics.com/" target="_blank" rel="noopener">
+              <img src="assets/1.png" alt="Logo Entreprise 1" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple2.com" target="_blank" rel="noopener">
-              <img src="2.png" alt="Logo Entreprise 2" loading="lazy">
+            <a class="trust__logo" href="https://www.kuka.com/" target="_blank" rel="noopener">
+              <img src="assets/2.png" alt="Logo Entreprise 2" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple3.com" target="_blank" rel="noopener">
-              <img src="3.png" alt="Logo Entreprise 3" loading="lazy">
+            <a class="trust__logo" href="https://ffrobplateforme.fr/" target="_blank" rel="noopener">
+              <img src="assets/3.png" alt="Logo Entreprise 3" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple4.com" target="_blank" rel="noopener">
-              <img src="4.png" alt="Logo Entreprise 4" loading="lazy">
+            <a class="trust__logo" href="https://www.cap-sciences.net/" target="_blank" rel="noopener">
+              <img src="assets/4.png" alt="Logo Entreprise 4" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple5.com" target="_blank" rel="noopener">
-              <img src="5.png" alt="Logo Entreprise 5" loading="lazy">
+            <a class="trust__logo" href="https://www.supdevinci.fr/" target="_blank" rel="noopener">
+              <img src="assets/5.png" alt="Logo Entreprise 5" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple6.com" target="_blank" rel="noopener">
-              <img src="6.png" alt="Logo Entreprise 6" loading="lazy">
+            <a class="trust__logo" href="https://www.ynov.com/campus/bordeaux" target="_blank" rel="noopener">
+              <img src="assets/6.png" alt="Logo Entreprise 6" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple7.com" target="_blank" rel="noopener">
-              <img src="7.png" alt="Logo Entreprise 7" loading="lazy">
+            <a class="trust__logo" href="https://www.ynov.com/campus/montpellier" target="_blank" rel="noopener">
+              <img src="assets/7.png" alt="Logo Entreprise 7" loading="lazy">
             </a>
-            <a class="trust__logo" href="https://exemple8.com" target="_blank" rel="noopener">
-              <img src="8.png" alt="Logo Entreprise 8" loading="lazy">
-            </a>
-
-            <!-- Série 2 : duplication pour boucle infinie -->
-            <a class="trust__logo" href="https://exemple1.com" target="_blank" rel="noopener">
-              <img src="1.png" alt="Logo Entreprise 1" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple2.com" target="_blank" rel="noopener">
-              <img src="2.png" alt="Logo Entreprise 2" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple3.com" target="_blank" rel="noopener">
-              <img src="3.png" alt="Logo Entreprise 3" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple4.com" target="_blank" rel="noopener">
-              <img src="4.png" alt="Logo Entreprise 4" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple5.com" target="_blank" rel="noopener">
-              <img src="5.png" alt="Logo Entreprise 5" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple6.com" target="_blank" rel="noopener">
-              <img src="6.png" alt="Logo Entreprise 6" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple7.com" target="_blank" rel="noopener">
-              <img src="7.png" alt="Logo Entreprise 7" loading="lazy">
-            </a>
-            <a class="trust__logo" href="https://exemple8.com" target="_blank" rel="noopener">
-              <img src="8.png" alt="Logo Entreprise 8" loading="lazy">
+            <a class="trust__logo" href="https://www.ynov.com/campus/toulouse" target="_blank" rel="noopener">
+              <img src="assets/8.png" alt="Logo Entreprise 8" loading="lazy">
             </a>
           </div>
         </div>
@@ -222,14 +201,14 @@
     </section>
 
     <!-- ================= STATS (COMPTEURS) ================= -->
-    <section class="section stats" aria-labelledby="stats-title">
+    <section class="section stats" id="stats" aria-labelledby="stats-title">
       <div class="container">
         <h2 class="visually-hidden" id="stats-title">Statistiques</h2>
 
         <div class="stats__inner">
           <article class="stat">
             <div class="stat__icon" aria-hidden="true">
-              <img src="probleme.png" alt="" loading="lazy">
+              <img src="assets/engrenage.png" alt="" loading="lazy">
             </div>
             <div class="stat__number" data-count="108">0</div>
             <div class="stat__label">Problèmes résolus</div>
@@ -237,7 +216,7 @@
 
           <article class="stat">
             <div class="stat__icon" aria-hidden="true">
-              <img src="bug.png" alt="" loading="lazy">
+              <img src="assets/bug.png" alt="" loading="lazy">
             </div>
             <div class="stat__number" data-count="1131">0</div>
             <div class="stat__label">Bugs corrigés</div>
@@ -245,7 +224,7 @@
 
           <article class="stat">
             <div class="stat__icon" aria-hidden="true">
-              <img src="temps.png" alt="" loading="lazy">
+              <img src="assets/temps.png" alt="" loading="lazy">
             </div>
             <div class="stat__number" data-count="220">0</div>
             <div class="stat__label">Heures de formation</div>
@@ -253,7 +232,7 @@
 
           <article class="stat">
             <div class="stat__icon" aria-hidden="true">
-              <img src="imprimante.png" alt="" loading="lazy">
+              <img src="assets/imprimante.png" alt="" loading="lazy">
             </div>
             <div class="stat__number" data-count="584">0</div>
             <div class="stat__label">Impressions 3D</div>
@@ -262,10 +241,171 @@
       </div>
     </section>
 
+    <!-- ================= ABOUT / À PROPOS ================= -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container about__inner">
+
+        <div class="about__media">
+          <figure class="about__figure about__figure--hotspots">
+            <img
+              class="about__img"
+              src="assets/bureau.webp"
+              alt="Maquette du bureau Gearforge"
+              loading="lazy"
+            />
+
+            <button class="about-point" type="button" style="top: 24%; left: 28%;"
+              data-title="Information 1"
+              data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore."
+              aria-label="Afficher information 1"></button>
+
+            <button class="about-point" type="button" style="top: 40%; left: 62%;"
+              data-title="Information 2"
+              data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation."
+              aria-label="Afficher information 2"></button>
+
+            <button class="about-point" type="button" style="top: 66%; left: 36%;"
+              data-title="Information 3"
+              data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate."
+              aria-label="Afficher information 3"></button>
+
+            <button class="about-point" type="button" style="top: 54%; left: 78%;"
+              data-title="Information 4"
+              data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident."
+              aria-label="Afficher information 4"></button>
+          </figure>
+        </div>
+
+        <div class="about__content">
+          <h2 class="about__title" id="about-title">À propos de nous</h2>
+          <p class="about__tagline">Let’s forge together.</p>
+
+          <div class="about__text">
+            <p>
+              Fondée en 2023 par le roboticien Anthony Orquin, Gearforge est un bureau d’étude en
+              <strong>ingénierie mécatronique</strong> basé en région bordelaise, intervenant partout en France.
+            </p>
+
+            <p>
+              Nous accompagnons nos clients <strong>de l’idée à la réalisation</strong> en combinant prototypage,
+              consulting et formation, pour transformer des idées techniques en
+              <strong>solutions concrètes, fiables et sur mesure</strong>.
+            </p>
+
+            <p>
+              Grâce à une <strong>expertise pluridisciplinaire</strong>, nous intervenons sur des projets innovants
+              et des systèmes complexes avec un objectif clair :
+              <strong>sécuriser les décisions techniques et accélérer les développements</strong>.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </main>
 
+  <!-- ================= ABOUT MODAL (POPUP TRANSPARENT) ================= -->
+  <div class="about-modal" aria-hidden="true">
+    <div class="about-modal__overlay"></div>
+
+    <div class="about-modal__content" role="dialog" aria-modal="true" aria-label="Information Gearforge">
+      <button class="about-modal__close" type="button" aria-label="Fermer la fenêtre">✕</button>
+      <h3 class="about-modal__title"></h3>
+      <p class="about-modal__text"></p>
+    </div>
+  </div>
+
+  <!-- ================= SOCIAL BAR ================= -->
+  <section class="socialbar" aria-label="Réseaux sociaux Gearforge">
+    <div class="container socialbar__inner">
+
+      <div class="socialbar__line"></div>
+
+      <nav class="socialbar__icons" aria-label="Liens réseaux sociaux">
+        <a href="https://www.instagram.com/gearforge.off?igsh=b3BqdzBzbW9yMXVz" aria-label="Gearforge sur Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5Zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5ZM18 6.7a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 18 6.7Z"></path>
+          </svg>
+        </a>
+
+        <a href="https://youtube.com/@gearfamily-ytb?si=1jhRrnM7UacZ4yAZ" aria-label="Gearforge sur YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.2V8.8L16 12l-6 3.2Z"></path>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/company/gearforge/" aria-label="Gearforge sur LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.9 6.7A2.1 2.1 0 1 1 9 4.6 2.1 2.1 0 0 1 6.9 6.7ZM5.5 20.5V8.5H8.3v12ZM9.9 8.5h2.7V10a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.9v7.3h-2.8v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.6H9.9Z"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <div class="socialbar__line"></div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
+          <img src="assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
+        </a>
+
+        <p class="footer__hint" id="footer-title">Gearforge — Bureau d’étude en ingénierie mécatronique.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Services">
+        <h3 class="footer__title">Use cases</h3>
+        <a class="footer__link" href="consulting.html">Consulting</a>
+        <a class="footer__link" href="prototypage.html">Prototypage</a>
+        <a class="footer__link" href="formation.html">Formation</a>
+        <a class="footer__link" href="articles.html">Articles</a>
+        <a class="footer__link" href="contact.html">Devis & contact</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Explorer">
+        <h3 class="footer__title">Explore</h3>
+        <a class="footer__link" href="#about">À propos</a>
+        <a class="footer__link" href="#services">Nos services</a>
+        <a class="footer__link" href="#trust">Partenaires</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Ressources">
+        <h3 class="footer__title">Resources</h3>
+        <a class="footer__link" href="contact.html">Support</a>
+        <a class="footer__link" href="contact.html">FAQ</a>
+      </nav>
+
+      <div class="footer__newsletter" aria-label="Newsletter">
+        <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
+        <p class="footer__sub">Avec notre newsletter quotidienne</p>
+
+        <form class="footer__form" action="#" method="post">
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
+          <button type="submit">Soumettre</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="footer__copy">© <span id="year"></span> Gearforge. Tous droits réservés.</p>
+
+      <nav class="footer__legal" aria-label="Liens légaux">
+        <a href="#" class="footer__legal-link">Mentions légales</a>
+        <a href="politique-confidentialite.html" class="footer__legal-link">Politique de confidentialité</a>
+        <a href="politique-vente.html" class="footer__legal-link">Politique de vente</a>
+      </nav>
+    </div>
+  </footer>
+
   <!-- ================= SCRIPTS ================= -->
-  <!-- Defer : le script se charge en parallèle et s’exécute après le parsing HTML -->
   <script src="script.js" defer></script>
 </body>
 </html>

@@ -5,6 +5,7 @@
    1) Navigation : met en surbrillance la page courante (classe .is-active + aria-current)
    2) Stats : compteurs animés (0 -> data-count) quand visibles
    3) Trust : duplication des logos pour boucle infinie (marquee géré en CSS)
+   4) About : 4 points d'info sur l'image => popup transparent (modal)
 
    Notes :
    - Respect de prefers-reduced-motion (accessibilité)
@@ -136,7 +137,7 @@
     const track = $(".trust__track");
     if (!track) return;
 
-    // Reduced motion : on ne duplique pas, et on peut stopper l’animation côté CSS si tu veux
+    // Reduced motion : on ne duplique pas
     if (prefersReducedMotion) return;
 
     // Empêche double duplication si le script est chargé 2 fois
@@ -147,11 +148,58 @@
   }
 
   /* =========================
+     4) ABOUT — HOTSPOTS (4 points + modal)
+     ========================= */
+  function initAboutHotspots() {
+    const points = $$(".about-point");
+    const modal = $(".about-modal");
+    if (!points.length || !modal) return;
+
+    const overlay = $(".about-modal__overlay", modal);
+    const closeBtn = $(".about-modal__close", modal);
+    const titleEl = $(".about-modal__title", modal);
+    const textEl = $(".about-modal__text", modal);
+
+    // Respect reduced motion : on garde la feature, mais pas d'animations supplémentaires
+    // (ici, rien de spécial à gérer côté JS)
+
+    const openModal = (point) => {
+      titleEl.textContent = point.dataset.title || "";
+      textEl.textContent = point.dataset.text || "";
+
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+
+      // Option simple : focus sur le bouton fermer (pratique clavier)
+      closeBtn?.focus();
+    };
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+    };
+
+    // Ouvrir au clic
+    points.forEach((point) => {
+      point.addEventListener("click", () => openModal(point));
+    });
+
+    // Fermer : bouton, overlay, ESC
+    closeBtn?.addEventListener("click", closeModal);
+    overlay?.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  }
+
+  /* =========================
      INIT
      ========================= */
   document.addEventListener("DOMContentLoaded", () => {
     setActiveNav();
     initCounters();
     initTrustInfinite();
+    initAboutHotspots();
   });
 })();
