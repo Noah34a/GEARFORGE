@@ -412,6 +412,7 @@ p{ margin: 0 0 14px; }
   text-align: left;
   position: relative;
   z-index: 5;
+  text-align: center;
 }
 
 /* Sous-titre services (kicker + desc) */

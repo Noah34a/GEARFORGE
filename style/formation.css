@@ -1,0 +1,250 @@
+/* =========================================
+   Gearforge (page Formation)
+   ========================================= */
+
+/* --------- Base typographique page --------- */
+.f-h2{
+  font-size: 42px;
+  margin: 0 0 10px;
+  letter-spacing: -0.4px;
+}
+.f-h3{
+  font-size: 18px;
+  margin: 0 0 8px;
+  letter-spacing: -0.2px;
+}
+.f-lead{
+  color: var(--gf-slate);
+  margin: 0 0 22px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.f-hero{
+  background: #fff;
+  padding-top: 110px;
+  padding-bottom: 80px;
+}
+
+.f-hero__inner{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.f-hero__title{
+  font-size: clamp(52px, 7vw, 80px);
+  line-height: 1.02;
+  margin: 0 0 10px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  color: #111;
+}
+
+.f-hero__subtitle{
+  color: #8b8f97;
+  font-size: 20px;
+  margin: 0 0 18px;
+  max-width: 60ch;
+}
+
+/* Barre recherche + loupe */
+.f-search{
+  display: grid;
+  grid-template-columns: 1fr 56px;
+  width: min(520px, 100%);
+  background: #fff;
+
+  border: 2px solid rgba(0,0,0,.35);
+  border-radius: 0;
+  box-shadow: none;
+
+  padding: 0;
+  overflow: hidden;
+}
+
+.f-search input{
+  height: 46px;
+  border: none;
+  outline: none;
+  padding: 0 14px;
+  font-size: 15px;
+  background: transparent;
+  color: #111;
+}
+
+.f-search:focus-within{
+  border-color: rgba(0,0,0,.55);
+}
+
+.f-search__icon{
+  height: 46px;
+  border: none;
+  border-left: 2px solid rgba(0,0,0,.35);
+  background: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.f-search__icon svg{
+  width: 20px;
+  height: 20px;
+  fill: rgba(0,0,0,.75);
+}
+
+.f-hero__visual{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.f-hero__img{
+  width: min(620px, 100%);
+  height: auto;
+  border-radius: 0;
+}
+
+.f-after-hero{
+  background: #fff;
+}
+
+/* =========================
+   FORMATIONS — Choix (cards)
+   - 5 cartes alignées
+   - Hover : fond rouge Gearforge + texte blanc
+   ========================= */
+
+.formations{
+  padding: 80px 0;
+}
+
+.formations__head{
+  margin-bottom: 18px;
+}
+
+.formations__title{
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.formations__subtitle{
+  margin: 0;
+  color: var(--gf-slate);
+  font-size: 16px;
+}
+
+/* Row */
+.formation-select__row{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Carte */
+.formation-card{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 18px;
+  padding: 22px 20px;
+
+  cursor: pointer;
+  transition:
+    background-color .25s ease,
+    color .25s ease,
+    transform .2s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+
+  outline: none;
+}
+
+/* petit lift */
+.formation-card:hover{
+  background: var(--gf-red);
+  border-color: rgba(167,0,0,.60);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,.15);
+}
+
+/* Accessibilité : focus clavier */
+.formation-card:focus-visible{
+  outline: 2px solid rgba(167,0,0,.85);
+  outline-offset: 3px;
+}
+
+/* Icon */
+.formation-card__icon{
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+
+  background: rgba(167,0,0,.08);
+  color: var(--gf-red);
+
+  font-size: 20px;
+  margin-bottom: 14px;
+
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* Titre */
+.formation-card__name{
+  font-family: var(--font-title);
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--gf-dark);
+
+  transition: color .25s ease;
+}
+
+/* Texte */
+.formation-card__meta{
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--gf-slate);
+
+  transition: color .25s ease;
+}
+
+/* Hover : texte blanc + icone inversée */
+.formation-card:hover .formation-card__name,
+.formation-card:hover .formation-card__meta{
+  color: #fff;
+}
+
+.formation-card:hover .formation-card__icon{
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .formation-select__row{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px){
+  .formation-select__row{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px){
+  .formation-select__row{
+    grid-template-columns: 1fr;
+  }
+
+  .formations__title{
+    font-size: 34px;
+  }
+}
