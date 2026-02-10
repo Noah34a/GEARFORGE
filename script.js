@@ -6,6 +6,7 @@
    2) Stats : compteurs animés (0 -> data-count) quand visibles
    3) Trust : duplication des logos pour boucle infinie (marquee géré en CSS)
    4) About : 4 points d'info sur l'image => popup transparent (modal)
+   5) Header : menu burger (mobile) => toggle + fermeture auto (lien / clic dehors)
 
    Notes :
    - Respect de prefers-reduced-motion (accessibilité)
@@ -160,17 +161,12 @@
     const titleEl = $(".about-modal__title", modal);
     const textEl = $(".about-modal__text", modal);
 
-    // Respect reduced motion : on garde la feature, mais pas d'animations supplémentaires
-    // (ici, rien de spécial à gérer côté JS)
-
     const openModal = (point) => {
       titleEl.textContent = point.dataset.title || "";
       textEl.textContent = point.dataset.text || "";
 
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden", "false");
-
-      // Option simple : focus sur le bouton fermer (pratique clavier)
       closeBtn?.focus();
     };
 
@@ -179,17 +175,55 @@
       modal.setAttribute("aria-hidden", "true");
     };
 
-    // Ouvrir au clic
     points.forEach((point) => {
       point.addEventListener("click", () => openModal(point));
     });
 
-    // Fermer : bouton, overlay, ESC
     closeBtn?.addEventListener("click", closeModal);
     overlay?.addEventListener("click", closeModal);
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  }
+
+  /* =========================
+     5) HEADER — BURGER MENU (MOBILE)
+     ========================= */
+  function initBurgerMenu() {
+    const burger = $("#burger-btn");
+    const nav = $("#main-nav");
+
+    if (!burger || !nav) return;
+
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      burger.setAttribute("aria-expanded", "false");
+      burger.setAttribute("aria-label", "Ouvrir le menu");
+    };
+
+    burger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+      burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    $$("a", nav).forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Fermer si clic en dehors
+    document.addEventListener("click", (e) => {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(e.target) || burger.contains(e.target)) return;
+      closeMenu();
+    });
+
+    // ESC ferme aussi (cohérent)
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeMenu();
     });
   }
 
@@ -201,5 +235,6 @@
     initCounters();
     initTrustInfinite();
     initAboutHotspots();
+    initBurgerMenu();
   });
 })();

@@ -1200,3 +1200,122 @@ p{ margin: 0 0 14px; }
     padding: 60px 0;
   }
 }
+
+/* =========================
+   BURGER + NAV MOBILE (CLEAN)
+   - Desktop : pills visibles + bouton .nav-cta visible
+   - Desktop : on cache le lien "contact" dans les pills pour éviter 2 devis
+   - Mobile : burger visible, pills deviennent drawer, .nav-cta caché
+   ========================= */
+
+/* Desktop : évite "2 devis" (le lien contact dans les pills) */
+.radio-inputs .radio[href*="contact"]{
+  display: none;
+}
+
+/* Burger caché par défaut (desktop) */
+.burger{
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(0,0,0,.04);
+  cursor: pointer;
+
+  /* layout interne */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  transition: background .2s ease, box-shadow .2s ease;
+}
+
+.burger span{
+  width: 18px;
+  height: 2px;
+  background: #111;
+  display: block;
+  border-radius: 2px;
+}
+
+.burger:hover{
+  background: rgba(0,0,0,.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px){
+
+  /* header en ligne : logo gauche / burger droite */
+  .header__inner{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+  }
+
+  .brand{ flex: 0 0 auto; }
+
+  /* burger visible */
+  .burger{
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px; /* respiration à droite */
+    flex: 0 0 auto;
+  }
+
+  /* on cache le bouton devis desktop en mobile */
+  .nav-cta{ display: none; }
+
+  /* on ré-affiche le lien "contact" dans le menu (pour avoir 1 devis mobile) */
+  .radio-inputs .radio[href*="contact"]{
+    display: block;
+  }
+
+  /* La nav pills devient un drawer */
+  .radio-inputs{
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: min(320px, calc(100vw - 32px));
+    padding: 12px;
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.98);
+    border: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 18px 50px rgba(0,0,0,.18);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* fermé par défaut */
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: .25s ease;
+    z-index: 999;
+  }
+
+  /* état ouvert (ton JS ajoute .is-open) */
+  .radio-inputs.is-open{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Style des items en mode drawer */
+  .radio-inputs .radio .name{
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0 14px;
+  }
+}

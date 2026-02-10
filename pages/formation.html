@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Formation — Gearforge</title>
+  <title>Formations — Gearforge</title>
 
+  <!-- Fonts (même charte que l'accueil) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -12,125 +13,200 @@
     rel="stylesheet"
   />
 
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../style/formation.css">
-
+  <!-- CSS global + overrides page -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style/formation.css" />
 </head>
 
 <body>
+  <!-- Skip link -->
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
-  <!-- HEADER -->
+  <!-- ================= HEADER (identique index) ================= -->
   <header class="site-header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
+
+      <!-- Brand / Logo -->
+      <a class="brand" href="../index.html" aria-label="Aller à l'accueil Gearforge">
         <img class="brand__logo" src="../assets/logo2.png" alt="Logo Gearforge" />
       </a>
 
-      <nav class="radio-inputs" aria-label="Navigation principale">
+      <!-- Burger (mobile) -->
+      <button
+        class="burger"
+        id="burger-btn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navigation principale -->
+      <nav class="radio-inputs nav" id="main-nav" aria-label="Navigation principale">
         <a class="radio" href="../index.html"><span class="name">Accueil</span></a>
-        <a class="radio" href="../pages/formation.html"><span class="name">Formation</span></a>
-        <a class="radio" href="../pages/consulting.html"><span class="name">Consulting</span></a>
-        <a class="radio" href="../pages/r&d.html"><span class="name">R&D</span></a>
-        <a class="radio" href="../pages/articles.html"><span class="name">Articles</span></a>
+        <a class="radio" href="formation.html" aria-current="page"><span class="name is-active">Formation</span></a>
+        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
+        <a class="radio" href="r&d.html"><span class="name">R&amp;D</span></a>
+        <a class="radio" href="articles.html"><span class="name">Articles</span></a>
+
+        <!-- CTA mobile -->
+        <a class="radio nav-mobile-cta" href="contact.html">
+          <span class="name">Demander un devis</span>
+        </a>
       </nav>
 
+      <!-- CTA desktop -->
       <a href="contact.html" class="nav-cta"><span>Demander un devis</span></a>
     </div>
+
+    <!-- Overlay mobile -->
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
   </header>
 
   <main id="main-content">
 
-    <!-- HERO  -->
-    <section class="section f-hero f-hero--clean" aria-labelledby="f-hero-title">
-  <div class="container f-hero__inner f-hero__inner--clean">
+    
+    <!-- ================= HERO ================= -->
+    <section class="f-hero">
+      <div class="container f-hero__inner">
+      <div class="f-hero__content">
+      <h1 class="f-hero__title">
+        Montez en <span class="is-red">compétences</span>
+        techniques et en
+        <span class="is-red">autonomie</span>
+      </h1>
 
-    <!-- GAUCHE -->
-    <div class="f-hero__content f-hero__content--clean">
-      <h1 class="f-hero__title f-hero__title--clean" id="f-hero-title">Gearforge</h1>
-      <p class="f-hero__subtitle f-hero__subtitle--clean">
-        Forgeons vos idées en solutions concrètes.
-      </p>
-
-      <!-- Barre de recherche -->
-      <form class="f-search f-search--clean" action="#catalogue" method="get" aria-label="Rechercher une formation">
+      <form class="f-search" role="search" aria-label="Rechercher une formation">
         <label class="sr-only" for="q">Rechercher</label>
-        <input id="q" name="q" type="search" placeholder="" autocomplete="off" />
-
-        <button class="f-search__icon" type="submit" aria-label="Rechercher">
-          <!-- icône loupe -->
+        <input id="q" name="q" type="search" placeholder="Rechercher une formation..." autocomplete="off" />
+        <button class="f-search__icon" type="submit" aria-label="Lancer la recherche">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10.5 3a7.5 7.5 0 1 1 0 15 7.5 7.5 0 0 1 0-15Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Zm8.9 14.5 2.6 2.6-1.4 1.4-2.6-2.6 1.4-1.4Z"/>
+            <path d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18Zm11.707 2.293-5.01-5.01A9.936 9.936 0 0 0 20 10a10 10 0 1 0-10 10 9.936 9.936 0 0 0 5.283-1.303l5.01 5.01a1 1 0 0 0 1.414-1.414Z"/>
           </svg>
         </button>
       </form>
+
+      <p class="f-hero__hint">
+        Cliquez sur une formation pour afficher les modules et les compétences associées.
+      </p>
+      </div>
+
+      <div class="f-hero__visual">
+      <img class="f-hero__img" src="../assets/maquette.webp" alt="Illustration formations Gearforge" loading="lazy" />
+      </div>
+      </div>
+    </section>
+
+
+    <!-- ================= LISTE FORMATIONS ================= -->
+    <section class="section formations" aria-labelledby="formations-title">
+      <div class="container">
+        <div class="formations__head">
+          <h2 class="formations__title" id="formations-title">Choisir une formation</h2>
+          <p class="formations__subtitle">TEXTE</p>
+        </div>
+
+        <div class="formation-select__row" role="list">
+          <article class="formation-card" role="listitem" tabindex="0" data-formation="fusion-eagle">
+            <div class="formation-card__icon" aria-hidden="true">⚙️</div>
+            <h3 class="formation-card__name">Fusion Eagle</h3>
+            <p class="formation-card__meta">TEXTE</p>
+          </article>
+
+          <article class="formation-card" role="listitem" tabindex="0" data-formation="iot-domotique">
+            <div class="formation-card__icon" aria-hidden="true">📡</div>
+            <h3 class="formation-card__name">IoT / Domotique</h3>
+            <p class="formation-card__meta">TEXTE</p>
+          </article>
+
+          <article class="formation-card" role="listitem" tabindex="0" data-formation="prototypage">
+            <div class="formation-card__icon" aria-hidden="true">🧪</div>
+            <h3 class="formation-card__name">Prototypage</h3>
+            <p class="formation-card__meta">TEXTE</p>
+          </article>
+
+          <article class="formation-card" role="listitem" tabindex="0" data-formation="robotique-mecatronique">
+            <div class="formation-card__icon" aria-hidden="true">🤖</div>
+            <h3 class="formation-card__name">Robotique / Mécatronique</h3>
+            <p class="formation-card__meta">TEXTE</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DETAIL FORMATION (hidden) ================= -->
+    <section id="formation-detail" class="f-detail" hidden>
+      <div class="container">
+
+        <div class="f-detail__head">
+          <div class="f-detail__left">
+            <p class="f-detail__eyebrow">Détail</p>
+            <h2 class="f-detail__title" id="f-detail-name">Formation</h2>
+            <p class="f-detail__subtitle" id="f-detail-summary"></p>
+          </div>
+
+          <div class="f-detail__actions">
+            <button id="f-detail-close" class="f-detail__close-x" type="button" aria-label="Fermer le détail">×</button>
+          </div>
+        </div>
+
+        <!-- Modules (1 ligne = image + accordéon) -->
+        <div class="f-mods" aria-label="Modules de la formation">
+          <div id="mods-rows" class="f-mods__rows"></div>
+        </div>
+
+        <!-- Compétences : titre au milieu + 4 tiles -->
+        <section class="f-skills" aria-label="Compétences">
+          <h3 class="f-skills__title">Compétences</h3>
+          <div id="skills-grid" class="skills-grid"></div>
+        </section>
+
+      </div>
+    </section>
+
+  </main>
+
+   <!-- ================= SOCIAL BAR ================= -->
+  <section class="socialbar" aria-label="Réseaux sociaux Gearforge">
+    <div class="container socialbar__inner">
+
+      <div class="socialbar__line"></div>
+
+      <nav class="socialbar__icons" aria-label="Liens réseaux sociaux">
+        <a href="https://www.instagram.com/gearforge.off?igsh=b3BqdzBzbW9yMXVz" aria-label="Gearforge sur Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5Zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5ZM18 6.7a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 18 6.7Z"></path>
+          </svg>
+        </a>
+
+        <a href="https://youtube.com/@gearfamily-ytb?si=1jhRrnM7UacZ4yAZ" aria-label="Gearforge sur YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5A3 3 0 0 0 2.4 7.2 31.3 31.3 0 0 0 2 12a31.3 31.3 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 22 12a31.3 31.3 0 0 0-.4-4.8ZM10 15.2V8.8L16 12l-6 3.2Z"></path>
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/company/gearforge/" aria-label="Gearforge sur LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.9 6.7A2.1 2.1 0 1 1 9 4.6 2.1 2.1 0 0 1 6.9 6.7ZM5.5 20.5V8.5H8.3v12ZM9.9 8.5h2.7V10a3.3 3.3 0 0 1 3-1.7c3.2 0 3.8 2.1 3.8 4.9v7.3h-2.8v-6.5c0-1.6 0-3.6-2.2-3.6s-2.5 1.7-2.5 3.5v6.6H9.9Z"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <div class="socialbar__line"></div>
+
     </div>
+  </section>
 
-    <!-- DROITE -->
-    <div class="f-hero__visual f-hero__visual--clean">
-      <img
-        src="../assets/maquette.webp"
-        alt="Formation — exemple de réalisation Gearforge"
-        class="f-hero__img"
-        loading="eager"
-      />
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     FORMATIONS — Choix
-     4 cartes alignées (hover rouge)
-     ========================= -->
-<section class="section formations" aria-labelledby="formations-title">
-  <div class="container">
-
-    <header class="formations__head">
-      <h2 class="formations__title" id="formations-title">Choix des formations</h2>
-    </header>
-
-    <div class="formation-select__row" role="list">
-      <!-- 1 -->
-      <article class="formation-card" role="listitem" tabindex="0">
-        <div class="formation-card__icon" aria-hidden="true">⚙️</div>
-        <h3 class="formation-card__name">Fusion Eagle 2</h3>
-        <p class="formation-card__meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-
-      <!-- 2 -->
-      <article class="formation-card" role="listitem" tabindex="0">
-        <div class="formation-card__icon" aria-hidden="true">🏠</div>
-        <h3 class="formation-card__name">IoT Domotique</h3>
-        <p class="formation-card__meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-
-      <!-- 3 -->
-      <article class="formation-card" role="listitem" tabindex="0">
-        <div class="formation-card__icon" aria-hidden="true">🧪</div>
-        <h3 class="formation-card__name">Prototypage</h3>
-        <p class="formation-card__meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-
-      <!-- 4 -->
-      <article class="formation-card" role="listitem" tabindex="0">
-        <div class="formation-card__icon" aria-hidden="true">🤖</div>
-        <h3 class="formation-card__name">Robotique mécatronique</h3>
-        <p class="formation-card__meta">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      </article>
-    </div>
-
-  </div>
-</section>
-
-
-
-    <!-- ================= FOOTER ================= -->
+  <!-- ================= FOOTER ================= -->
   <footer class="site-footer" aria-labelledby="footer-title">
     <div class="container footer__inner">
 
       <div class="footer__brand">
-        <a class="footer__logo" href="../index.html" aria-label="Retour à l'accueil Gearforge">
+        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
           <img src="../assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
         </a>
 
@@ -183,9 +259,9 @@
     </div>
   </footer>
 
-  </main>
 
-  <script src="script.js" defer></script>
+  <!-- ================= SCRIPTS ================= -->
+  <script src="../script.js" defer></script>
+  <script src="../js/formation.js" defer></script>
 </body>
 </html>
-

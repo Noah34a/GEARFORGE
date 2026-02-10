@@ -23,32 +23,55 @@
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <!-- ================= HEADER ================= -->
-  <header class="site-header">
-    <div class="container header__inner">
+<header class="site-header">
+  <div class="container header__inner">
 
-      <!-- Brand / Logo -->
-      <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
-        <img class="brand__logo" src="assets/logo2.png" alt="Logo Gearforge" />
+    <!-- Brand / Logo -->
+    <a class="brand" href="index.html" aria-label="Aller à l'accueil Gearforge">
+      <img class="brand__logo" src="assets/logo2.png" alt="Logo Gearforge" />
+    </a>
+
+    <!-- Burger (mobile) -->
+    <button
+      class="burger"
+      id="burger-btn"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Navigation principale -->
+    <nav class="radio-inputs nav" id="main-nav" aria-label="Navigation principale">
+      <a class="radio" href="index.html" aria-current="page">
+        <span class="name is-active">Accueil</span>
       </a>
+      <a class="radio" href="pages/formation.html"><span class="name">Formation</span></a>
+      <a class="radio" href="pages/consulting.html"><span class="name">Consulting</span></a>
+      <a class="radio" href="pages/r&d.html"><span class="name">R&amp;D</span></a>
+      <a class="radio" href="pages/articles.html"><span class="name">Articles</span></a>
 
-      <!-- Navigation principale -->
-      <nav class="radio-inputs" aria-label="Navigation principale">
-        <a class="radio" href="index.html" aria-current="page">
-          <span class="name is-active">Accueil</span>
-        </a>
-        <a class="radio" href="pages/formation.html"><span class="name">Formation</span></a>
-        <a class="radio" href="pages/consulting.html"><span class="name">Consulting</span></a>
-        <a class="radio" href="pages/r&d.html"><span class="name">R&D</span></a>
-        <a class="radio" href="pages/articles.html"><span class="name">Articles</span></a>
-      </nav>
-
-      <!-- CTA -->
-      <a href="pages/contact.html" class="nav-cta">
-        <span>Demander un devis</span>
+      <!-- CTA dans le menu (mobile) -->
+      <a class="radio nav-mobile-cta" href="pages/contact.html">
+        <span class="name">Demander un devis</span>
       </a>
+    </nav>
 
-    </div>
-  </header>
+    <!-- CTA desktop -->
+    <a href="pages/contact.html" class="nav-cta">
+      <span>Demander un devis</span>
+    </a>
+
+  </div>
+
+  <!-- Overlay mobile (clic dehors) -->
+  <div class="nav-overlay" id="nav-overlay" hidden></div>
+</header>
+
 
   <!-- ================= MAIN ================= -->
   <main id="main-content">
