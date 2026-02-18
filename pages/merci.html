@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Merci — Gearforge</title>
+  <link rel="stylesheet" href="../style/merci.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main class="ty">
+    <section class="card" aria-live="polite">
+      <img class="logo" src="../assets/logo2.png" alt="Gearforge" />
+
+      <h1>Merci, on a bien reçu votre message.</h1>
+      <p class="lead">
+        On revient vers vous rapidement. En attendant, vous pouvez explorer nos formations
+        ou revenir à l’accueil.
+      </p>
+
+      <div class="steps">
+        <div class="steps__head">Prochaines étapes</div>
+
+        <ul class="steps__list">
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Analyse</strong>
+              <span>On lit votre demande et on identifie le besoin.</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Retour rapide</strong>
+              <span>Réponse par mail ou téléphone selon le contexte.</span>
+            </div>
+          </li>
+
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Proposition</strong>
+              <span>On vous propose une solution claire et actionnable.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn--primary" href="../index.html">Retour à l’accueil</a>
+        <a class="btn btn--ghost" href="../pages/formation.html">Découvrir nos formations</a>
+        <a class="link" href="../pages/contact.html">Envoyer un autre message</a>
+      </div>
+
+      <footer>© <span id="year"></span> Gearforge • Let’s forge together</footer>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

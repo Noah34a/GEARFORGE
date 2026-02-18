@@ -262,7 +262,7 @@ p{ margin: 0 0 14px; }
 }
 
 /* =========================
-   SECTIONS (rythme)
+   SECTIONS 
    ========================= */
 .section{
   padding: 96px 0;
@@ -572,7 +572,7 @@ p{ margin: 0 0 14px; }
   transition: color 1s;
 }
 
-/* ===== PATCH FINAL hover (lisible + pas d'italique) ===== */
+/* ===== PATCH FINAL hover  ===== */
 .service-card--fx:hover,
 .service-card--fx:focus-within{
   color: #fff;
@@ -861,10 +861,16 @@ p{ margin: 0 0 14px; }
 
 .footer__inner{
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr 1.3fr;
-  gap: 28px;
+  grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+  gap: 60px;
   align-items: start;
 }
+
+.footer__newsletter{
+  justify-self: end;
+  max-width: 420px;
+}
+
 
 .footer__logo{
   display: inline-flex;
@@ -1202,13 +1208,10 @@ p{ margin: 0 0 14px; }
 }
 
 /* =========================
-   BURGER + NAV MOBILE (CLEAN)
-   - Desktop : pills visibles + bouton .nav-cta visible
-   - Desktop : on cache le lien "contact" dans les pills pour éviter 2 devis
-   - Mobile : burger visible, pills deviennent drawer, .nav-cta caché
+   BURGER 
    ========================= */
 
-/* Desktop : évite "2 devis" (le lien contact dans les pills) */
+/* Desktop */
 .radio-inputs .radio[href*="contact"]{
   display: none;
 }
