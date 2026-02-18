@@ -45,17 +45,17 @@ style/ — CSS par page
 ## ⬇️ Récupérer le projet (2 méthodes)
 
 ### Méthode A — La plus simple (Télécharger en ZIP)
-1. Sur la page GitHub du projet, clique sur **Code**
-2. Clique sur **Download ZIP**
-3. Dézippe le fichier sur ton PC
-4. Ouvre le dossier
+1. Cliquer sur **Code**
+2. Cliquer sur **Download ZIP**
+3. Dézipper le fichier sur ton PC
+4. Ouvrir le dossier
 
 ---
 
 ### Méthode B — Cloner le repo (si tu as Git)
 > “Cloner” = copier le projet sur ton ordinateur avec Git.
 
-1. Ouvre un terminal :
+1. Ouvrir un terminal :
    - Windows : PowerShell
    - Mac : Terminal
 
@@ -69,6 +69,6 @@ style/ — CSS par page
      cd ~/Desktop
      ```
 
-3. Clone le repo :
+3. Cloner le repo :
    ```bash
    git clone <URL_DU_REPO>
