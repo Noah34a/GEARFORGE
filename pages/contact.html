@@ -1,82 +1,76 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact — Gearforge</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../style/contact.css">
 </head>
+
 <body>
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="index.html">
-        <img class="brand__img" src="assets/logo.png" alt="Logo Gearforge" />
-        <span class="brand__text"><strong>GEARFORGE</strong><small>LET’S FORGE TOGETHER</small></span>
-      </a>
-      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="nav" id="nav">
-        <a href="about.html">À propos</a>
-        <a href="services.html">Nos services</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-      </nav>
-    </div>
-  </header>
+  <main class="contact">
+    <section class="card">
 
-  <main class="section">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2>Contact</h2>
-      <p>Une question ? Un projet ? Parlons-en.</p>
-    </div>
+      <img class="logo" src="../assets/logo2.png" alt="Gearforge">
 
-    <div class="card reveal">
-      <h3>Informations</h3>
-      <ul class="list">
-        <li><strong>Adresse :</strong> À compléter</li>
-        <li><strong>Téléphone :</strong> À compléter</li>
-        <li><strong>Email :</strong> contact@gearforge.fr</li>
-      </ul>
-    </div>
+      <div class="layout">
+        <div class="left">
+          <span class="kicker">Contact</span>
+          <h1>Prenez contact avec nos experts</h1>
+          <p class="lead">Prêt à faire avancer vos projets ?</p>
 
-    <!-- FORMULAIRE -->
-    <div class="card reveal">
-      <h3>Envoyer un message</h3>
+          <p class="desc">
+            Échangeons sur vos enjeux techniques, vos idées ou vos objectifs d'innovation.
+            Que vous soyez au stade de la réflexion ou déjà en phase de développement, nous vous aidons à passer à
+            l'action efficacement et à coûts maîtrisés.
+          </p>
 
-      <form action="../pages/merci.html" method="GET" class="contact-form">
-
-        <div class="form-group">
-          <label for="name">Nom</label>
-          <input type="text" id="name" name="name" required>
+          <div class="note">
+            Contactez nous dès aujourd'hui pour un premier échange personnalisé sur votre projet.
+          </div>
         </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
+        <form class="form" action="../pages/merci.html" method="GET">
+          <div class="grid">
+            <div class="field">
+              <input type="text" name="nom" required placeholder=" ">
+              <label>Nom</label>
+            </div>
 
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
+            <div class="field">
+              <input type="text" name="prenom" required placeholder=" ">
+              <label>Prénom</label>
+            </div>
 
-        <button type="submit" class="btn-primary">Envoyer</button>
+            <div class="field">
+              <input type="tel" name="telephone" required placeholder=" ">
+              <label>Téléphone</label>
+            </div>
 
-      </form>
-    </div>
+            <div class="field">
+              <input type="email" name="email" required placeholder=" ">
+              <label>Email</label>
+            </div>
+          </div>
 
-  </div>
-</main>
+          <div class="field field--full">
+            <textarea name="message" rows="5" required placeholder=" " spellcheck="false"></textarea>
+            <label>Message</label>
+          </div>
 
+          <div class="actions">
+            <button type="submit" class="btn-primary">Envoyer</button>
+            <a href="../index.html" class="btn-link">Retour à l'accueil</a>
+          </div>
+        </form>
+      </div>
 
-  <footer class="footer">
-    <div class="container footer__bottom">
-      <p>© <span id="year"></span> Gearforge</p>
-      <a href="accueil.html" class="to-top">Accueil</a>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+    </section>
+  </main>
 </body>
 </html>

@@ -121,11 +121,27 @@ document.addEventListener("DOMContentLoaded", () => {
   name: "IoT / Domotique",
   summary: "TEXTE",
   keySkills: [
-    { title: "Gérer un protocole de communication", moduleNum: "01", video: "", poster: "" },
-    { title: "Développer un firmware fonctionnel", moduleNum: "02", video: "", poster: "" },
-    { title: "Déployer et tester en conditions réelles", moduleNum: "03", video: "", poster: "" },
-    { title: "Sécuriser un système IoT", moduleNum: "04", video: "", poster: "" },
-  ],
+  {
+    title: "Gérer un protocole de communication",
+    moduleNum: "01",
+    video: "../animation/anime_domo_1.mp4",
+  },
+  {
+    title: "Développer un firmware fonctionnel pour un système IoT/domotique",
+    moduleNum: "02",
+    video: "../animation/anime_domo_2.mp4",
+  },
+  {
+    title: "Déployer et tester un système IoT/domotique en conditions réelles",
+    moduleNum: "03",
+    video: "../animation/anime_domo_3.mp4",
+  },
+  {
+    title: "Sécuriser un système IoT",
+    moduleNum: "04",
+    video: "../animation/anime_domo_4.mp4",
+  }
+],
   modules: [
     {
       num: "01",
@@ -252,11 +268,27 @@ document.addEventListener("DOMContentLoaded", () => {
     "TEXTE",
 
   keySkills: [
-    { title: "Choisir une méthodologie de conception adaptée", moduleNum: "01", video: "", poster: "" },
-    { title: "Optimiser et valider un prototype", moduleNum: "01", video: "", poster: "" },
-    { title: "Industrialiser un produit et optimiser les coûts", moduleNum: "02", video: "", poster: "" },
-    { title: "Protéger et financer une innovation", moduleNum: "02", video: "", poster: "" },
-  ],
+  {
+    title: "Identification les matériaux et procédés nécessaires",
+    moduleNum: "01",
+    video: "../animation/anime_comp_1.mp4",
+  },
+  {
+    title: "Évaluer les coûts et optimiser la rentabilité d’un produit",
+    moduleNum: "02",
+    video: "../animation/anime_comp_2.mp4",
+  },
+  {
+    title: "Mettre en place des outils de contrôle qualité",
+    moduleNum: "03",
+    video: "../animation/anime_comp_3.mp4",
+  },
+  {
+    title: "Protéger et financer une innovation",
+    moduleNum: "04",
+    video: "../animation/anime_comp_4.mp4",
+  }
+],
 
   modules: [
     {
@@ -382,12 +414,28 @@ document.addEventListener("DOMContentLoaded", () => {
   name: "Robotique & Mécatronique",
   summary:
     "TEXTE",
-  keySkills: [
-    { title: "Concevoir un système robotisé", moduleNum: "01", video: "", poster: "" },
-    { title: "Appliquer les normes de sécurité", moduleNum: "02", video: "", poster: "" },
-    { title: "Développer une robotique autonome", moduleNum: "03", video: "", poster: "" },
-    { title: "Intégrer ROS et l’IA", moduleNum: "03", video: "", poster: "" },
-  ],
+   keySkills: [
+  {
+    title: "Concevoir des bras polyarticuléss",
+    moduleNum: "01",
+    video: "../animation/anime_formation_5.mp4",
+  },
+  {
+    title: "Planification de trajectoire/odométrie",
+    moduleNum: "02",
+    video: "../animation/anime_formation_6.mp4",
+  },
+  {
+    title: "Intégrer l’IA pour la perception",
+    moduleNum: "03",
+    video: "../animation/anime_formation_7.mp4",
+  },
+  {
+    title: "Utiliser ROS (outil de simulation)",
+    moduleNum: "04",
+    video: "../animation/anime_formation_8.mp4",
+  }
+],
   modules: [
     {
       num: "01",
@@ -552,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Corriger les erreurs d’odométrie",
             "Fusionner l’odométrie avec d’autres capteurs",
             "Appliquer l’odométrie à la navigation autonome",
-            "ptimiser la précision de la localisation",
+            "Optimiser la précision de la localisation",
           ],
         },
         {

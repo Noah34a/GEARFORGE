@@ -17,8 +17,7 @@ body{
   margin:0;
   min-height:100vh;
   font-family: "Space Grotesk", system-ui, sans-serif;
-
-  background-image: url("../assets/carte.webp"); 
+ 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -112,6 +111,7 @@ h1{
   display:grid;
   grid-template-columns: 12px 1fr;
   gap: 12px;
+  position: relative;
 }
 
 .dot{
@@ -121,6 +121,20 @@ h1{
   background: var(--red);
   margin-top: 5px;
   box-shadow: 0 0 0 6px rgba(167,0,0,.10);
+  position: relative;
+  z-index: 1;
+}
+
+.steps__list li:not(:last-child) .dot::after{
+  content:"";
+  position: absolute;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% + 14px);
+  background: var(--red);
+  z-index: 0;
 }
 
 .steps strong{
@@ -138,29 +152,68 @@ h1{
 /* actions */
 .actions{
   display:flex;
-  gap: 12px;
-  flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  margin-bottom: 8px;
+  gap:28px;
+  margin-top:32px;
+}
+
+.actions .btn-primary{
+  width:auto;
+  min-width:280px;
+  padding:14px 36px;
+  border-radius:999px;
+}
+
+.actions .btn-link{
+  font-weight:600;
+  color:rgba(18,19,22,.75);
+  text-decoration:underline;
+  text-underline-offset:6px;
+  white-space:nowrap;
+}
+
+.actions .btn-link:hover{
+  color:rgba(18,19,22,.95);
 }
 
 .btn{
-  padding: 13px 20px;
-  border-radius: 999px;
-  text-decoration:none;
-  font-weight: 800;
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  margin-top:35px;
+  width:100%;
+  padding:16px;
+  border-radius:999px;
+  border:none;
+  background:var(--red);
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  transition:.25s;
+  box-shadow:none; /* ⬅️ plus d’ombre par défaut */
 }
 
-.btn--primary{
-  background: var(--red);
-  color:#fff;
-  box-shadow: 0 16px 36px rgba(167,0,0,.22);
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(167,0,0,.35); /* ⬅️ ombre seulement au hover */
 }
-.btn--primary:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 22px 46px rgba(167,0,0,.28);
+
+.btn-primary{
+  display:inline-block;
+  width:auto;              /* ⬅️ plus 100% */
+  padding:16px 40px;       /* largeur contrôlée */
+  border-radius:999px;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+  transition:.25s ease;
+  box-shadow:none;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 40px rgba(167,0,0,.30);
 }
 
 .btn--ghost{
