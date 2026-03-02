@@ -103,40 +103,44 @@
 
 
     <!-- ================= LISTE FORMATIONS ================= -->
-    <section class="section formations" aria-labelledby="formations-title">
-      <div class="container">
-        <div class="formations__head">
-          <h2 class="formations__title" id="formations-title">Choisir une formation</h2>
-          <p class="formations__subtitle">TEXTE</p>
+   <section class="formations">
+  <div class="container">
+    <h2 class="formations-title">Choisir une formation</h2>
+    <p class="formations-subtitle">Découvrez nos modules en détail.</p>
+
+    <div class="formations-grid">
+
+      <div class="formation-card" data-formation="fusion-eagle" role="button" tabindex="0">
+        <div class="formation-image">
+          <img src="" alt="" aria-hidden="true">
         </div>
-
-        <div class="formation-select__row" role="list">
-          <article class="formation-card" role="listitem" tabindex="0" data-formation="fusion-eagle">
-            <div class="formation-card__icon" aria-hidden="true">⚙️</div>
-            <h3 class="formation-card__name">Fusion Eagle</h3>
-            <p class="formation-card__meta">TEXTE</p>
-          </article>
-
-          <article class="formation-card" role="listitem" tabindex="0" data-formation="iot-domotique">
-            <div class="formation-card__icon" aria-hidden="true">📡</div>
-            <h3 class="formation-card__name">IoT / Domotique</h3>
-            <p class="formation-card__meta">TEXTE</p>
-          </article>
-
-          <article class="formation-card" role="listitem" tabindex="0" data-formation="prototypage">
-            <div class="formation-card__icon" aria-hidden="true">🧪</div>
-            <h3 class="formation-card__name">Prototypage</h3>
-            <p class="formation-card__meta">TEXTE</p>
-          </article>
-
-          <article class="formation-card" role="listitem" tabindex="0" data-formation="robotique-mecatronique">
-            <div class="formation-card__icon" aria-hidden="true">🤖</div>
-            <h3 class="formation-card__name">Robotique / Mécatronique</h3>
-            <p class="formation-card__meta">TEXTE</p>
-          </article>
-        </div>
+        <h3>Fusion Eagle</h3>
       </div>
-    </section>
+
+      <div class="formation-card" data-formation="iot-domotique" role="button" tabindex="0">
+        <div class="formation-image">
+          <img src="" alt="" aria-hidden="true">
+        </div>
+        <h3>IoT / Domotique</h3>
+      </div>
+
+      <div class="formation-card" data-formation="prototypage" role="button" tabindex="0">
+        <div class="formation-image">
+          <img src="" alt="" aria-hidden="true">
+        </div>
+        <h3>Prototypage</h3>
+      </div>
+
+      <div class="formation-card" data-formation="robotique-mecatronique" role="button" tabindex="0">
+        <div class="formation-image">
+          <img src="" alt="" aria-hidden="true">
+        </div>
+        <h3>Robotique / Mécatronique</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- ================= DETAIL FORMATION ================= -->
     <section id="formation-detail" class="f-detail" hidden>

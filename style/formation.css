@@ -142,92 +142,65 @@
 /* -------------------------
    LISTE FORMATIONS
 ------------------------- */
-.section.formations{
-  padding-top: 30px;
-  padding-bottom: 70px;
+.formations {
+  padding: 100px 20px;
+  background: #fff;
 }
-.formations__title{
-  font-family: var(--font-title);
-  font-size: 44px;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formations-title {
+  font-size: 48px;
   font-weight: 700;
-  margin: 0 0 6px;
-  letter-spacing: -0.3px;
-  color: var(--gf-dark);
-}
-.formations__subtitle{
-  margin: 0;
-  color: var(--gf-slate);
-  font-family: var(--font-body);
-  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: "Space Grotesk", sans-serif;
 }
 
-.section.formations .formation-select__row{
-  display:grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 18px !important;
-  align-items: stretch;
+.formations-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 60px;
+  font-size: 18px;
 }
 
-/* Carte formation */
-.section.formations .formation-card{
-  background:#fff;
-  border: 1px solid var(--border);
+.formations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.formation-card {
+  background: #ffffff;
   border-radius: 20px;
-  padding: 22px 20px;
-  cursor:pointer;
-  transition: transform .2s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease;
-  outline:none;
-  box-shadow: 0 16px 46px rgba(0,0,0,.05);
-}
-.section.formations .formation-card:focus-visible{
-  outline: 2px solid rgba(167,0,0,.85);
-  outline-offset: 3px;
+  padding: 50px 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #111;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
 }
 
-.section.formations .formation-card:hover{
-  transform: translateY(-3px);
-  background: var(--gf-red);
-  border-color: rgba(167,0,0,.65);
-  box-shadow: 0 22px 60px rgba(167,0,0,.18);
-}
-.section.formations .formation-card:hover .formation-card__name,
-.section.formations .formation-card:hover .formation-card__meta{
-  color:#fff;
-}
-.section.formations .formation-card:hover .formation-card__icon{
-  background: rgba(255,255,255,.16);
-  color:#fff;
+.formation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
-.section.formations .formation-card__icon{
-  width: 46px; height: 46px;
-  border-radius: 14px;
-  display:grid; place-items:center;
-  background: rgba(167,0,0,.08);
-  color: var(--gf-red);
+.formation-image {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 30px;
+  background: #eef1f4;
+  border-radius: 20px;
+}
+
+.formation-card h3 {
   font-size: 20px;
-  margin-bottom: 14px;
-  transition: background-color .25s ease, color .25s ease;
-}
-.section.formations .formation-card__name{
-  font-family: var(--font-title);
-  font-size: 17px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  color: var(--gf-dark);
-  transition: color .25s ease;
-}
-.section.formations .formation-card__meta{
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--gf-slate);
-  font-family: var(--font-body);
-  transition: color .25s ease;
-}
-.section.formations .formation-card.is-selected{
-  border-color: rgba(167,0,0,.35);
-  box-shadow: 0 22px 60px rgba(167,0,0,.10);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* -------------------------

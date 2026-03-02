@@ -10,7 +10,7 @@
 body{
   margin:0;
   min-height:100vh;
-  font-family:"Space Grotesk", sans-serif;
+  font-family: "Space Grotesk", system-ui, sans-serif;
   color: var(--text);
   display:flex;
   align-items:center;
@@ -45,8 +45,27 @@ body{
 .layout{
   display:grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 34px;
-  align-items:center; 
+  grid-template-rows: auto auto;
+  column-gap:34px;
+  row-gap:22px;
+  align-items:start;
+}
+
+.left{ grid-column:1; grid-row:1; }
+.form{ grid-column:2; grid-row:1 / span 2; }
+
+.note{
+  grid-column:1;
+  grid-row:2;
+  align-self:start;
+  margin-top:-40px;
+  padding:14px 16px;
+  border-radius:16px;
+  background: rgba(167,0,0,.06);
+  border: 1px solid rgba(167,0,0,.12);
+  font-weight:800;
+  color: rgba(18,19,22,.92);
+  transform: translateY(-18px);
 }
 
 .kicker{

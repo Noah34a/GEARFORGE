@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Consulting — Gearforge</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style/consulting.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <!-- Brand -->
+      <a class="brand" href="../index.html" aria-label="Aller à l'accueil Gearforge">
+        <img class="brand__logo" src="../assets/logo2.png" alt="Logo Gearforge" />
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="burger"
+        id="burger-btn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main navigation -->
+      <nav class="radio-inputs nav" id="main-nav" aria-label="Navigation principale">
+        <a class="radio" href="../index.html"><span class="name">Accueil</span></a>
+        <a class="radio" href="formation.html"><span class="name">Formation</span></a>
+
+        <!-- Current page -->
+        <a class="radio" href="consulting.html" aria-current="page">
+          <span class="name is-active">Consulting</span>
+        </a>
+
+        <a class="radio" href="r&d.html"><span class="name">R&amp;D</span></a>
+        <a class="radio" href="articles.html"><span class="name">Articles</span></a>
+
+        <!-- Mobile CTA -->
+        <a class="radio nav-mobile-cta" href="contact.html">
+          <span class="name">Demander un devis</span>
+        </a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contact.html" class="nav-cta"><span>Demander un devis</span></a>
+    </div>
+
+    <!-- Mobile overlay -->
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero hero--consulting">
+      <div class="container hero__inner">
+
+        <!-- Copy -->
+        <div class="hero__content">
+          <h1 class="hero__title">
+            <span class="gf-red">Résolvez</span> vos
+            <span class="gf-red">problématiques techniques</span> complexes.
+          </h1>
+
+          <p class="hero__subtitle">
+            Nos consultants sont qualifiés et experts dans leur domaine afin de vous faire bénéficier
+            de connaissances approfondies pour résoudre vos problématiques les plus complexes.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="contact.html">Nous contacter</a>
+            <a class="btn btn--ghost" href="https://calendly.com/aorquin92/30min" target="_blank" rel="noopener">
+              Prendre rendez-vous
+            </a>
+          </div>
+
+          <!-- Social proof -->
+          <div class="hero__trust">
+            <p class="hero__trust-title">Ils nous font confiance</p>
+
+            <div class="hero__logos" aria-label="Entreprises partenaires">
+              <img src="../assets/1.png" alt="Entreprise 1" loading="lazy">
+              <img src="../assets/2.png" alt="Entreprise 2" loading="lazy">
+              <img src="../assets/3.png" alt="Entreprise 3" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="hero__visual">
+          <div class="hero__imgWrap">
+            <img
+              class="hero__img"
+              src="../assets/consul.webp"
+              alt="Consulting Gearforge"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global scripts -->
+  <script src="../script.js"></script>
+</body>
+</html>
