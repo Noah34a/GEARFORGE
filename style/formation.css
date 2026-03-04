@@ -1,21 +1,6 @@
-/* =========================================
-   formation.css — Gearforge
-   ========================================= */
+/* formation.css — Gearforge */
 
-/* -------------------------
-   NAV (onglet actif)
-------------------------- */
-.radio[aria-current="page"]{
-  background: var(--gf-red);
-  border-radius: 999px;
-}
-.radio[aria-current="page"] .name{
-  color:#fff !important;
-}
-
-/* -----------------------------------------
-   HERO 
------------------------------------------ */
+/* HERO */
 .f-hero{
   padding-top: 140px;
   padding-bottom: 80px;
@@ -110,44 +95,35 @@
 
 /* Visuel à droite */
 .f-hero__visual{
-  display:flex;
-  justify-content:flex-end;
+  flex: 1.4;
+  justify-content: center;
 }
 
 .f-hero__img{
-  width: min(620px, 100%);
-  height: auto;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: 0 22px 60px rgba(0,0,0,.08);
+  width: 180%;                      
+  max-width: 1100px;
+  transform: translateX(-180px);
 }
 
 /* Responsive */
 @media (max-width: 980px){
-  .f-hero{
-    padding-top: 120px;
+  .f-hero{ padding-top: 120px;
   }
-  .f-hero__inner{
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .f-hero__inner{ grid-template-columns: 1fr; gap: 28px;
   }
-  .f-hero__visual{
-    justify-content: flex-start;
+  .f-hero__visual{ justify-content: flex-start;
   }
-  .f-hero__title{
-    font-size: clamp(44px, 8vw, 64px);
+  .f-hero__title{ font-size: clamp(44px, 8vw, 64px);
   }
 }
 
-/* -------------------------
-   LISTE FORMATIONS
-------------------------- */
+/*LISTE FORMATIONS*/
 .formations {
   padding: 100px 20px;
   background: #fff;
 }
 
-.container {
+.formations .container{
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -203,9 +179,7 @@
   line-height: 1.4;
 }
 
-/* -------------------------
-   DETAIL
-------------------------- */
+/*DETAIL*/
 .f-detail{
   padding-top: 40px;
   padding-bottom: 90px;
@@ -263,9 +237,7 @@
   outline-offset: 3px;
 }
 
-/* -------------------------
-   MODULES
-------------------------- */
+/*MODULES*/
 .f-mods{
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -293,9 +265,7 @@
   overflow:hidden;
   cursor:pointer;
   height: 120px;
-  background:
-    radial-gradient(140px 140px at 18% 25%, rgba(167,0,0,.18), transparent 62%),
-    linear-gradient(135deg, rgba(0,0,0,.02), rgba(167,0,0,.05));
+  background: radial-gradient(140px 140px at 18% 25%, rgba(167,0,0,.18), transparent 62%), linear-gradient(135deg, rgba(0,0,0,.02), rgba(167,0,0,.05));
   transition: height .22s ease, transform .22s ease, box-shadow .25s ease, border-color .25s ease;
 }
 .mod-img img{
@@ -476,9 +446,7 @@
   margin: 0 0 10px;
 }
 
-/* ===============================
-   MODULE — NIVEAU
-================================ */
+/*MODULE — NIVEAU*/
 
 .module-card__media{
   position: relative;
@@ -511,9 +479,7 @@
 }
 
 
-/* -------------------------
-   COMPÉTENCES
-------------------------- */
+/*COMPÉTENCES*/
 .f-skills{
   margin-top: 18px;
 }
@@ -549,9 +515,7 @@
   border-radius: 18px;
   overflow:hidden;
   border: 1px solid var(--border);
-  background:
-    radial-gradient(220px 220px at 20% 10%, rgba(167,0,0,.10), transparent 60%),
-    linear-gradient(135deg, rgba(0,0,0,.02), rgba(0,0,0,0));
+  background: radial-gradient(220px 220px at 20% 10%, rgba(167,0,0,.10), transparent 60%), linear-gradient(135deg, rgba(0,0,0,.02), rgba(0,0,0,0));
   box-shadow: 0 18px 50px rgba(0,0,0,.06);
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
@@ -589,12 +553,9 @@
   line-height: 1.2;
 }
 
-/* -------------------------
-   RESPONSIVE
-------------------------- */
+/*RESPONSIVE*/
 @media (max-width: 1100px){
-  .section.formations .formation-select__row{
-    grid-template-columns: repeat(2, 1fr) !important;
+  .section.formations .formation-select__row{ grid-template-columns: repeat(2, 1fr) !important;
   }
   .skills-grid{ grid-template-columns: repeat(2, 1fr); }
 }
@@ -609,9 +570,7 @@
   .skills-grid{ grid-template-columns: 1fr; }
 }
 
-/* ===============================
-   CTA 
-================================ */
+/*CTA */
 
 .f-cta{
   margin-top: 120px;     
@@ -663,9 +622,7 @@
 
 /* Mobile */
 @media (max-width: 720px){
-  .f-cta__inner{
-    flex-direction: column;
-    text-align: center;
+  .f-cta__inner{ flex-direction: column; text-align: center;
   }
 }
 
@@ -673,9 +630,7 @@
   min-height: calc(100vh - 420px);
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+/* FOOTER */
 .site-footer{
   background: #fff;
   border-top: 1px solid rgba(0,0,0,.08);

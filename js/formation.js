@@ -1,13 +1,9 @@
-/* =========================================================
-   formation.js — Gearforge 
-   ========================================================= */
+/*formation.js — Gearforge*/
 
 document.addEventListener("DOMContentLoaded", () => {
   "use strict";
 
-  /* =========================================================
-     1) DATA 
-     ========================================================= */
+  /* DATA */
   const FORMATIONS = {
     "fusion-eagle": {
       name: "Fusion Eagle",
@@ -669,15 +665,11 @@ document.addEventListener("DOMContentLoaded", () => {
 },
   }
 
-  /* =========================================================
-     2) Helpers DOM
-     ========================================================= */
+  /* Helpers DOM*/
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  /* =========================================================
-     3) Selecteurs 
-     ========================================================= */
+  /*Selecteurs */
   const searchInput = $("#q");
   const cards = $$(".formation-card");
 
@@ -689,9 +681,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modsRows = $("#mods-rows");     
   const skillsGrid = $("#skills-grid"); 
 
-  /* =========================================================
-     4) Utils
-     ========================================================= */
+  /* Utils*/
   const pad2 = (n) => String(n).padStart(2, "0");
 
   function showDetail() {
@@ -741,9 +731,7 @@ document.addEventListener("DOMContentLoaded", () => {
     found.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  /* =========================================================
-   5) Render modules (image + accordéon + pastille niveau)
-   ========================================================= */
+  /*Render modules (image + accordéon + pastille niveau*/
 function renderModules(modules) {
   if (!modsRows) return;
   modsRows.innerHTML = "";
@@ -761,14 +749,14 @@ function renderModules(modules) {
     imgBtn.className = "mod-img";
     imgBtn.setAttribute("aria-label", `Ouvrir le module ${num}`);
 
-    // -------- Pastille niveau (optionnelle)
+    //Pastille niveau (optionnelle)
     const levelText = (m.level || "").trim(); // "Essentiel" | "Confirmé" | "Expert"
     const levelClass = levelText
       ? levelText
           .toLowerCase()
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") // enlève accents
-          .replace(/\s+/g, "-") // espaces -> tirets
+          .replace(/[\u0300-\u036f]/g, "") 
+          .replace(/\s+/g, "-") 
       : "";
 
     imgBtn.innerHTML = `
@@ -826,9 +814,7 @@ function renderModules(modules) {
 }
 
 
-  /* =========================================================
-     6) Render compétences
-     ========================================================= */
+  /* Render compétences*/
  function renderKeySkills(keySkills) {
   if (!skillsGrid) return;
   skillsGrid.innerHTML = "";
@@ -905,9 +891,8 @@ function renderModules(modules) {
 }
 
 
-  /* =========================================================
-     7) Select formation
-     ========================================================= */
+  /*
+     7) Select formation*/
   function selectFormation(key) {
     const data = FORMATIONS[key];
     if (!data) return;
@@ -923,9 +908,7 @@ function renderModules(modules) {
     showDetail();
   }
 
-  /* =========================================================
-     8) Events
-     ========================================================= */
+  /*Events*/
   cards.forEach((card) => {
     const key = card.dataset.formation;
 

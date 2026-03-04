@@ -1,24 +1,9 @@
-/* =========================
-   GEARFORGE — script.js
-
-   Fonctionnalités :
-   1) Navigation : met en surbrillance la page courante (classe .is-active + aria-current)
-   2) Stats : compteurs animés (0 -> data-count) quand visibles
-   3) Trust : duplication des logos pour boucle infinie (marquee géré en CSS)
-   4) About : 4 points d'info sur l'image => popup transparent (modal)
-   5) Header : menu burger (mobile) => toggle + fermeture auto (lien / clic dehors)
-
-   Notes :
-   - Respect de prefers-reduced-motion (accessibilité)
-   - Code organisé par blocs (lecture facile en review)
-   ========================= */
+/*GEARFORGE — script.js*/
 
 (() => {
   "use strict";
 
-  /* =========================
-     CONFIG / HELPERS
-     ========================= */
+  /*CONFIG / HELPERS*/
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
@@ -30,9 +15,7 @@
     return file === "" ? "index.html" : file;
   };
 
-  /* =========================
-     1) NAVIGATION ACTIVE
-     ========================= */
+  /* NAVIGATION ACTIVE*/
   function setActiveNav() {
     const nav = $(".radio-inputs");
     if (!nav) return;
@@ -42,7 +25,6 @@
 
     const current = getCurrentFilename();
 
-    // Reset : enlever is-active + aria-current
     $$(".name.is-active", nav).forEach((el) => el.classList.remove("is-active"));
     links.forEach((a) => a.removeAttribute("aria-current"));
 
@@ -61,16 +43,7 @@
     match.setAttribute("aria-current", "page");
   }
 
-  /* =========================
-     2) STATS COUNTERS
-     ========================= */
-
-  /**
-   * Anime un compteur (0 -> to) avec easing.
-   * @param {HTMLElement} el
-   * @param {number} to
-   * @param {number} duration
-   */
+  /*STATS COUNTERS*/
   function animateCounter(el, to, duration = 750) {
     const start = performance.now();
     const from = 0;
@@ -78,7 +51,7 @@
 
     const tick = (now) => {
       const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3); // easeOutCubic
+      const eased = 1 - Math.pow(1 - t, 3);
       const value = from + (to - from) * eased;
 
       el.textContent = isInt ? String(Math.round(value)) : String(Math.round(value));
@@ -94,7 +67,6 @@
     const nodes = $$(".stat__number[data-count]");
     if (!nodes.length) return;
 
-    // Reduced motion : on affiche direct
     if (prefersReducedMotion) {
       nodes.forEach((el) => {
         const to = Number(el.dataset.count);
@@ -130,27 +102,21 @@
     nodes.forEach((el) => io.observe(el));
   }
 
-  /* =========================
-     3) TRUST — DUPLICATION (CSS MARQUEE)
-     ========================= */
+  /*TRUST — DUPLICATION */
   function initTrustInfinite() {
-    // Ton HTML utilise déjà .trust__track + animation CSS (trustScroll)
+
     const track = $(".trust__track");
     if (!track) return;
 
-    // Reduced motion : on ne duplique pas
     if (prefersReducedMotion) return;
 
-    // Empêche double duplication si le script est chargé 2 fois
     if (track.dataset.duplicated === "true") return;
 
     track.innerHTML += track.innerHTML;
     track.dataset.duplicated = "true";
   }
 
-  /* =========================
-     4) ABOUT — HOTSPOTS (4 points + modal)
-     ========================= */
+  /*ABOUT — HOTSPOTS (4 points + modal)*/
   function initAboutHotspots() {
     const points = $$(".about-point");
     const modal = $(".about-modal");
@@ -187,9 +153,7 @@
     });
   }
 
-  /* =========================
-     5) HEADER — BURGER MENU (MOBILE)
-     ========================= */
+  /*HEADER — BURGER MENU (MOBILE)*/
   function initBurgerMenu() {
     const burger = $("#burger-btn");
     const nav = $("#main-nav");
@@ -227,9 +191,7 @@
     });
   }
 
-  /* =========================
-     INIT
-     ========================= */
+  /*INIT*/
   document.addEventListener("DOMContentLoaded", () => {
     setActiveNav();
     initCounters();

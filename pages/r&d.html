@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R&amp;D — Gearforge</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style/r&d.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header__inner">
+
+      <!-- Brand -->
+      <a class="brand" href="../index.html" aria-label="Aller à l'accueil Gearforge">
+        <img class="brand__logo" src="../assets/logo2.png" alt="Logo Gearforge" />
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="burger"
+        id="burger-btn"
+        type="button"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main navigation -->
+      <nav class="radio-inputs nav" id="main-nav" aria-label="Navigation principale">
+        <a class="radio" href="../index.html"><span class="name">Accueil</span></a>
+        <a class="radio" href="formation.html"><span class="name">Formation</span></a>
+
+        <a class="radio" href="consulting.html"><span class="name">Consulting</span></a>
+
+        <a class="radio" href="r&d.html" aria-current="page">
+          <span class="name is-active">R&amp;D</span>
+        </a>
+
+        <a class="radio" href="articles.html"><span class="name">Articles</span></a>
+
+        <!-- Mobile CTA -->
+        <a class="radio nav-mobile-cta" href="contact.html">
+          <span class="name">Demander un devis</span>
+        </a>
+      </nav>
+
+      <!-- Desktop CTA -->
+      <a href="contact.html" class="nav-cta"><span>Demander un devis</span></a>
+    </div>
+
+    <!-- Mobile overlay -->
+    <div class="nav-overlay" id="nav-overlay" hidden></div>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section class="hero hero--rd">
+      <div class="container hero__inner">
+
+        <!-- Copy -->
+        <div class="hero__content">
+          <h1 class="hero__title">
+             <span class="gf-red">Transformez</span> l’incertitude
+             <span class="gf-red">technique</span> en
+             <span class="gf-red">avantage</span> concurrentiel.
+            </h1>
+
+          <p class="hero__subtitle">
+            TEXTE
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="contact.html">Nous contacter</a>
+            <a class="btn btn--ghost" href="https://calendly.com/aorquin92/30min" target="_blank" rel="noopener">
+              Prendre rendez-vous
+            </a>
+          </div>
+
+          <!-- Social proof -->
+          <div class="hero__trust">
+            <p class="hero__trust-title">Ils nous font confiance</p>
+
+            <div class="hero__logos" aria-label="Entreprises partenaires">
+              <img src="../assets/1.png" alt="Entreprise 1" loading="lazy">
+              <img src="../assets/2.png" alt="Entreprise 2" loading="lazy">
+              <img src="../assets/3.png" alt="Entreprise 3" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual -->
+        <div class="c-hero__visual">
+          <img
+            src="../assets/mar&d.webp"
+            alt="Maquette 3D illustrant une démarche R&amp;D Gearforge"
+            class="c-hero__img"
+            loading="eager"
+          />
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Avantages -->
+  <section class="advantages" aria-labelledby="advantages-title">
+    <div class="container advantages__inner">
+      <h2 class="advantages__title" id="advantages-title">
+        Externalisez la complexité, gardez l'innovation
+      </h2>
+
+      <div class="advantages__grid">
+        <article class="adv-card">
+          <div class="adv-card__icon" aria-hidden="true">
+            <img src="../assets/Innovation_sans_frontieres.webp" alt="" />
+          </div>
+          <h3 class="adv-card__title">Innovation sans frontières</h3>
+          <p class="adv-card__text">
+            Intégration de technologies avancées (IoT, systèmes asservis, mécatronique) sans investir dans un laboratoire interne.
+          </p>
+        </article>
+
+        <article class="adv-card">
+          <div class="adv-card__icon" aria-hidden="true">
+            <img src="../assets/PoC_Preuve_de_Concept_Ultra-Rapide.webp" alt="" />
+          </div>
+          <h3 class="adv-card__title">PoC Ultra-Rapide</h3>
+          <p class="adv-card__text">
+             Matérialisez vos idées en prototypes fonctionnels en un temps record pour convaincre vos investisseurs ou valider votre marché.
+          </p>
+        </article>
+
+        <article class="adv-card">
+          <div class="adv-card__icon" aria-hidden="true">
+            <img src="../assets/Design_for_Manufacturing_DfM.webp" alt="" />
+          </div>
+          <h3 class="adv-card__title">Design for Manufacturing</h3>
+          <p class="adv-card__text">
+             Nous ne créons pas de "gadgets de labo". Chaque prototype est conçu dès le premier jour pour être industrialisable à grande échelle
+          </p>
+        </article>
+
+        <article class="adv-card">
+          <div class="adv-card__icon" aria-hidden="true">
+            <img src="../assets/Patrimoine_Technologique.webp" alt="" />
+          </div>
+          <h3 class="adv-card__title">Patrimoine Technologique</h3>
+          <p class="adv-card__text">
+            Développez des solutions propriétaires uniques et sécurisez votre propriété intellectuelle pour dominer votre secteur.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Étapes -->
+  <section class="steps" aria-labelledby="steps-title">
+    <div class="steps__head" id="steps-title">
+      De l'idée au produit : Notre méthode R&D
+    </div>
+
+    <ul class="steps__list">
+      <li>
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>01 | Audit & Performance</strong>
+          <span>Évaluation rigoureuse de vos besoins et faisabilité technique.</span>
+        </div>
+      </li>
+
+      <li>
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>02 | Conception & Intelligence</strong>
+          <span> Implémentation de maintenance prédictive (IoT) et de systèmes intelligents pour minimiser les défaillances.</span>
+        </div>
+      </li>
+
+      <li>
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>03 | Évolution Produit</strong>
+          <span>Adaptation constante de vos solutions aux exigences mouvantes du marché..</span>
+        </div>
+      </li>
+
+      <li>
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>04 | Veille Active</strong>
+          <span> Intégration systématique des dernières avancées technologiques pour que votre produit n'ait jamais un train de retard.</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Témoignage -->
+  <section class="testimonial" aria-labelledby="testimonial-title">
+    <div class="container testimonial__inner">
+      <h2 class="testimonial__title" id="testimonial-title">Témoignage client</h2>
+
+      <article class="testimonial__card">
+        <div class="testimonial__meta">
+          <span class="testimonial__formation">Projet R&amp;D : Fusion Eagle</span>
+        </div>
+
+        <blockquote class="testimonial__quote">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+          Vestibulum id ligula porta felis euismod semper.
+        </blockquote>
+
+        <div class="testimonial__author">
+          <strong>Julien Martin</strong>
+          <span>Responsable Innovation</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!--  FOOTER  -->
+  <footer class="site-footer" aria-labelledby="footer-title">
+    <div class="container footer__inner">
+
+      <div class="footer__brand">
+        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
+          <img src="../assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
+        </a>
+        <p class="footer__hint" id="footer-title">Gearforge — Bureau d’étude en ingénierie mécatronique.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Services">
+        <h3 class="footer__title">Nos expertises</h3>
+        <a class="footer__link" href="../pages/formation.html">Formation</a>
+        <a class="footer__link" href="../pages/consulting.html">Consulting</a>
+        <a class="footer__link" href="../pages/r&d.html">R&amp;D</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Explorer">
+        <h3 class="footer__title">En savoir plus</h3>
+        <a class="footer__link" href="../pages/articles.html">Articles</a>
+        <a class="footer__link" href="../pages/contact.html">Contact</a>
+      </nav>
+
+      <div class="footer__newsletter" aria-label="Newsletter">
+        <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
+        <p class="footer__sub">Avec notre newsletter</p>
+
+        <form class="footer__form" action="#" method="post">
+          <label class="sr-only" for="newsletter-email">Email</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
+          <button type="submit">Soumettre</button>
+        </form>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p class="footer__copy">© <span id="year"></span> Gearforge. Tous droits réservés.</p>
+
+      <nav class="footer__legal" aria-label="Liens légaux">
+        <a href="#" class="footer__legal-link">Mentions légales</a>
+        <a href="../pages/politique-confidentialite.html" class="footer__legal-link">Politique de confidentialité</a>
+        <a href="../pages/politique-vente.html" class="footer__legal-link">Politique de vente</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Global scripts -->
+  <script src="../script.js"></script>
+</body>
+</html>
