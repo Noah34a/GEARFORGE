@@ -112,28 +112,28 @@
 
       <div class="formation-card" data-formation="fusion-eagle" role="button" tabindex="0">
         <div class="formation-image">
-          <img src="" alt="" aria-hidden="true">
+          <img src="../assets/fusion_eagle.webp" alt="" aria-hidden="true">
         </div>
         <h3>Fusion Eagle</h3>
       </div>
 
       <div class="formation-card" data-formation="iot-domotique" role="button" tabindex="0">
         <div class="formation-image">
-          <img src="" alt="" aria-hidden="true">
+          <img src="../assets/iot_domotique.webp" alt="" aria-hidden="true">
         </div>
         <h3>IoT / Domotique</h3>
       </div>
 
       <div class="formation-card" data-formation="prototypage" role="button" tabindex="0">
         <div class="formation-image">
-          <img src="" alt="" aria-hidden="true">
+          <img src="../assets/prototypage.webp" alt="" aria-hidden="true">
         </div>
         <h3>Prototypage</h3>
       </div>
 
       <div class="formation-card" data-formation="robotique-mecatronique" role="button" tabindex="0">
         <div class="formation-image">
-          <img src="" alt="" aria-hidden="true">
+          <img src="../assets/robotique_mecatronique.webp" alt="" aria-hidden="true">
         </div>
         <h3>Robotique / Mécatronique</h3>
       </div>
@@ -144,26 +144,33 @@
 
     <!--  DETAIL FORMATION  -->
     <section id="formation-detail" class="f-detail" hidden>
-      <div class="container">
+  <div class="container">
+    <div class="f-detail__head">
+      <div class="f-detail__left">
+        <p class="f-detail__eyebrow">DÉTAIL</p>
+        <h2 class="f-detail__title" id="f-detail-name">Formation</h2>
+        <p class="f-detail__subtitle" id="f-detail-summary"></p>
 
-        <div class="f-detail__head">
-          <div class="f-detail__left">
-            <p class="f-detail__eyebrow">Détail</p>
-            <h2 class="f-detail__title" id="f-detail-name">Formation</h2>
-            <p class="f-detail__subtitle" id="f-detail-summary"></p>
-          </div>
+        <div class="f-detail__text" id="f-detail-description"></div>
 
-          <div class="f-detail__actions">
-            <button id="f-detail-close" class="f-detail__close-x" type="button" aria-label="Fermer le détail">×</button>
-          </div>
+        <div class="f-detail__cta-wrap">
+          <a href="#" id="f-detail-download" class="f-detail__download">
+            Télécharger le détail
+          </a>
         </div>
+      </div>
+
+      <div class="f-detail__actions">
+        <button id="f-detail-close" class="f-detail__close-x" type="button" aria-label="Fermer le détail">×</button>
+      </div>
+    </div>
 
         <!-- Modules (1 ligne = image + accordéon) -->
         <div class="f-mods" aria-label="Modules de la formation">
           <div id="mods-rows" class="f-mods__rows"></div>
         </div>
 
-        <!-- Compétences : titre au milieu + 4 tiles -->
+        <!-- Compétences -->
         <section class="f-skills" aria-label="Compétences">
           <h3 class="f-skills__title">Compétences</h3>
           <div id="skills-grid" class="skills-grid"></div>
@@ -174,7 +181,7 @@
 
   </main>
 
-  <!--  CTA SUR-MESURE  -->
+  <!--  CTA -->
 <section class="f-cta">
   <div class="container f-cta__inner">
 
@@ -226,7 +233,7 @@
     <div class="container footer__inner">
 
       <div class="footer__brand">
-        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
+        <a class="footer__logo" href="../index.html" aria-label="Retour à l'accueil Gearforge">
           <img src="../assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
         </a>
 
@@ -248,15 +255,26 @@
 
 
       <div class="footer__newsletter" aria-label="Newsletter">
-        <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
-        <p class="footer__sub">Avec notre newsletter</p>
+  <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
+  <p class="footer__sub">Avec notre newsletter</p>
 
-        <form class="footer__form" action="#" method="post">
-          <label class="sr-only" for="newsletter-email">Email</label>
-          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
-          <button type="submit">Soumettre</button>
-        </form>
-      </div>
+  <form id="newsletterForm" class="footer__form">
+    <label class="sr-only" for="newsletter-email">Email</label>
+
+    <input
+      id="newsletter-email"
+      name="email"
+      type="email"
+      placeholder="gearforge@example.com"
+      autocomplete="email"
+      required
+    />
+
+    <button type="submit">Soumettre</button>
+  </form>
+
+  <p id="newsletterOut" class="footer__sub" style="margin-top:10px;"></p>
+</div>
 
     </div>
 
@@ -275,5 +293,6 @@
   <!--  SCRIPTS  -->
   <script src="../script.js" defer></script>
   <script src="../js/formation.js" defer></script>
+  <script src="../js/newsletter.js"></script>
 </body>
 </html>

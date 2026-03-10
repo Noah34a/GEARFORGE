@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Mails</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="brand"><span class="dot"></span> Admin BackOffice</div>
+        <div style="display:flex;gap:10px">
+          <a class="btn" href="./contact.html">Créer un mail (test)</a>
+          <button id="logoutBtn" class="btn danger" style="display:none">Logout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- Login -->
+    <div id="loginPanel" class="panel">
+      <div class="panel-h">
+        <div>
+          <div style="font-weight:800">Connexion admin</div>
+          <div class="small">Utilise les identifiants du .env</div>
+        </div>
+      </div>
+      <div class="panel-b">
+        <form id="loginForm" class="split" style="max-width:520px">
+  <input class="input" name="email" placeholder="Email" autocomplete="username" required />
+  <input class="input" name="password" placeholder="Mot de passe" type="password" autocomplete="current-password" required />
+  <button id="loginBtn" class="btn primary" type="button">Se connecter</button>
+  <div id="loginOut" class="small"></div>
+</form>
+      </div>
+    </div>
+
+    <!-- App -->
+    <div id="app" style="display:none;margin-top:16px" class="grid">
+
+      <!-- gauche: list -->
+      <div class="panel">
+        <div class="panel-h">
+          <div>
+            <div style="font-weight:800">Boîte de réception</div>
+            <div id="meLine" class="small"></div>
+          </div>
+        </div>
+
+        <div class="panel-b">
+          <div class="toolbar" style="margin-bottom:10px">
+            <input id="q" class="input" placeholder="Recherche (nom/email/sujet…)" />
+            <select id="status" class="select">
+              <option value="all">Tous</option>
+              <option value="unread">Non lus</option>
+              <option value="read">Lus</option>
+            </select>
+
+            <select id="starred" class="select">
+              <option value="all">Tous</option>
+              <option value="1">Importants</option>
+              <option value="0">Non importants</option>
+            </select>
+
+            <select id="archived" class="select">
+              <option value="0">Inbox</option>
+              <option value="1">Archivés</option>
+            </select>
+
+            <button id="refresh" class="btn">Rafraîchir</button>
+          </div>
+
+          <div class="kpis" style="margin-bottom:10px">
+            <div class="kpi">
+              <div id="kTotal" class="n">—</div>
+              <div class="l">Total résultats</div>
+            </div>
+            <div class="kpi">
+              <div id="kPage" class="n">—</div>
+              <div class="l">Page</div>
+            </div>
+            <div class="kpi">
+              <div id="kHint" class="n">—</div>
+              <div class="l">Sélection</div>
+            </div>
+          </div>
+
+          <div id="list" class="list"></div>
+
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <button id="prev" class="btn">←</button>
+            <button id="next" class="btn">→</button>
+          </div>
+
+          <div id="listOut" class="small" style="margin-top:10px"></div>
+        </div>
+        <div class="panel" style="margin-top:16px">
+          <div class="panel-h">
+          <div>
+          <div style="font-weight:800">Newsletter</div>
+          <div class="small">Abonnés inscrits</div>
+        </div>
+        </div>
+
+        <div class="panel-b">
+        <div id="newsletterList" class="list"></div>
+        <div id="newsletterOut" class="small" style="margin-top:10px"></div>
+       </div>
+      </div>
+
+      <!-- droite: detail -->
+      <div class="panel">
+        <div class="panel-h">
+          <div>
+            <div id="dTitle" style="font-weight:800">Sélectionne un mail</div>
+            <div id="dSub" class="small"></div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button id="btnRead" class="btn" disabled>Lu</button>
+            <button id="btnStar" class="btn" disabled>Important</button>
+            <button id="btnArch" class="btn" disabled>Archiver</button>
+            <button id="btnDel" class="btn danger" disabled>Supprimer</button>
+          </div>
+        </div>
+
+        <div class="panel-b">
+          <div id="detail" class="split">
+            <div class="small">Aucun mail sélectionné.</div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="split">
+            <div style="font-weight:800">Répondre</div>
+            <input id="replySubject" class="input" placeholder="Sujet de réponse" />
+            <textarea id="replyBody" class="textarea" placeholder="Ta réponse…"></textarea>
+            <button id="btnReply" class="btn primary" disabled>Envoyer la réponse</button>
+            <div id="replyOut" class="small"></div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="split">
+            <div style="font-weight:800">Historique des réponses</div>
+            <div id="replies" class="small">—</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./admin.js" defer></script>
+</body>
+</html>

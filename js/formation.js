@@ -5,29 +5,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* DATA */
   const FORMATIONS = {
-    "fusion-eagle": {
-      name: "Fusion Eagle",
-      summary:
-        "TEXTE",
+  "fusion-eagle": {
+    name: "Formation Fusion 360 & Eagle : Maîtrisez la Conception de Produits de A à Z",
+
+    summary:
+      "Devenez expert en CAO mécanique et électronique pour transformer vos idées en produits manufacturables.",
+
+    description:
+      "Cette formation complète vous offre une immersion totale dans l’écosystème Autodesk pour couvrir l’intégralité du cycle de développement d’un produit. Vous apprendrez à naviguer entre la modélisation 3D avancée sur Fusion 360 et la conception de circuits imprimés (PCB) sur Eagle. Que vous soyez débutant ou utilisateur confirmé, ce cursus vous donne les clés pour concevoir des systèmes complexes, simuler leur comportement et préparer leur fabrication industrielle.",
+    
+    download: "https://rqk.sh/fu8FPP",
       keySkills: [
   {
     title: "Modéliser des objets 3D complexes",
     moduleNum: "01",
+    thumbnail: "../assets/anime_formation_1_mignature.png",
     video: "../animation/anime_formation_1.mp4",
   },
   {
     title: "Simuler des scénarios thermiques/dynamiques",
     moduleNum: "02",
+    thumbnail: "../assets/anime_formation_2_mignature.png",
     video: "../animation/anime_formation_2.mp4",
   },
   {
     title: "Créer et modifier un schéma électronique",
     moduleNum: "03",
+    thumbnail: "../assets/anime_formation_3_mignature.png",
     video: "../animation/anime_formation_3.mp4",
   },
   {
     title: "Router un PCB complexe",
     moduleNum: "04",
+    thumbnail: "../assets/anime_formation_4_mignature.png",
     video: "../animation/anime_formation_4.mp4",
   }
 ],
@@ -35,24 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
       modules: [
         {
           num: "01",
-          image: "",
-          level: "Essentiel",
-          listTitle: "Module 1 : Prise en main Fusion 360 (1 jour) — 400€ (HT)",
-          objective: "Maîtriser les outils basiques et avancés pour la conception mécanique.",
+          image: "../assets/01fusion.webp",
+          /*level: "Essentiel",*/
+          listTitle: "Conception Mécanique avec Fusion 360",
+          objective: "Passez de l'esquisse 2D à la création de systèmes mécaniques complets et réalistes.",
           sections: [
             {
               title: "Contenu",
               bullets: [
-                "Présentation de l’interface et des espaces de travail (Design, Manufacture, Simulation)",
-                "Création de croquis 2D : contraintes, dimensions, outils de base",
-                "Modélisation 3D basique : extrusion, révolution, opérations booléennes",
-                "Assemblages : création et gestion des assemblages, contraintes d’assemblage",
-                "Création de pièces complexes : loft, sweep, patterns",
-                "Introduction à la simulation (analyse statique simple)",
-                "Génération de documents pour la fabrication",
+                "Modélisation 3D Complexe : Maîtrise des fonctions d'extrusion, de révolution, de lissage (loft) et de balayage (sweep).",
+                "Assemblages & Articulations : Création et gestion d'assemblages complexes avec gestion des contraintes de mouvement.",
+                "Simulation de Pointe : Analyse de résistance statique, thermique et dynamique des fluides pour valider vos concepts avant production.",
+                "Fabrication Assistée (FAO) : Génération de parcours d'outils pour l'usinage CNC et création de rendus photo-réalistes.",
               ],
             },
-            {
+            /*{
               title: "Compétences",
               bullets: [
                 "Concevoir des assemblages",
@@ -64,31 +71,30 @@ document.addEventListener("DOMContentLoaded", () => {
                 "Utiliser les opérations booléennes",
                 "Générer des documents de fabrication Fusion 360 et Eagle",
               ],
-            },
+            },*/
           ],
         },
         {
           num: "02",
-          image: "",
-          level: "Essentiel",
-          listTitle: "Module 2 : Prise en main Eagle (1 jour) — 400€ (HT)",
-          objective: "Maîtriser les outils basiques et avancés pour la conception électronique.  ",
+          image: "../assets/02fusion.webp",
+          /*level: "Essentiel",*/
+          listTitle: "Conception Électronique avec Autodesk Eagle",
+          objective: "Concevez des cartes électroniques professionnelles, du schéma de principe au routage multicouche.",
           sections: [
             {
               title: "Contenu",
               bullets: [
-                "Présentation de l’interface : éditeur de schémas et de PCB",
-                "Création et modification d’une schématique : composants, connexions, annotations",
-                "Génération d’un PCB basique : routage manuel, règles de design ",
-                "Gestion des bibliothèques de composants : création et import",
-                "Routage avancé : règles de design, plans de masse, vias",
-                "Génération des fichiers Gerber, de la BOM et export pour la fabrication ",
+                "Schématique & Librairies : Création de schémas électroniques clairs et gestion personnalisée de vos bibliothèques de composants.",
+                "Routage PCB Avancé : Maîtrise du routage manuel et automatique, gestion des plans de masse, des vias et des circuits haute fréquence.",
+                "Intégration Méca-Élec : Synchronisation parfaite entre votre PCB et son boîtier 3D pour vérifier les interférences et optimiser le design.",
+                "Standard Industriel : Génération des fichiers de fabrication (Gerber, BOM, STEP) et application des règles de Design for Manufacturing (DFM).t",
               ],
             },
-            { title: "Compétences", bullets: ["Naviguer dans l’interface ", "Créer et modifier un schéma électronique", "Utiliser des composants et librairies préconçus ", "Router un PCB simple ", "Générer des documents de fabrication", "Créer et modifier une librairie et un composant sur mesure ", "Router un PCB avec des règles de conception avancées"] },
+            /*{ title: "Compétences", bullets: ["Naviguer dans l’interface ", "Créer et modifier un schéma électronique", "Utiliser des composants et librairies préconçus ", "Router un PCB simple ", "Générer des documents de fabrication", "Créer et modifier une librairie et un composant sur mesure ", "Router un PCB avec des règles de conception avancées"] 
+            },*/
           ],
         },
-        {
+        /*{
           num: "03",
           image: "",
           level: "Confirmé",
@@ -98,8 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
             { title: "Contenu", bullets: ["Création d’un assemblage complexe ", "Utilisation d’objets à géométrie complexe : surfacing", "Analyse faisabilité produit", "Anticipation des besoins de fabrication", "Modélisation de système complexe sur mesure", "Simulation avancée : analyse thermique, dynamique des fluides", "Fabrication assistée par ordinateur (FAO) : génération d’outils de parcours d’outil pour l'usage CNC", "Rendering et visualisation : création de rendus réalistes et animations"] },
             { title: "Compétences", bullets: ["Concevoir un projet complet", "Modéliser un objet vide modelable", "Analyser un système complexe", "Adapter la faisabilité de fabrication", "Modéliser un système complexe sur mesure", "Simuler des scénarios thermiques/dynamiques", "Préparer la fabrication d’un système", "Créer un rendu réaliste ou animé"] },
           ],
-        },
-        {
+        },*/
+        /*{
           num: "04",
           image: "",
           level: "Confirmé",
@@ -109,86 +115,78 @@ document.addEventListener("DOMContentLoaded", () => {
             { title: "Contenu", bullets: ["Routage d’un PCB complexe", "Intégration du PCB dans le boîtier (import/export entre Fusion et Eagle)", "Vérification des interférences et optimisation du design", "DRC/ERC", "Génération des fichiers pour la fabrication (STEP, Gerber, BOM)", "Conception de circuits multi-couches", "Conception de circuits haute fréquence", "Simulation de circuit analogique", "Bonnes pratiques pour la fabrication industrielle : normes, tests, DFM (Design for Manufacturing)"] },
             { title: "Compétences", bullets: ["Router un PCB complexe", "Générer et intégrer un modèle 3D du PCB finit", "Gérer des contraintes de conception", "Optimiser un design de PCB", "Gérer un routage multicouche", "Créer un circuit gérant de la haute fréquence", "Simuler le signal d’un circuit ou d’un sous-circuit", "Fabriquer un PCB en suivant les bonnes pratiques industrielles"] },
           ],
-        },
+        },*/
       ],
     },
 
    "iot-domotique": {
-  name: "IoT / Domotique",
-  summary: "TEXTE",
+  name: "Formation IoT & Domotique : De l'objet connecté à la maison intelligente",
+  summary: "Devenez expert dans la conception et le déploiement de solutions IoT, de l'électronique embarquée jusqu'au Cloud.",
+  descriptionHTML: `
+    <p>
+    Cette formation complète vous permet de maîtriser l'intégralité de la chaîne de valeur de l'Internet des Objets. Vous apprendrez à choisir les architectures matérielles optimales (STM32, ESP32, Raspberry Pi) et à manipuler les protocoles de communication essentiels tels que Zigbee, LoRa et MQTT.
+    </p>
+
+    <h4 class="f-detail__points-title">Points forts et compétences clés :</h4>
+
+    <ul class="f-detail__points">
+      <li><strong>Développement Embarqué :</strong> Programmation de firmware en C/C++, gestion des capteurs/actionneurs et optimisation de la consommation énergétique.</li>
+      <li><strong>Conception Sur Mesure :</strong> Création de circuits imprimés (PCB) et prototypage rapide sur plateformes open-source.</li>
+      <li><strong>Sécurité & Cloud :</strong> Mise en œuvre du chiffrement, des mises à jour OTA et intégration aux plateformes Cloud (AWS IoT).</li>
+      <li><strong>Technologies Futuristes  :</strong> Initiation au TinyML (IA embarquée) et aux nouveaux standards d'interopérabilité comme Matter.</li>
+    </ul>
+  `,
+  download: " https://rqk.sh/EA5Ojy",
   keySkills: [
   {
     title: "Gérer un protocole de communication",
     moduleNum: "01",
+    thumbnail: "../assets/Anime_IOT_1_mignature.png",
     video: "../animation/anime_domo_1.mp4",
   },
   {
     title: "Développer un firmware fonctionnel pour un système IoT/domotique",
     moduleNum: "02",
+    thumbnail: "../assets/Anime_IOT_2_mignature.png",
     video: "../animation/anime_domo_2.mp4",
   },
   {
     title: "Déployer et tester un système IoT/domotique en conditions réelles",
     moduleNum: "03",
+    thumbnail: "../assets/Anime_IOT_3_mignature.png",
     video: "../animation/anime_domo_3.mp4",
   },
   {
     title: "Sécuriser un système IoT",
     moduleNum: "04",
+    thumbnail: "../assets/Anime_IOT_4_mignature.png",
     video: "../animation/anime_domo_4.mp4",
   }
 ],
-  modules: [
+  /*modules: [
     {
       num: "01",
       image: "",
       level: "Essentiel",
       listTitle:
-        "Module 1 :  Fondamentaux des systèmes IoT/Domotique (2 jours) – 1000€ (HT)",
+        "Formation robotique & mécatronique avancée",
       objective:
-        "",
+        "Maîtrisez la conception de robots autonomes, la vision par ordinateur et l'intelligence artificielle.",
 
       sections: [
         {
-          title: "Jour 1 —  Introduction aux systèmes IoT et architectures matérielles",
+          title: "Contenu",
           bullets: [
-            "Définition et enjeux des systèmes IoT/domotique",
-            "Architectures matérielles : microcontrôleurs (STM32, ESP32, Arduino) vs microprocesseurs (Raspberry Pi)",
-            "Protocoles de communication (Wi-Fi, Bluetooth, LoRa, Zigbee, MQTT)",
-            "Capteurs et actionneurs : choix, interfaçage et calibration",
-            "Étude de cas : analyse d’un système domotique existant (ex : système de gestion d’énergie)",
-          ],
-        },
-        {
-          title: "Compétences acquises",
-          bullets: [
-            "Savoir choisir une architecture matérielle adaptée à un besoin IoT/domotique",
-            "Comprendre les protocoles de communication et leurs cas d’usage",
-            "Analyser et critiquer un système domotique existant",
-          ],
-        },
-        {
-          title: "Jour 2 —  Développement logiciel embarqué et intégration",
-          bullets: [
-            "Environnements de développement (IDE, toolchains) pour systèmes embarqués",
-            "Programmation bas niveau (C/C++) : gestion des entrées/sorties, interruptions, timers",
-            "Développement de firmware pour capteurs et actionneurs",
-            "Intégration logicielle : communication entre modules (UART, SPI, I2C)",
-            "Bonnes pratiques : optimisation de la consommation énergétique et gestion des erreurs",
-          ],
-        },
-        {
-          title: "Compétences acquises",
-          bullets: [
-            "Développer un firmware fonctionnel pour un système IoT/domotique",
-            "Intégrer et faire communiquer plusieurs modules matériels",
-            "Optimiser la consommation énergétique et la robustesse du code",
-          ],
+            "Navigation Autonome : Implémentation d'algorithmes de SLAM (cartographie), de LIDAR et d'odométrie pour une localisation précise.",
+            "Computer Vision : Traitement d'images avec OpenCV et détection d'objets via YOLO pour le guidage visuel.",
+            "Écosystème ROS : Maîtrise de ROS 2 et Micro-ROS pour orchestrer des systèmes robotiques complexes et simulés sur Gazebo.",
+            "IA & Décision : Intégration de l'apprentissage par renforcement pour créer des robots capables de prendre des décisions en temps réel.",
+              ],
         },
       ],
     },
 
-    {
+    /*{
       num: "02",
       image: "",
       level: "Confirmé",
@@ -255,38 +253,56 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
-  ],
+  ],*/
 },
 
     "prototypage": {
-  name: "Prototypage",
-  summary:
-    "TEXTE",
+  name: "Formation Prototypage & Industrialisation : Du concept à la série",
+  summary: "Apprenez à transformer une idée en un produit viable, industrialisable et rentable.",
+  descriptionHTML: `
+    <p>
+      Ce cursus est conçu pour les créateurs et ingénieurs souhaitant valider leurs innovations par des méthodes rigoureuses. Vous passerez de la conception assistée par ordinateur (CAO) sur SolidWorks ou Fusion 360 à la fabrication physique via l'impression 3D et l'usinage CNC.
+    </p>
+
+    <h4 class="f-detail__points-title">Points forts et compétences clés :</h4>
+
+    <ul class="f-detail__points">
+      <li><strong>Méthodologies Agiles :</strong> Maîtrise du Design Thinking et du Lean Startup pour accélérer vos cycles de développement.</li>
+      <li><strong>Optimisation Technique :</strong> Simulation de contraintes et tests de validation pour garantir la robustesse de vos prototypes.</li>
+      <li><strong>Stratégie de Production :</strong> Analyse des coûts, gestion de la supply chain et conformité aux normes réglementaires.</li>
+      <li><strong>Innovation & Protection  :</strong> Veille technologique, stratégies de levée de fonds et protection de la propriété intellectuelle.</li>
+    </ul>
+  `,
+  download: "https://rqk.sh/TC8D8r",
 
   keySkills: [
   {
     title: "Identification les matériaux et procédés nécessaires",
     moduleNum: "01",
+    thumbnail: "../assets/Anime_proto_1_mignature.jpeg",
     video: "../animation/anime_comp_1.mp4",
   },
   {
     title: "Évaluer les coûts et optimiser la rentabilité d’un produit",
     moduleNum: "02",
+    thumbnail: "../assets/Anime_proto_2_mignature.jpeg",
     video: "../animation/anime_comp_2.mp4",
   },
   {
     title: "Mettre en place des outils de contrôle qualité",
     moduleNum: "03",
+    thumbnail: "../assets/Anime_proto_3_mignature.png",
     video: "../animation/anime_comp_3.mp4",
   },
   {
     title: "Protéger et financer une innovation",
     moduleNum: "04",
+    thumbnail: "../assets/Anime_proto_4_mignature.png",
     video: "../animation/anime_comp_4.mp4",
   }
 ],
 
-  modules: [
+  /*modules: [
     {
       num: "01",
       image: "",
@@ -402,37 +418,54 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
-  ],
+  ],*/
 },
+  "robotique-mecatronique": {
+  name: "Formation robotique & mécatronique avancée",
+  summary: "Maîtrisez la conception de robots autonomes, la vision par ordinateur et l'intelligence artificielle.",
+  descriptionHTML: `
+    <p>
+      Une immersion totale dans l'univers de la robotique, couvrant aussi bien les robots industriels que les systèmes mobiles autonomes. De la mécanique des bras polyarticulés à l'intelligence des cobots, vous développerez une expertise pointue en intégration système.
+    </p>
 
+    <h4 class="f-detail__points-title">Points forts et compétences clés :</h4>
 
-    "robotique-mecatronique": {
-  name: "Robotique & Mécatronique",
-  summary:
-    "TEXTE",
+    <ul class="f-detail__points">
+      <li><strong>Navigation Autonome :</strong> Implémentation d'algorithmes de SLAM (cartographie), de LIDAR et d'odométrie pour une localisation précise.</li>
+      <li><strong>Computer Vision :</strong> Traitement d'images avec OpenCV et détection d'objets via YOLO pour le guidage visuel.</li>
+      <li><strong>Écosystème ROS :</strong> Maîtrise de ROS 2 et Micro-ROS pour orchestrer des systèmes robotiques complexes et simulés sur Gazebo..</li>
+      <li><strong>IA & Décision :</strong> Intégration de l'apprentissage par renforcement pour créer des robots capables de prendre des décisions en temps réel.</li>
+    </ul>
+  `,
+  download: "https://rqk.sh/xHiyMO",
+
    keySkills: [
   {
     title: "Concevoir des bras polyarticuléss",
     moduleNum: "01",
-    video: "../animation/anime_formation_5.mp4",
+    thumbnail: "../assets/Anime_robot_1_mignature.png",
+    video: "../animation/Anime_robot_1.mp4",
   },
   {
     title: "Planification de trajectoire/odométrie",
     moduleNum: "02",
-    video: "../animation/anime_formation_6.mp4",
+    thumbnail: "../assets/Anime_robot_2_mignature.png",
+    video: "../animation/Anime_robot_2.mp4",
   },
   {
     title: "Intégrer l’IA pour la perception",
     moduleNum: "03",
-    video: "../animation/anime_formation_7.mp4",
+    thumbnail: "../assets/Anime_robot_3_mignature.png",
+    video: "../animation/Anime_robot_3.mp4",
   },
   {
     title: "Utiliser ROS (outil de simulation)",
     moduleNum: "04",
-    video: "../animation/anime_formation_8.mp4",
+    thumbnail: "../assets/Anime_robot_4_mignature.png",
+    video: "../animation/Anime_robot_4.mp4",
   }
 ],
-  modules: [
+ /* modules: [
     {
       num: "01",
       image: "",
@@ -661,7 +694,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       ],
     },
-  ],
+  ],*/
 },
   }
 
@@ -676,6 +709,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const detailSection = $("#formation-detail");
   const detailTitle = $("#f-detail-name");
   const detailSummary = $("#f-detail-summary");
+  const detailDescription = $("#f-detail-description");
+  const detailDownload = $("#f-detail-download");
   const closeBtn = $("#f-detail-close");
 
   const modsRows = $("#mods-rows");     
@@ -696,6 +731,10 @@ document.addEventListener("DOMContentLoaded", () => {
     detailSection.hidden = true;
     cards.forEach((c) => c.classList.remove("is-selected"));
 
+    if (detailTitle) detailTitle.textContent = "";
+    if (detailSummary) detailSummary.textContent = "";
+    if (detailDescription) detailDescription.textContent = "";
+    if (detailDownload) detailDownload.href = "#";
     if (modsRows) modsRows.innerHTML = "";
     if (skillsGrid) skillsGrid.innerHTML = "";
   }
@@ -825,43 +864,49 @@ function renderModules(modules) {
   items.forEach((s) => {
     const mod = s.moduleNum ? pad2(s.moduleNum) : "01";
     const videoSrc = (s.video || "").trim();
-    const posterSrc = (s.poster || "").trim();
+    const thumbSrc = (s.thumbnail || "").trim();
     const hasVideo = !!videoSrc;
+    const hasThumb = !!thumbSrc;
 
     const tile = document.createElement("article");
     tile.className = "skill-tile";
     tile.tabIndex = 0;
 
     tile.innerHTML = `
-      <div class="skill-tile__media">
-        ${
-          hasVideo
-            ? `<video
-                 muted
-                 playsinline
-                 preload="metadata"
-                 ${posterSrc ? `poster="${posterSrc}"` : ""}
-               >
-                 <source src="${videoSrc}" type="video/mp4">
-               </video>`
-            : `<div class="skill-tile__placeholder">Animation à venir</div>`
-        }
-      </div>
-      <h4 class="skill-tile__title">${s.title || "Compétence"}</h4>
-    `;
+  <div class="skill-tile__media">
+    ${
+      hasThumb
+        ? `<img class="skill-tile__thumb" src="${thumbSrc}" alt="${s.title || "Compétence"}" loading="lazy">`
+        : `<div class="skill-tile__placeholder">Miniature à venir</div>`
+    }
 
-    //  Hover vidéo : play/pause en boucle + reset
-    const video = tile.querySelector("video");
+    ${
+      hasVideo
+        ? `<video class="skill-tile__video" muted playsinline preload="metadata">
+             <source src="${videoSrc}" type="video/mp4">
+           </video>`
+        : ``
+    }
+  </div>
+
+  <h4 class="skill-tile__title">${s.title || "Compétence"}</h4>
+`;
+
+    const video = tile.querySelector(".skill-tile__video");
+    const media = tile.querySelector(".skill-tile__media");
+
     if (video) {
       video.loop = true;
 
       const play = () => {
+        tile.classList.add("is-hovered");
         video.currentTime = 0;
         const p = video.play();
         if (p && typeof p.catch === "function") p.catch(() => {});
       };
 
       const stop = () => {
+        tile.classList.remove("is-hovered");
         video.pause();
         video.currentTime = 0;
       };
@@ -869,14 +914,19 @@ function renderModules(modules) {
       tile.addEventListener("mouseenter", play);
       tile.addEventListener("mouseleave", stop);
 
-      // si la vidéo ne charge pas => fallback "Animation à venir"
+      tile.addEventListener("focus", play);
+      tile.addEventListener("blur", stop);
+
       video.addEventListener("error", () => {
-        tile.querySelector(".skill-tile__media").innerHTML =
-          `<div class="skill-tile__placeholder">Animation à venir</div>`;
+        if (media) {
+          media.innerHTML = `
+            <div class="skill-tile__placeholder">Animation à venir</div>
+            <span class="skill-tile__module">${mod}</span>
+          `;
+        }
       });
     }
 
-    // Clic => ouvre le module correspondant
     const go = () => openModuleByNum(mod);
     tile.addEventListener("click", go);
     tile.addEventListener("keydown", (e) => {
@@ -891,22 +941,31 @@ function renderModules(modules) {
 }
 
 
-  /*
-     7) Select formation*/
+  /* Select formation*/
   function selectFormation(key) {
-    const data = FORMATIONS[key];
-    if (!data) return;
+  const data = FORMATIONS[key];
+  if (!data) return;
 
-    cards.forEach((c) => c.classList.toggle("is-selected", c.dataset.formation === key));
+  cards.forEach((c) =>
+    c.classList.toggle("is-selected", c.dataset.formation === key)
+  );
 
-    if (detailTitle) detailTitle.textContent = data.name || "Formation";
-    if (detailSummary) detailSummary.textContent = data.summary || "";
+  if (detailTitle) detailTitle.textContent = data.name || "Formation";
+  if (detailSummary) detailSummary.textContent = data.summary || "";
+  if (detailDescription) {
+  detailDescription.innerHTML = data.descriptionHTML || data.description || "";
+}
 
-    renderModules(data.modules);
-    renderKeySkills(data.keySkills);
-
-    showDetail();
+  if (detailDownload) {
+    detailDownload.href = data.download || "#";
+    detailDownload.setAttribute("download", "");
   }
+
+  renderModules(data.modules);
+  renderKeySkills(data.keySkills);
+
+  showDetail();
+}
 
   /*Events*/
   cards.forEach((card) => {

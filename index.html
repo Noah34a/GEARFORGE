@@ -306,24 +306,35 @@
 
           <div class="about__text">
             <p>
-              Fondée en 2023 par le roboticien Anthony Orquin, Gearforge est un bureau d’étude en
-              <strong>ingénierie mécatronique</strong> basé en région bordelaise, intervenant partout en France.
+              Fondé en 2023 par Anthony Orquin près de Bordeaux, Gearforge rend la mécatronique de pointe accessible et fiable. Partenaire stratégique des innovateurs, notre bureau d’étude intervient partout en France pour lever vos barrières technologiques.
             </p>
 
             <p>
-              Nous accompagnons nos clients <strong>de l’idée à la réalisation</strong> en combinant prototypage,
-              consulting et formation, pour transformer des idées techniques en
-              <strong>solutions concrètes, fiables et sur mesure</strong>.
+              <strong>Notre mission : Accélérer et Fiabiliser</strong><br>
+              Plus que du conseil, nous forgeons vos succès. Via le Consulting, la R&D et la Formation, nous créons un écosystème robuste pour propulser vos produits vers le marché.
             </p>
 
             <p>
-              Grâce à une <strong>expertise pluridisciplinaire</strong>, nous intervenons sur des projets innovants
-              et des systèmes complexes avec un objectif clair :
-              <strong>sécuriser les décisions techniques et accélérer les développements</strong>.
+              <strong>Nos points forts</strong><br>
+              <ul>
+                <li>
+                <strong>Expertise Pluridisciplinaire  :</strong>
+                Une maîtrise complète des systèmes complexes.
+                </li>
+
+                <li>
+                <strong>Culture du Résultat :</strong>
+                Des solutions sur mesure, prêtes pour le monde réel.
+                </li>
+
+                <li>
+                <strong>Sécurité Stratégique :</strong>
+                Des choix techniques optimisés dès le premier jour.
+                </li>
+              </ul>
             </p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -402,11 +413,20 @@
         <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
         <p class="footer__sub">Avec notre newsletter</p>
 
-        <form class="footer__form" action="#" method="post">
+        <form id="newsletterForm" class="footer__form" action="javascript:void(0);">
           <label class="sr-only" for="newsletter-email">Email</label>
-          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
+          <input
+          id="newsletter-email"
+          name="email"
+          type="email"
+          placeholder="gearforge@example.com"
+          autocomplete="email"
+          required
+          />
           <button type="submit">Soumettre</button>
         </form>
+
+        <p id="newsletterOut" class="footer__sub" style="margin-top:10px;"></p>
       </div>
 
     </div>
@@ -424,5 +444,6 @@
 
   <!-- SCRIPTS -->
   <script src="script.js" defer></script>
+  <script src="./js/newsletter.js"></script>
 </body>
 </html>

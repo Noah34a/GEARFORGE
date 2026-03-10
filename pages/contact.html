@@ -15,56 +15,112 @@
 <body>
   <main class="contact">
     <section class="card">
-
       <img class="logo" src="../assets/logo2.png" alt="Gearforge">
 
       <div class="layout">
-  <div class="left">
-    <span class="kicker">Contact</span>
-    <h1>Prenez contact avec nos experts</h1>
-    <p class="lead">Prêt à faire avancer vos projets ?</p>
-  </div>
+        <div class="left">
+          <span class="kicker">Contact</span>
+          <h1>Prenez contact avec nos experts</h1>
+          <p class="lead">Prêt à faire avancer vos projets ?</p>
+        </div>
 
-  <form class="form" action="../pages/merci.html" method="GET">
-    <div class="grid">
-      <div class="field">
-        <input type="text" name="nom" required placeholder=" ">
-        <label>Nom</label>
+  
+        <form id="contactForm" class="form" novalidate>
+          <div class="grid">
+            <div class="field">
+              <input type="text" name="nom" required placeholder=" ">
+              <label>Nom</label>
+            </div>
+
+            <div class="field">
+              <input type="text" name="prenom" required placeholder=" ">
+              <label>Prénom</label>
+            </div>
+
+            <div class="field">
+              <input type="tel" name="telephone" required placeholder=" ">
+              <label>Téléphone</label>
+            </div>
+
+            <div class="field">
+              <input type="email" name="email" required placeholder=" ">
+              <label>Email</label>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <textarea name="message" rows="5" required placeholder=" " spellcheck="false"></textarea>
+            <label>Message</label>
+          </div>
+
+          <div class="actions">
+            <button id="submitBtn" type="submit" class="btn-primary">Envoyer</button>
+            <a href="../index.html" class="btn-link">Retour à l'accueil</a>
+          </div>
+
+          <p id="formOut" style="margin:12px 0 0; font-size:14px;"></p>
+        </form>
+
+        <div class="note">
+          Contactez nous dès aujourd'hui pour un premier échange personnalisé sur votre projet.
+        </div>
       </div>
-
-      <div class="field">
-        <input type="text" name="prenom" required placeholder=" ">
-        <label>Prénom</label>
-      </div>
-
-      <div class="field">
-        <input type="tel" name="telephone" required placeholder=" ">
-        <label>Téléphone</label>
-      </div>
-
-      <div class="field">
-        <input type="email" name="email" required placeholder=" ">
-        <label>Email</label>
-      </div>
-    </div>
-
-    <div class="field field--full">
-      <textarea name="message" rows="5" required placeholder=" " spellcheck="false"></textarea>
-      <label>Message</label>
-    </div>
-
-    <div class="actions">
-      <button type="submit" class="btn-primary">Envoyer</button>
-      <a href="../index.html" class="btn-link">Retour à l'accueil</a>
-    </div>
-  </form>
-
-  <div class="note">
-    Contactez nous dès aujourd'hui pour un premier échange personnalisé sur votre projet.
-  </div>
-</div>
-
     </section>
   </main>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const out = document.getElementById("formOut");
+    const btn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      out.textContent = "";
+      out.style.color = "";
+
+      if (!form.checkValidity()) {
+        if (form.reportValidity) form.reportValidity();
+        out.textContent = "⚠️ Merci de remplir tous les champs correctement.";
+        out.style.color = "#a70000";
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = "Envoi…";
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      const payload = {
+        name: `${(data.prenom || "").trim()} ${(data.nom || "").trim()}`.trim(),
+        email: (data.email || "").trim(),
+        telephone: (data.telephone || "").trim(),
+        subject: "Contact Gearforge",
+        message: (data.message || "").trim(),
+        nom: (data.nom || "").trim(),
+        prenom: (data.prenom || "").trim(),
+      };
+
+      try {
+        const r = await fetch("http://localhost:3000/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const j = await r.json().catch(() => ({}));
+        if (!r.ok) {
+        throw new Error("Erreur serveur");
+        }
+      
+        window.location.href = "./merci.html";
+      } catch (err) {
+        out.textContent = "❌ Erreur d’envoi : " + err.message;
+        out.style.color = "#a70000";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Envoyer";
+      }
+    });
+  </script>
 </body>
 </html>

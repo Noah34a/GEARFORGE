@@ -133,16 +133,28 @@ body{
 /*RESPONSIVE*/
 
 @media (max-width: 1100px){
-  .hero--consulting .hero__inner{ gap: 40px; }
+
+  .hero--consulting .hero__inner{
+    gap: 36px;
+  }
+
+  .hero--consulting .c-hero__visual{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 
   .hero--consulting .c-hero__img{
-    width: 145%;
-    max-width: 1000px;
-    transform: translateX(-60px);
+    width:130%;
+    max-width:900px;
+    height:auto;
+    transform:none;
   }
+
 }
 
 @media (max-width: 980px){
+
   .hero--consulting{
     padding-top: 96px;
     padding-bottom: 110px;
@@ -156,34 +168,45 @@ body{
   }
 
   .hero--consulting .hero__cta{
-    justify-content: center;
+    justify-content:center;
   }
 
   .hero--consulting .hero__logos{
-    justify-content: center;
+    justify-content:center;
   }
 
   .hero--consulting .c-hero__visual{
-    width: 100%;
-    justify-content: center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    margin-top:20px;
   }
 
   .hero--consulting .c-hero__img{
-    width: 120%;
-    max-width: 900px;
-    transform: none;
+    width:140%;
+    max-width:720px;
+    margin:0 auto;
   }
+
 }
 
 @media (max-width: 560px){
+
+  .hero--consulting{
+    padding-top:80px;
+    padding-bottom:90px;
+  }
+
   .hero--consulting .c-hero__img{
-    width: 110%;
-    max-width: 520px;
+    width:145%;
+    max-width:560px;
   }
 
   .hero--consulting .hero__logos img{
-    height: 56px;
+    height:48px;
   }
+
 }
 /* advantages */
 
@@ -472,5 +495,180 @@ body{
 
   .testimonial__quote{
     font-size: 16px;
+  }
+}
+
+@media (max-width: 980px){
+  .site-footer{
+    padding: 48px 0 20px;
+  }
+
+  .footer__inner{
+    gap: 36px;
+  }
+
+  .footer__newsletter{
+    justify-self: stretch;
+    max-width: 100%;
+  }
+
+  .footer__hint{
+    max-width: 100%;
+  }
+
+  .footer__form{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer__form input,
+  .footer__form button{
+    width: 100%;
+  }
+
+  .footer__bottom{
+    margin-top: 24px;
+    padding-top: 16px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  .footer__legal{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 640px){
+  .site-footer{
+    padding: 38px 0 18px;
+  }
+
+  .footer__inner{
+    gap: 28px;
+  }
+
+  .footer__logo{
+    justify-content: flex-start;
+  }
+
+  .footer__hint{
+    margin: 10px 0 12px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .footer__title{
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .footer__title--big{
+    font-size: 26px;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .footer__sub{
+    margin: 0 0 12px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .footer__col{
+    gap: 7px;
+  }
+
+  .footer__link{
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .footer__newsletter{
+    width: 100%;
+  }
+
+  .footer__form{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .footer__form input{
+    height: 42px;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 0 12px;
+  }
+
+  .footer__form button{
+    width: 100%;
+    height: 42px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .footer__bottom{
+    margin-top: 22px;
+    padding-top: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer__copy{
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .footer__legal{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+
+  .footer__legal-link{
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 420px){
+  .site-footer{
+    padding: 32px 0 16px;
+  }
+
+  .footer__inner{
+    gap: 24px;
+  }
+
+  .footer__title--big{
+    font-size: 22px;
+  }
+
+  .footer__hint,
+  .footer__sub,
+  .footer__link{
+    font-size: 13px;
+  }
+
+  .footer__form input,
+  .footer__form button{
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .footer__bottom{
+    gap: 8px;
+  }
+
+  .footer__legal{
+    gap: 6px 10px;
+  }
+
+  .footer__copy,
+  .footer__legal-link{
+    font-size: 11.5px;
   }
 }

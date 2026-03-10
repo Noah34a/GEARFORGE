@@ -246,19 +246,17 @@
     <article class="testimonial__card">
       <div class="testimonial__meta">
         <span class="testimonial__formation">
-          Projet R&amp;D : Fusion Eagle
+          R&D
         </span>
       </div>
 
       <blockquote class="testimonial__quote">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-        Vestibulum id ligula porta felis euismod semper.
+        Besoin d'un prototype fonctionnel pour une levée de fonds en urgence. L'équipe a su traduire notre cahier des charges complexe en un modèle 3D sur Fusion 360 puis en un prototype physique (impression 3D et PCB intégré) en moins de deux semaines. Le rendu était impeccable pour nos démonstrations.
       </blockquote>
 
       <div class="testimonial__author">
-        <strong>Julien Martin</strong>
-        <span>Responsable Innovation</span>
+        <strong>Julien Roche</strong>
+        <span>Chef de Projet Innovation chez InnovaBat</span>
       </div>
     </article>
 
@@ -303,7 +301,7 @@
     <div class="container footer__inner">
 
       <div class="footer__brand">
-        <a class="footer__logo" href="index.html" aria-label="Retour à l'accueil Gearforge">
+        <a class="footer__logo" href="../index.html" aria-label="Retour à l'accueil Gearforge">
           <img src="../assets/logo2.png" alt="Gearforge" width="120" height="40" loading="lazy">
         </a>
         <p class="footer__hint" id="footer-title">Gearforge — Bureau d’étude en ingénierie mécatronique.</p>
@@ -323,15 +321,26 @@
       </nav>
 
       <div class="footer__newsletter" aria-label="Newsletter">
-        <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
-        <p class="footer__sub">Avec notre newsletter</p>
+  <h3 class="footer__title footer__title--big">Suivez les dernières tendances</h3>
+  <p class="footer__sub">Avec notre newsletter</p>
 
-        <form class="footer__form" action="#" method="post">
-          <label class="sr-only" for="newsletter-email">Email</label>
-          <input id="newsletter-email" name="email" type="email" placeholder="gearforge@example.com" autocomplete="email" />
-          <button type="submit">Soumettre</button>
-        </form>
-      </div>
+  <form id="newsletterForm" class="footer__form">
+    <label class="sr-only" for="newsletter-email">Email</label>
+
+    <input
+      id="newsletter-email"
+      name="email"
+      type="email"
+      placeholder="gearforge@example.com"
+      autocomplete="email"
+      required
+    />
+
+    <button type="submit">Soumettre</button>
+  </form>
+
+  <p id="newsletterOut" class="footer__sub" style="margin-top:10px;"></p>
+</div>
 
     </div>
 
@@ -348,5 +357,6 @@
 
   <!-- Global scripts -->
   <script src="../script.js"></script>
+  <script src="../js/newsletter.js"></script>
 </body>
 </html>
