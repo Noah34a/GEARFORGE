@@ -1,22 +1,22 @@
 🚀 Gearforge — Site vitrine
 
+
+
 📌 Présentation
 
-Ce projet est un site vitrine réalisé pour Gearforge dans le cadre d’un projet/stage.
+Ce projet est un site vitrine réalisé pour Gearforge.
 
 L’objectif est de créer un site moderne, fluide et responsive pour présenter les services de l’entreprise :
 
-Accueil
+Les formations:
 
-Formation
+-Consulting
 
-Consulting
-
-R&D
-
-Articles
+-R&D
 
 Le site met surtout l’accent sur le design, l’expérience utilisateur et les animations.
+
+
 
 ⚙️ Fonctionnalités
 
@@ -32,6 +32,8 @@ Compteurs animés
 
 Responsive (mobile / desktop)
 
+
+
 🧱 Stack utilisée
 
 HTML5
@@ -39,6 +41,8 @@ HTML5
 CSS3
 
 JavaScript 
+
+
 
 📁 Structure du projet
 
@@ -57,6 +61,7 @@ JavaScript
 ```
 
 
+
 ▶️ Lancer le projet
 Méthode simple
 
@@ -64,11 +69,28 @@ Télécharger le projet
 
 Ouvrir index.html dans un navigateur
 
-Méthode recommandée (serveur local)
-php -S localhost:8000
 
-Puis aller sur :
-http://localhost:8000
+Quand tu reprends le projet :
+```
+git clone URL_DU_REPO
+cd gearforge
+code .
+php -S localhost:8000
+```
+
+Quand tu travailles dessus :
+```
+git status
+git add .
+git commit -m "ton message"
+git push
+```
+
+Quand tu veux récupérer les dernières mises à jour :
+```
+git pull
+```
+
 
 🌐 Mise en ligne
 
@@ -78,11 +100,11 @@ Hostinger
 
 👉 Il suffit d’envoyer les fichiers dans public_html
 
+
+
 🛠️ Back-office
 
-Au début, un back-office custom était prévu dans le projet, mais il a été supprimé.
-
-👉 Le choix a été fait d’utiliser WordPress pour la gestion du contenu.
+ Le choix a été fait d’utiliser WordPress pour la gestion du contenu.
 
 Pourquoi ?
 
@@ -92,8 +114,12 @@ pas besoin de maintenir un système admin
 
 gestion des contenus plus rapide
 
+
+
 👉 Résultat :
 Le projet actuel est uniquement un front-end vitrine.
+
+
 
 ⚠️ À savoir pour la suite
 
@@ -105,6 +131,8 @@ Formulaire de contact
 
 Newsletter
 
+
+
 📌 Conseils si tu reprends le projet
 
 Regarder script.js avant de modifier quoi que ce soit
@@ -113,9 +141,7 @@ Faire attention aux chemins (../assets/...)
 
 Tester toujours sur mobile aussi
 
-🧠 Contexte
 
-Projet réalisé en tant qu’étudiant en 2ème année d’informatique, avec une volonté de faire quelque chose de propre, moderne et proche d’un rendu professionnel.
 
 ✅ Conclusion
 
