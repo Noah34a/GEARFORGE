@@ -16,7 +16,7 @@ Les formations:
 
 Le site met surtout l’accent sur le design, l’expérience utilisateur et les animations.
 
-
+---
 
 ⚙️ Fonctionnalités
 
@@ -32,7 +32,7 @@ Compteurs animés
 
 Responsive (mobile / desktop)
 
-
+---
 
 🧱 Stack utilisée
 
@@ -42,7 +42,7 @@ CSS3
 
 JavaScript 
 
-
+---
 
 📁 Structure du projet
 
@@ -60,7 +60,7 @@ JavaScript
 └── style/
 ```
 
-
+---
 
 ▶️ Lancer le projet
 Méthode simple
@@ -90,7 +90,7 @@ Quand tu veux récupérer les dernières mises à jour :
 ```
 git pull
 ```
-
+---
 
 🌐 Mise en ligne
 
@@ -100,7 +100,7 @@ Hostinger
 
 👉 Il suffit d’envoyer les fichiers dans public_html
 
-
+---
 
 🛠️ Back-office
 
@@ -114,12 +114,12 @@ pas besoin de maintenir un système admin
 
 gestion des contenus plus rapide
 
-
+---
 
 👉 Résultat :
 Le projet actuel est uniquement un front-end vitrine.
 
-
+---
 
 ⚠️ À savoir pour la suite
 
@@ -131,7 +131,7 @@ Formulaire de contact
 
 Newsletter
 
-
+---
 
 📌 Conseils si tu reprends le projet
 
@@ -141,7 +141,7 @@ Faire attention aux chemins (../assets/...)
 
 Tester toujours sur mobile aussi
 
-
+---
 
 ✅ Conclusion
 
