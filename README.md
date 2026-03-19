@@ -40,18 +40,19 @@ CSS3
 
 JavaScript 
 
-📂 Structure du projet
+📁 Structure du projet
+
 /gearforge
 │
 ├── index.html
 ├── style.css
 ├── script.js
 │
-├── /pages
-├── /assets
-├── /animation
-├── /js
-├── /style
+├── pages/
+├── assets/
+├── animation/
+├── js/
+└── style/
 
 
 ▶️ Lancer le projet
