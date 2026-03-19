@@ -86,7 +86,7 @@ Au début, un back-office custom était prévu dans le projet, mais il a été s
 
 Pourquoi ?
 
-plus simple pour le client
+plus simple pour nous
 
 pas besoin de maintenir un système admin
 
