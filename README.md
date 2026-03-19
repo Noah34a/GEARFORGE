@@ -42,7 +42,8 @@ JavaScript
 
 📁 Structure du projet
 
-/gearforge
+```
+📁 gearforge
 │
 ├── index.html
 ├── style.css
@@ -53,6 +54,7 @@ JavaScript
 ├── animation/
 ├── js/
 └── style/
+```
 
 
 ▶️ Lancer le projet
