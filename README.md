@@ -1,74 +1,127 @@
-Gearforge — Site vitrine
+🚀 Gearforge — Site vitrine
 
-Site vitrine de Gearforge présentant les services (Acceuil, Formation, Consulting, R&D, Articles), avec animations, pages dédiées et design responsive.
+📌 Présentation
 
-🚀 Fonctionnalités
+Ce projet est un site vitrine réalisé pour Gearforge dans le cadre d’un projet/stage.
+
+L’objectif est de créer un site moderne, fluide et responsive pour présenter les services de l’entreprise :
+
+Accueil
+
+Formation
+
+Consulting
+
+R&D
+
+Articles
+
+Le site met surtout l’accent sur le design, l’expérience utilisateur et les animations.
+
+⚙️ Fonctionnalités
 
 Navigation avec état actif automatique
 
-Cartes services avec effets hover
+Cartes services avec effets au hover
 
 Pages dédiées par service
 
-Animations vidéo (Formation)
+Animations (scroll, vidéo, interactions)
 
-Compteurs animés au scroll
+Compteurs animés
 
-Responsive (desktop / tablette / mobile)
+Responsive (mobile / desktop)
 
-🧱 Stack
+🧱 Stack utilisée
 
 HTML5
 
 CSS3
 
-JavaScript
+JavaScript 
 
-📂 Structure
+📂 Structure du projet
+/gearforge
+│
+├── index.html
+├── style.css
+├── script.js
+│
+├── /pages
+├── /assets
+├── /animation
+├── /js
+├── /style
 
-index.html — page d’accueil
 
-style.css — styles globaux
+▶️ Lancer le projet
+Méthode simple
 
-script.js — JS global
+Télécharger le projet
 
-animation/ — vidéos
+Ouvrir index.html dans un navigateur
 
-assets/ — images / logos
+Méthode recommandée (serveur local)
+php -S localhost:8000
 
-js/ — scripts spécifiques
+Puis aller sur :
+http://localhost:8000
 
-pages/ — pages secondaires
+🌐 Mise en ligne
 
-style/ — CSS par page
+Le site peut être hébergé sur :
 
-## ⬇️ Récupérer le projet (2 méthodes)
+Hostinger
 
-### Méthode A — La plus simple (Télécharger en ZIP)
-1. Cliquer sur **Code**
-2. Cliquer sur **Download ZIP**
-3. Dézipper le fichier sur ton PC
-4. Ouvrir le dossier
+👉 Il suffit d’envoyer les fichiers dans public_html
 
----
+🛠️ Back-office
 
-### Méthode B — Cloner le repo (si tu as Git)
-> “Cloner” = copier le projet sur ton ordinateur avec Git.
+Au début, un back-office custom était prévu dans le projet, mais il a été supprimé.
 
-1. Ouvrir un terminal :
-   - Windows : PowerShell
-   - Mac : Terminal
+👉 Le choix a été fait d’utiliser WordPress pour la gestion du contenu.
 
-2. Va dans le dossier où tu veux mettre le projet (exemple : Bureau) :
-   - **Windows**
-     ```bash
-     cd Desktop
-     ```
-   - **Mac**
-     ```bash
-     cd ~/Desktop
-     ```
+Pourquoi ?
 
-3. Cloner le repo :
-   ```bash
-   git clone <URL_DU_REPO>
+plus simple pour le client
+
+pas besoin de maintenir un système admin
+
+gestion des contenus plus rapide
+
+👉 Résultat :
+Le projet actuel est uniquement un front-end vitrine.
+
+⚠️ À savoir pour la suite
+
+Certaines parties devront être reliées à WordPress :
+
+Articles (SEO)
+
+Formulaire de contact
+
+Newsletter
+
+📌 Conseils si tu reprends le projet
+
+Regarder script.js avant de modifier quoi que ce soit
+
+Faire attention aux chemins (../assets/...)
+
+Tester toujours sur mobile aussi
+
+🧠 Contexte
+
+Projet réalisé en tant qu’étudiant en 2ème année d’informatique, avec une volonté de faire quelque chose de propre, moderne et proche d’un rendu professionnel.
+
+✅ Conclusion
+
+Le site est :
+
+simple à comprendre
+
+rapide
+
+facilement modifiable
+
+👉 La suite logique est surtout de connecter le front avec WordPress pour le rendre dynamique.
