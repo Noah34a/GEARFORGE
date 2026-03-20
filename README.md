@@ -63,7 +63,8 @@ JavaScript
 ---
 
 ▶️ Lancer le projet 2 possibilités 
-Méthode simple
+
+*Méthode simple*
 
 Télécharger le projet
 
@@ -71,12 +72,12 @@ Ouvrir index.html dans un navigateur
 
 ---
 
-Méthode PowerShell
+*Méthode PowerShell*
 
 Quand tu reprends le projet :
 ```
-git clone URL_DU_REPO
-cd gearforge
+git clone https://github.com/Noah34a/GEARFORGE.git
+cd GEARFORGE
 code .
 php -S localhost:8000
 ```
