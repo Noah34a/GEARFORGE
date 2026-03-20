@@ -62,13 +62,16 @@ JavaScript
 
 ---
 
-▶️ Lancer le projet
+▶️ Lancer le projet 2 possibilités 
 Méthode simple
 
 Télécharger le projet
 
 Ouvrir index.html dans un navigateur
 
+---
+
+Méthode PowerShell
 
 Quand tu reprends le projet :
 ```
@@ -77,6 +80,8 @@ cd gearforge
 code .
 php -S localhost:8000
 ```
+
+---
 
 Quand tu travailles dessus :
 ```
@@ -94,11 +99,11 @@ git pull
 
 🌐 Mise en ligne
 
-Le site peut être hébergé sur :
+Pour héberger le site web se rendre sur:
 
 Hostinger
 
-👉 Il suffit d’envoyer les fichiers dans public_html
+👉 Site web --> Liste des site --> Tableau de bord --> Aperçu général --> Gestionnaire de fichiers --> public_html
 
 ---
 
@@ -140,17 +145,3 @@ Regarder script.js avant de modifier quoi que ce soit
 Faire attention aux chemins (../assets/...)
 
 Tester toujours sur mobile aussi
-
----
-
-✅ Conclusion
-
-Le site est :
-
-simple à comprendre
-
-rapide
-
-facilement modifiable
-
-👉 La suite logique est surtout de connecter le front avec WordPress pour le rendre dynamique.
