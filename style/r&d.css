@@ -1,14 +1,19 @@
-/*HERO — rd */
+/*HERO — R&D*/
 
+/* on coupe le débordement horizontal global
+   surtout utile ici à cause du visuel du hero qui est volontairement oversize */
 body{
   overflow-x:hidden;
 }
 
+/* bloc hero principal de la page R&D */
 .hero--rd{
   padding-top: 120px;
   padding-bottom: 140px;
 }
 
+/* layout desktop :
+   texte à gauche / visuel à droite */
 .hero--rd .hero__inner{
   display: flex;
   align-items: center;
@@ -17,12 +22,14 @@ body{
   flex-wrap: nowrap;
 }
 
+/* colonne texte */
 .hero--rd .hero__content{
   flex: 0 1 620px;
   max-width: 620px;
-  min-width: 0; 
+  min-width: 0;
 }
 
+/* gros titre principal */
 .hero--rd .hero__title{
   font-family: var(--font-title, "Space Grotesk", sans-serif);
   font-weight: 800;
@@ -31,13 +38,18 @@ body{
   margin-bottom: 18px;
   letter-spacing: -0.02em;
 
+  /* évite les coupures moches sur le h1 */
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
 }
 
-.gf-red{ color: var(--gf-red, #A70000); }
+/* utilitaire pour forcer un mot en rouge dans le titre */
+.gf-red{
+  color: var(--gf-red, #A70000);
+}
 
+/* sous-texte du hero */
 .hero--rd .hero__subtitle{
   font-family: var(--font-body, "Blinker", sans-serif);
   font-size: clamp(16px, 2vw, 18px);
@@ -46,6 +58,7 @@ body{
   max-width: 56ch;
 }
 
+/* zone des CTA */
 .hero--rd .hero__cta{
   display: flex;
   gap: 14px;
@@ -53,7 +66,9 @@ body{
   margin-bottom: 28px;
 }
 
-/* buttons */
+/*BOUTONS*/
+
+/* base commune des boutons */
 .btn{
   display: inline-flex;
   align-items: center;
@@ -65,6 +80,7 @@ body{
   transition: .2s ease;
 }
 
+/* bouton principal */
 .btn--primary{
   background: var(--gf-red, #A70000);
   color: #fff;
@@ -76,6 +92,7 @@ body{
   box-shadow: 0 16px 34px rgba(167,0,0,.25);
 }
 
+/* bouton secondaire clair */
 .btn--ghost{
   background: #fff;
   color: #000;
@@ -87,8 +104,12 @@ body{
   box-shadow: 0 12px 28px rgba(0,0,0,.08);
 }
 
-/* social proof */
-.hero__trust{ margin-top: 24px; }
+/*SOCIAL PROOF*/
+
+/* petit bloc logos sous le hero */
+.hero__trust{
+  margin-top: 24px;
+}
 
 .hero__trust-title{
   font-size: 14px;
@@ -97,6 +118,7 @@ body{
   margin-bottom: 16px;
 }
 
+/* ligne de logos partenaires / preuves sociales */
 .hero__logos{
   display: flex;
   align-items: center;
@@ -104,6 +126,7 @@ body{
   flex-wrap: wrap;
 }
 
+/* logos volontairement plus sobres par défaut */
 .hero__logos img{
   height: 68px;
   width: auto;
@@ -112,28 +135,37 @@ body{
   transition: opacity 0.2s ease;
 }
 
-.hero__logos img:hover{ opacity: 1; }
+.hero__logos img:hover{
+  opacity: 1;
+}
 
-/*VISUEL*/
+/*VISUEL HERO*/
 
+/* conteneur du visuel de droite */
 .hero--rd .c-hero__visual{
-  flex: 1.6;                 
+  flex: 1.6;
   display: flex;
   align-items: center;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   min-width: 0;
 }
 
+/* visuel volontairement plus grand que son conteneur
+   pour donner une impression plus "premium" et éviter un rendu trop petit */
 .hero--rd .c-hero__img{
-  width: 220%;                      
+  width: 220%;
   max-width: 1100px;
   transform: translateX(240px);
 }
 
-/*RESPONSIVE*/
+/*RESPONSIVE HERO*/
 
+/* breakpoint intermédiaire :
+   on réduit l’amplitude du visuel avant de passer en colonne */
 @media (max-width: 1100px){
-  .hero--rd .hero__inner{ gap: 40px; }
+  .hero--rd .hero__inner{
+    gap: 40px;
+  }
 
   .hero--rd .c-hero__img{
     width: 145%;
@@ -142,6 +174,8 @@ body{
   }
 }
 
+/* tablette / petit laptop :
+   on empile le texte et l’image */
 @media (max-width: 980px){
   .hero--rd{
     padding-top: 96px;
@@ -175,6 +209,8 @@ body{
   }
 }
 
+/* mobile :
+   on réduit encore l’image et les logos */
 @media (max-width: 560px){
   .hero--rd .c-hero__img{
     width: 110%;
@@ -185,8 +221,10 @@ body{
     height: 56px;
   }
 }
-/* advantages */
 
+/*AVANTAGES*/
+
+/* section avantages / bénéfices */
 .advantages{
   padding: 80px 0 110px;
 }
@@ -195,6 +233,7 @@ body{
   text-align: center;
 }
 
+/* titre de section */
 .advantages__title{
   font-family: var(--font-title, "Space Grotesk", sans-serif);
   font-weight: 800;
@@ -204,6 +243,7 @@ body{
   letter-spacing: -0.02em;
 }
 
+/* grille 4 colonnes sur desktop */
 .advantages__grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -211,6 +251,7 @@ body{
   align-items: stretch;
 }
 
+/* carte avantage */
 .adv-card{
   text-align: left;
   background: #fff;
@@ -220,16 +261,19 @@ body{
   box-shadow: 0 18px 50px rgba(0,0,0,.06);
 }
 
+/* hover volontairement discret :
+   ici on garde un rendu sobre, pas trop "carte flottante" */
 .adv-card:hover{
   transform: none;
   box-shadow: 0 18px 50px rgba(0,0,0,.06);
   border-color: rgba(0,0,0,.08);
 }
 
+/* icône dans la carte */
 .adv-card__icon{
   width: 46px;
   height: 46px;
-  border-radius: 10px; 
+  border-radius: 10px;
   display: grid;
   place-items: center;
   background: rgba(167,0,0,.10);
@@ -242,6 +286,7 @@ body{
   line-height: 1;
 }
 
+/* titre de carte */
 .adv-card__title{
   font-family: var(--font-title, "Space Grotesk", sans-serif);
   font-weight: 800;
@@ -249,6 +294,7 @@ body{
   margin: 0 0 8px;
 }
 
+/* texte de carte */
 .adv-card__text{
   font-family: var(--font-body, "Blinker", sans-serif);
   color: var(--gf-slate, #69727D);
@@ -256,14 +302,14 @@ body{
   line-height: 1.55;
 }
 
-/* responsive advantages */
-
+/* tablette : on passe à 2 colonnes */
 @media (max-width: 1100px){
   .advantages__grid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* mobile : pile simple */
 @media (max-width: 640px){
   .advantages{
     padding: 60px 0 80px;
@@ -278,11 +324,12 @@ body{
   }
 }
 
-/* steps */
+/*STEPS / PROCESS*/
 
+/* bloc étapes / timeline */
 .steps{
   width: 100%;
-  margin: 0;                
+  margin: 0;
   background: rgba(255,255,255,.65);
   border: 1px solid rgba(17,18,20,.10);
   border-radius: 20px;
@@ -291,10 +338,13 @@ body{
   box-shadow: 0 20px 60px rgba(0,0,0,.05);
 }
 
+/* ici le petit header est masqué volontairement,
+   on garde quand même la classe si on veut le remettre plus tard */
 .steps__head{
   display: none;
 }
 
+/* liste des étapes */
 .steps__list{
   list-style: none;
   padding: 0;
@@ -303,6 +353,7 @@ body{
   gap: 18px;
 }
 
+/* point + contenu */
 .steps__list li{
   display: grid;
   grid-template-columns: 14px 1fr;
@@ -310,6 +361,7 @@ body{
   position: relative;
 }
 
+/* titre global de la section */
 .steps__title{
   text-align: center;
   font-family: var(--font-title, "Space Grotesk", sans-serif);
@@ -318,6 +370,7 @@ body{
   margin-bottom: 40px;
 }
 
+/* point rouge de la timeline */
 .dot{
   width: 12px;
   height: 12px;
@@ -329,6 +382,7 @@ body{
   z-index: 1;
 }
 
+/* trait vertical entre les points */
 .steps__list li:not(:last-child) .dot::after{
   content: "";
   position: absolute;
@@ -342,6 +396,7 @@ body{
   z-index: 0;
 }
 
+/* titre d’étape */
 .steps strong{
   display: block;
   font-family: var(--font-title, "Space Grotesk", sans-serif);
@@ -351,6 +406,7 @@ body{
   color: #111;
 }
 
+/* texte d’étape */
 .steps span{
   font-family: var(--font-body, "Blinker", sans-serif);
   color: rgba(18,19,22,.65);
@@ -358,6 +414,7 @@ body{
   line-height: 1.6;
 }
 
+/* ajustements mobile */
 @media (max-width: 640px){
   .steps{
     padding: 20px;
@@ -373,19 +430,22 @@ body{
   }
 }
 
-/* testimonial */
+/*TESTIMONIAL*/
 
+/* section témoignage */
 .testimonial{
   padding: 100px 0;
 }
 
+/* largeur max du contenu */
 .testimonial__inner{
   width: 100%;
-  max-width: 1200px;   
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
 }
 
+/* titre de section */
 .testimonial__title{
   text-align: center;
   font-family: var(--font-title);
@@ -394,6 +454,7 @@ body{
   margin-bottom: 40px;
 }
 
+/* carte rouge du témoignage */
 .testimonial__card{
   background: var(--gf-red, #A70000);
   border: 1px solid rgba(255,255,255,.25);
@@ -404,6 +465,7 @@ body{
   box-shadow: 0 25px 70px rgba(0,0,0,.08);
 }
 
+/* petit label au-dessus de la citation */
 .testimonial__formation{
   font-size: 13px;
   font-weight: 700;
@@ -414,6 +476,7 @@ body{
   color: rgba(255,255,255,.85);
 }
 
+/* texte du témoignage */
 .testimonial__quote{
   font-family: var(--font-body);
   font-size: 18px;
@@ -423,6 +486,7 @@ body{
   font-style: italic;
 }
 
+/* nom de l’auteur */
 .testimonial__author strong{
   display: block;
   font-family: var(--font-title);
@@ -431,11 +495,13 @@ body{
   color: #ffffff;
 }
 
+/* rôle / précision sous le nom */
 .testimonial__author span{
   font-size: 14px;
   color: rgba(255,255,255,.85);
 }
 
+/* version plus compacte sur mobile */
 @media (max-width: 640px){
   .testimonial{
     padding: 70px 0;

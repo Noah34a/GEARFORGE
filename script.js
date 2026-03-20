@@ -1,21 +1,25 @@
-/*GEARFORGE — script.js*/
+/* script principal Gearforge
+   regroupe les petits comportements globaux du site :
+   nav active, compteurs, bandeau trust, hotspots et menu mobile */
 
 (() => {
   "use strict";
 
-  /*CONFIG / HELPERS*/
+  /* raccourcis DOM pour éviter de répéter querySelector partout */
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+  /* si l’utilisateur préfère moins d’animations, on allège ce qui bouge */
   const prefersReducedMotion =
     window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches ?? false;
 
+  /* récupère le nom du fichier courant pour savoir quelle page est active dans la nav */
   const getCurrentFilename = () => {
     const file = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     return file === "" ? "index.html" : file;
   };
 
-  /* NAVIGATION ACTIVE*/
+  /* NAV ACTIVE */
   function setActiveNav() {
     const nav = $(".radio-inputs");
     if (!nav) return;
@@ -25,10 +29,11 @@
 
     const current = getCurrentFilename();
 
+    /* reset avant d’appliquer l’état actif */
     $$(".name.is-active", nav).forEach((el) => el.classList.remove("is-active"));
     links.forEach((a) => a.removeAttribute("aria-current"));
 
-    // Trouver le lien correspondant
+    /* cherche le lien qui correspond au fichier courant */
     const match = links.find((a) => {
       const href = (a.getAttribute("href") || "").toLowerCase();
       return href === current || href.endsWith("/" + current);
@@ -39,11 +44,11 @@
     const name = $(".name", match);
     if (name) name.classList.add("is-active");
 
-    // Accessibilité : indique au lecteur d’écran la page courante
+    /* utile pour les lecteurs d’écran */
     match.setAttribute("aria-current", "page");
   }
 
-  /*STATS COUNTERS*/
+  /* COMPTEURS */
   function animateCounter(el, to, duration = 750) {
     const start = performance.now();
     const from = 0;
@@ -67,6 +72,7 @@
     const nodes = $$(".stat__number[data-count]");
     if (!nodes.length) return;
 
+    /* version simple si les animations doivent être réduites */
     if (prefersReducedMotion) {
       nodes.forEach((el) => {
         const to = Number(el.dataset.count);
@@ -75,6 +81,7 @@
       return;
     }
 
+    /* évite de relancer un compteur plusieurs fois si on rescroll dessus */
     const done = new WeakSet();
 
     const io = new IntersectionObserver(
@@ -102,21 +109,23 @@
     nodes.forEach((el) => io.observe(el));
   }
 
-  /*TRUST — DUPLICATION */
+  /* TRUST STRIP
+     duplique le contenu de la track pour simuler une boucle continue */
   function initTrustInfinite() {
-
     const track = $(".trust__track");
     if (!track) return;
 
     if (prefersReducedMotion) return;
 
+    /* garde-fou pour éviter de doubler la track plusieurs fois */
     if (track.dataset.duplicated === "true") return;
 
     track.innerHTML += track.innerHTML;
     track.dataset.duplicated = "true";
   }
 
-  /*ABOUT — HOTSPOTS (4 points + modal)*/
+  /* HOTSPOTS SECTION ABOUT
+     chaque point ouvre une modale avec son contenu venant des data-attributes */
   function initAboutHotspots() {
     const points = $$(".about-point");
     const modal = $(".about-modal");
@@ -148,12 +157,14 @@
     closeBtn?.addEventListener("click", closeModal);
     overlay?.addEventListener("click", closeModal);
 
+    /* fermeture clavier pour rester cohérent avec une vraie modale */
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
     });
   }
 
-  /*HEADER — BURGER MENU (MOBILE)*/
+  /* MENU BURGER MOBILE
+     repose sur la classe is-open côté nav */
   function initBurgerMenu() {
     const burger = $("#burger-btn");
     const nav = $("#main-nav");
@@ -173,25 +184,25 @@
       burger.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
     });
 
-    // Fermer le menu quand on clique sur un lien
+    /* ferme le menu après clic sur un lien, surtout utile sur mobile */
     $$("a", nav).forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
 
-    // Fermer si clic en dehors
+    /* ferme aussi si clic à l’extérieur */
     document.addEventListener("click", (e) => {
       if (!nav.classList.contains("is-open")) return;
       if (nav.contains(e.target) || burger.contains(e.target)) return;
       closeMenu();
     });
 
-    // ESC ferme aussi (cohérent)
+    /* même logique au clavier */
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeMenu();
     });
   }
 
-  /*INIT*/
+  /* point d’entrée */
   document.addEventListener("DOMContentLoaded", () => {
     setActiveNav();
     initCounters();

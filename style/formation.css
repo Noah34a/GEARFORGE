@@ -1,11 +1,15 @@
-/* formation.css — Gearforge */
+/* formation.css — page formations Gearforge */
 
-/* HERO */
+/*HERO*/
+
+/* bloc hero principal de la page formation */
 .f-hero{
   padding-top: 140px;
   padding-bottom: 80px;
 }
 
+/* structure en 2 colonnes :
+   texte à gauche / visuel à droite */
 .f-hero__inner{
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -13,25 +17,28 @@
   align-items: center;
 }
 
-/* Texte */
+/* zone texte du hero */
 .f-hero__content{
   max-width: 640px;
 }
 
+/* gros titre principal */
 .f-hero__title{
   font-family: var(--font-title);
   font-size: clamp(42px, 5.2vw, 64px);
-  line-height: 1.08;                  
+  line-height: 1.08;
   margin: 0 0 16px;
   font-weight: 800;
   letter-spacing: -0.6px;
   color: var(--gf-dark);
 }
 
+/* permet de mettre un mot ou un morceau de phrase en rouge dans le titre */
 .is-red{
   color: var(--gf-red);
 }
 
+/* sous-texte principal sous le h1 */
 .f-hero__subtitle{
   font-family: var(--font-body);
   color: var(--gf-slate);
@@ -41,6 +48,7 @@
   max-width: 62ch;
 }
 
+/* petite phrase d’aide / précision sous la recherche */
 .f-hero__hint{
   margin: 10px 0 0;
   color: rgba(105,114,125,.95);
@@ -49,7 +57,9 @@
   max-width: 62ch;
 }
 
-/* Recherche  */
+/*BARRE DE RECHERCHE*/
+
+/* champ + bouton icône */
 .f-search{
   display: grid;
   grid-template-columns: 1fr 56px;
@@ -61,6 +71,7 @@
   box-shadow: 0 16px 46px rgba(0,0,0,.05);
 }
 
+/* input principal de recherche */
 .f-search input{
   height: 48px;
   border: none;
@@ -72,11 +83,13 @@
   font-family: var(--font-body);
 }
 
+/* état focus sur l’ensemble du composant, pas juste l’input */
 .f-search:focus-within{
   border-color: rgba(167,0,0,.25);
   box-shadow: 0 18px 52px rgba(167,0,0,.08);
 }
 
+/* bouton de droite avec l’icône */
 .f-search__icon{
   height: 48px;
   border: none;
@@ -93,43 +106,60 @@
   fill: rgba(0,0,0,.75);
 }
 
-/* Visuel à droite */
+/*VISUEL HERO*/
+
+/* conteneur du visuel de droite */
 .f-hero__visual{
   flex: 1.4;
   justify-content: center;
 }
 
+/* image volontairement agrandie et décalée pour donner plus d’impact visuel */
 .f-hero__img{
-  width: 180%;                      
+  width: 180%;
   max-width: 1100px;
   transform: translateX(-180px);
 }
 
-/* Responsive */
+/* responsive hero :
+   on empile le texte et le visuel quand l’espace horizontal devient trop juste */
 @media (max-width: 980px){
-  .f-hero{ padding-top: 120px;
+  .f-hero{
+    padding-top: 120px;
   }
-  .f-hero__inner{ grid-template-columns: 1fr; gap: 28px;
+
+  .f-hero__inner{
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
-  .f-hero__visual{ transform: translateX(60px);
-                  width: 90%
+
+  /* on recentre le visuel une fois le layout passé en une colonne */
+  .f-hero__visual{
+    transform: translateX(60px);
+    width: 90%;
   }
-  .f-hero__title{ font-size: clamp(44px, 8vw, 64px);
+
+  .f-hero__title{
+    font-size: clamp(44px, 8vw, 64px);
   }
 }
 
-/*LISTE FORMATIONS*/
-.formations {
+/*LISTE DES FORMATIONS*/
+
+/* section qui contient les cartes de formations */
+.formations{
   padding: 100px 20px;
   background: #fff;
 }
 
+/* largeur max de la zone centrale */
 .formations .container{
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.formations-title {
+/* titre de section */
+.formations-title{
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -137,13 +167,15 @@
   font-family: "Space Grotesk", sans-serif;
 }
 
-.formations-subtitle {
+/* sous-titre de section */
+.formations-subtitle{
   text-align: center;
   color: #6b7280;
   margin-bottom: 60px;
   font-size: 18px;
 }
 
+/* grille desktop : 4 cartes par ligne */
 .formations-grid{
   display:grid;
   grid-template-columns: repeat(4,1fr);
@@ -151,6 +183,8 @@
   margin-top:50px;
 }
 
+/* carte de formation cliquable
+   le JS s’appuie dessus pour ouvrir le détail correspondant */
 .formation-card{
   background:#fff;
   border-radius:22px;
@@ -161,6 +195,7 @@
   cursor:pointer;
 }
 
+/* petit lift au hover pour rendre la grille plus vivante */
 .formation-card:hover{
   transform:translateY(-6px);
 }
@@ -169,24 +204,28 @@
   margin-bottom:20px;
 }
 
+/* image principale de la carte */
 .formation-image img{
-  width:150px;      
+  width:150px;
   height:auto;
   display:block;
   margin:auto;
   transition: transform .3s ease;
 }
 
+/* zoom léger de l’image au hover */
 .formation-card:hover img{
   transform:scale(1.08);
 }
 
+/* titre de la carte */
 .formation-card h3{
   font-family: var(--font-title);
   font-size:18px;
   font-weight:600;
 }
 
+/* tablette : passage en 2 colonnes */
 @media (max-width: 980px){
   .formations{
     padding: 80px 20px;
@@ -220,6 +259,7 @@
   }
 }
 
+/* mobile : une seule colonne et largeur contrôlée pour éviter des cartes trop étirées */
 @media (max-width: 560px){
   .formations{
     padding: 56px 16px;
@@ -263,8 +303,9 @@
   }
 }
 
-/*DETAIL*/
+/*DÉTAIL DE LA FORMATION*/
 
+/* section injectée / remplie par le JS après sélection d’une carte */
 .f-detail{
   padding: 42px 0 24px;
 }
@@ -273,6 +314,8 @@
   max-width: 1180px;
 }
 
+/* entête du détail :
+   texte à gauche, actions à droite */
 .f-detail__head{
   display: flex;
   align-items: flex-start;
@@ -281,10 +324,12 @@
   margin-bottom: 34px;
 }
 
+/* colonne gauche avec titre, résumé, texte... */
 .f-detail__left{
   max-width: 930px;
 }
 
+/* petit libellé au-dessus du titre */
 .f-detail__eyebrow{
   margin: 0 0 18px;
   font-size: 12px;
@@ -294,6 +339,7 @@
   color: var(--gf-red);
 }
 
+/* titre principal du détail */
 .f-detail__title{
   margin: 0 0 18px;
   max-width: 900px;
@@ -305,6 +351,7 @@
   color: var(--gf-dark);
 }
 
+/* phrase de résumé / accroche en style plus léger */
 .f-detail__subtitle{
   margin: 0 0 12px;
   max-width: 760px;
@@ -315,6 +362,7 @@
   color: #b9b9b9;
 }
 
+/* texte principal de description */
 .f-detail__text{
   margin: 0;
   max-width: 940px;
@@ -323,10 +371,12 @@
   color: #2e2e2e;
 }
 
+/* zone du bouton téléchargement */
 .f-detail__cta-wrap{
   margin-top: 26px;
 }
 
+/* bouton PDF / doc formation */
 .f-detail__download{
   display: inline-flex;
   align-items: center;
@@ -348,11 +398,13 @@
   opacity: .95;
 }
 
+/* colonne d’actions à droite, ici surtout le bouton fermer */
 .f-detail__actions{
   flex: 0 0 auto;
   padding-top: 82px;
 }
 
+/* bouton de fermeture du bloc détail */
 .f-detail__close-x{
   width: 46px;
   height: 46px;
@@ -375,6 +427,7 @@
   transform: translateY(-1px);
 }
 
+/* sur plus petit écran, on remet tout en vertical */
 @media (max-width: 1100px){
   .f-detail__head{
     flex-direction: column;
@@ -396,6 +449,7 @@
   }
 }
 
+/* ajustements lisibilité mobile */
 @media (max-width: 768px){
   .f-detail{
     padding: 28px 0 16px;
@@ -421,6 +475,7 @@
   }
 }
 
+/* titre "points forts" dans certaines descriptions HTML injectées */
 .f-detail__points-title{
   margin-top:20px;
   margin-bottom:10px;
@@ -428,6 +483,7 @@
   color:var(--gf-red);
 }
 
+/* liste custom utilisée dans le HTML injecté */
 .f-detail__points{
   list-style:none;
   padding:0;
@@ -440,6 +496,7 @@
   margin-bottom:8px;
 }
 
+/* petite puce rouge custom */
 .f-detail__points li::before{
   content:"";
   width:7px;
@@ -451,8 +508,9 @@
   top:9px;
 }
 
-
 /*MODULES*/
+
+/* wrapper global des modules */
 .f-mods{
   border: 1px solid var(--border);
   border-radius: 22px;
@@ -461,11 +519,13 @@
   padding: 14px;
 }
 
+/* liste des lignes de modules générées par le JS */
 .f-mods__rows{
   display:grid;
   gap: 14px;
 }
 
+/* chaque ligne = image à gauche + accordéon à droite */
 .f-mod-row{
   display:grid;
   grid-template-columns: 220px 1fr;
@@ -473,10 +533,12 @@
   align-items: start;
 }
 
+/* si le JS n’a injecté aucun module, on cache complètement le bloc */
 .f-mods:has(#mods-rows:empty){
   display:none;
 }
 
+/* image / bouton du module */
 .mod-img{
   display:block;
   padding:0;
@@ -485,27 +547,33 @@
   overflow:hidden;
   cursor:pointer;
   height: 120px;
-  background: radial-gradient(140px 140px at 18% 25%, rgba(167,0,0,.18), transparent 62%), linear-gradient(135deg, rgba(0,0,0,.02), rgba(167,0,0,.05));
+  background:
+    radial-gradient(140px 140px at 18% 25%, rgba(167,0,0,.18), transparent 62%),
+    linear-gradient(135deg, rgba(0,0,0,.02), rgba(167,0,0,.05));
   transition: height .22s ease, transform .22s ease, box-shadow .25s ease, border-color .25s ease;
 }
+
+/* image du module */
 .mod-img img{
   width:100%;
   height:100%;
   object-fit: cover;
   display:block;
 }
+
+/* petit feedback visuel au survol */
 .mod-img:hover{
   transform: translateY(-2px);
   border-color: rgba(167,0,0,.25);
   box-shadow: 0 18px 44px rgba(0,0,0,.10);
 }
 
-/* Pastille niveau sur l'image module */
+/* la pastille de niveau se positionne par-dessus l’image */
 .mod-img{
-  position: relative; 
+  position: relative;
 }
 
-/* base */
+/* style de base de la pastille niveau */
 .mod-level{
   position: absolute;
   top: 10px;
@@ -523,21 +591,22 @@
   backdrop-filter: blur(6px);
 }
 
-/* couleurs selon niveau */
+/* variantes de couleur selon le niveau
+   pour l’instant elles sont identiques, mais la structure est prête si on veut différencier */
 .mod-level.essentiel{
   background: rgba(105,114,125,.92);
 }
 
 .mod-level.confirme{
-  background:  rgba(105,114,125,.92); 
+  background: rgba(105,114,125,.92);
 }
 
 .mod-level.expert{
-  background:  rgba(105,114,125,.92); 
+  background: rgba(105,114,125,.92);
 }
 
-
-/*  Quand le module est ouvert : image s’agrandit */
+/* quand le details est ouvert, le JS ajoute .is-open sur la ligne
+   et on agrandit l’image pour donner plus de présence au module actif */
 .f-mod-row.is-open .mod-img{
   height: 220px;
   border-color: rgba(167,0,0,.55);
@@ -545,6 +614,7 @@
   transform: translateY(-1px);
 }
 
+/* accordéon natif basé sur <details> */
 .mod-acc{
   border: 1px solid var(--border);
   border-radius: 18px;
@@ -552,9 +622,17 @@
   overflow: hidden;
   transition: box-shadow .25s ease, border-color .25s ease;
 }
-.mod-acc:hover{ box-shadow: 0 18px 50px rgba(0,0,0,.06); }
-.mod-acc[open]{ border-color: rgba(167,0,0,.18); }
 
+.mod-acc:hover{
+  box-shadow: 0 18px 50px rgba(0,0,0,.06);
+}
+
+/* léger accent rouge quand ouvert */
+.mod-acc[open]{
+  border-color: rgba(167,0,0,.18);
+}
+
+/* résumé cliquable de l’accordéon */
 .mod-acc summary{
   list-style:none;
   cursor:pointer;
@@ -564,14 +642,21 @@
   justify-content: space-between;
   gap: 14px;
 }
-.mod-acc summary::-webkit-details-marker{ display:none; }
 
+/* supprime le marker natif du details */
+.mod-acc summary::-webkit-details-marker{
+  display:none;
+}
+
+/* partie gauche du résumé : numéro + titre */
 .mod-acc__left{
   display:flex;
   align-items:center;
   gap: 14px;
   min-width: 0;
 }
+
+/* pastille numéro du module */
 .mod-acc__num{
   width: 52px;
   height: 52px;
@@ -585,6 +670,9 @@
   flex: 0 0 auto;
   font-family: var(--font-title);
 }
+
+/* titre du module dans le summary
+   on coupe proprement si jamais il est trop long */
 .mod-acc__title{
   margin:0;
   font-weight: 600;
@@ -595,6 +683,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* chevron de l’accordéon */
 .mod-acc__chev{
   width: 38px;
   height: 38px;
@@ -607,14 +697,19 @@
   transition: transform .18s ease;
   font-size: 18px;
 }
-.mod-acc[open] .mod-acc__chev{ transform: rotate(90deg); }
 
+/* rotation du chevron quand l’accordéon est ouvert */
+.mod-acc[open] .mod-acc__chev{
+  transform: rotate(90deg);
+}
+
+/* corps du module */
 .mod-acc__body{
   padding: 0 18px 18px;
   border-top: 1px solid var(--border);
 }
 
-/* Contenu module */
+/* sous-titres internes du contenu du module */
 .mod-doc__h3{
   margin: 16px 0 10px;
   font-size: 16px;
@@ -622,6 +717,8 @@
   color: var(--gf-dark);
   font-family: var(--font-title);
 }
+
+/* bloc objectif */
 .mod-doc__objective{
   margin: 0 0 14px;
   color: rgba(0,0,0,.75);
@@ -629,8 +726,13 @@
   line-height: 1.75;
   font-family: var(--font-body);
 }
-.mod-doc__objective strong{ color: var(--gf-dark); font-weight: 700; }
 
+.mod-doc__objective strong{
+  color: var(--gf-dark);
+  font-weight: 700;
+}
+
+/* liste standard dans le contenu du module */
 .mod-doc__ul{
   margin: 0 0 10px;
   padding-left: 0;
@@ -642,10 +744,13 @@
   line-height: 1.65;
   font-family: var(--font-body);
 }
+
 .mod-doc__ul li{
   position: relative;
   padding-left: 18px;
 }
+
+/* puce custom */
 .mod-doc__ul li::before{
   content:"";
   position:absolute;
@@ -656,17 +761,22 @@
   border-radius: 999px;
   background: rgba(167,0,0,.65);
 }
+
+/* variante spéciale pour les listes de compétences :
+   affichage en colonnes au lieu d’une simple pile */
 .mod-doc__ul.is-skills{
   columns: 2;
   column-gap: 26px;
   display: block;
 }
+
 .mod-doc__ul.is-skills li{
   break-inside: avoid;
   margin: 0 0 10px;
 }
 
-/*MODULE — NIVEAU*/
+/*MODULE CARD / NIVEAU
+   bloc prêt si un autre affichage carte module est réutilisé ailleurs*/
 
 .module-card__media{
   position: relative;
@@ -683,7 +793,7 @@
   object-fit: cover;
 }
 
-/* Pastille niveau */
+/* autre pastille niveau, utilisée pour une version carte */
 .module-level{
   position: absolute;
   top: 10px;
@@ -698,12 +808,13 @@
   z-index: 2;
 }
 
+/*COMPÉTENCES CLÉS*/
 
-/*COMPÉTENCES*/
 .f-skills{
   margin-top: 18px;
 }
 
+/* titre de la zone compétences */
 .f-skills__title{
   text-align: center;
   font-size: 28px;
@@ -713,6 +824,7 @@
   color: var(--gf-dark);
 }
 
+/* grille desktop : 4 cartes */
 .skills-grid{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -720,6 +832,8 @@
   align-items: stretch;
 }
 
+/* chaque carte compétence est cliquable
+   le JS peut s’en servir pour ouvrir le bon module */
 .skill-tile{
   background: transparent;
   border: none;
@@ -731,6 +845,7 @@
   cursor: pointer;
 }
 
+/* zone média : miniature + vidéo hover */
 .skill-tile__media{
   position: relative;
   width: 100%;
@@ -745,6 +860,7 @@
   transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
+/* même état visuel au hover souris et via la classe JS is-hovered */
 .skill-tile:hover .skill-tile__media,
 .skill-tile.is-hovered .skill-tile__media{
   transform: translateY(-3px);
@@ -752,6 +868,7 @@
   box-shadow: 0 22px 60px rgba(0,0,0,.10);
 }
 
+/* miniature statique + vidéo superposées */
 .skill-tile__thumb,
 .skill-tile__video{
   position: absolute;
@@ -762,12 +879,14 @@
   display: block;
 }
 
+/* miniature visible par défaut */
 .skill-tile__thumb{
   z-index: 2;
   opacity: 1;
   transition: opacity .25s ease;
 }
 
+/* vidéo cachée par défaut */
 .skill-tile__video{
   z-index: 1;
   opacity: 0;
@@ -775,16 +894,19 @@
   pointer-events: none;
 }
 
+/* au hover, on masque la miniature */
 .skill-tile:hover .skill-tile__thumb,
 .skill-tile.is-hovered .skill-tile__thumb{
   opacity: 0;
 }
 
+/* et on affiche la vidéo */
 .skill-tile:hover .skill-tile__video,
 .skill-tile.is-hovered .skill-tile__video{
   opacity: 1;
 }
 
+/* fallback si pas de miniature / vidéo dispo */
 .skill-tile__placeholder{
   position: absolute;
   inset: 0;
@@ -797,6 +919,7 @@
   padding: 10px;
 }
 
+/* titre sous la carte compétence */
 .skill-tile__title{
   margin: 0;
   font-family: var(--font-title);
@@ -806,37 +929,57 @@
   line-height: 1.2;
 }
 
-/*RESPONSIVE*/
+/* responsive global formations / modules / compétences */
 @media (max-width: 1100px){
-  .section.formations .formation-select__row{ grid-template-columns: repeat(2, 1fr) !important;
+  /* laisse une version 2 colonnes si une ancienne row est encore utilisée quelque part */
+  .section.formations .formation-select__row{
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  .skills-grid{ grid-template-columns: repeat(2, 1fr); }
+
+  .skills-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media (max-width: 900px){
-  .f-hero__inner{ grid-template-columns: 1fr; gap: 24px; }
+  .f-hero__inner{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 
-  .f-mod-row{ grid-template-columns: 1fr; }
-  .mod-img{ height: 160px; }
-  .f-mod-row.is-open .mod-img{ height: 240px; }
+  /* modules en une colonne pour éviter un bloc trop serré */
+  .f-mod-row{
+    grid-template-columns: 1fr;
+  }
+
+  .mod-img{
+    height: 160px;
+  }
+
+  .f-mod-row.is-open .mod-img{
+    height: 240px;
+  }
 }
+
 @media (max-width: 650px){
-  .skills-grid{ grid-template-columns: 1fr; }
+  .skills-grid{
+    grid-template-columns: 1fr;
+  }
 }
 
-/*CTA */
+/*CTA FINAL*/
 
+/* bloc call-to-action avant le footer */
 .f-cta{
-  margin-top: 120px;     
-  margin-bottom: 18px;  
+  margin-top: 120px;
+  margin-bottom: 18px;
 }
-
 
 .f-cta__inner{
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-
   padding: 36px 48px;
   border-radius: 24px;
   background: #fff;
@@ -852,7 +995,7 @@
   color: var(--gf-dark);
 }
 
-/* 🔴 Pastille Contact */
+/* bouton principal de prise de contact */
 .f-cta__pill{
   padding: 14px 26px;
   border-radius: 999px;
@@ -863,7 +1006,6 @@
   font-size: 15px;
   text-decoration: none;
   white-space: nowrap;
-
   box-shadow: 0 10px 28px rgba(167,0,0,.35);
   transition: transform .2s ease, box-shadow .2s ease;
 }
@@ -873,23 +1015,29 @@
   box-shadow: 0 14px 36px rgba(167,0,0,.45);
 }
 
-/* Mobile */
+/* sur mobile, on empile texte + bouton */
 @media (max-width: 720px){
-  .f-cta__inner{ flex-direction: column; text-align: center;
+  .f-cta__inner{
+    flex-direction: column;
+    text-align: center;
   }
 }
 
+/* hauteur mini du main pour éviter un footer qui remonte trop sur page courte */
 #main-content{
   min-height: calc(100vh - 420px);
 }
 
-/* FOOTER */
+/*FOOTER*/
+
+/* footer global de la page */
 .site-footer{
   background: #fff;
   border-top: 1px solid rgba(0,0,0,.08);
   padding: 60px 0 22px;
 }
 
+/* grille du footer desktop */
 .footer__inner{
   display: grid;
   grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
@@ -897,17 +1045,18 @@
   align-items: start;
 }
 
+/* colonne newsletter alignée à droite sur desktop */
 .footer__newsletter{
   justify-self: end;
   max-width: 420px;
 }
-
 
 .footer__logo{
   display: inline-flex;
   text-decoration: none;
 }
 
+/* texte d’intro du footer */
 .footer__hint{
   margin: 10px 0 14px;
   color: var(--gf-slate);
@@ -916,6 +1065,7 @@
   max-width: 280px;
 }
 
+/* titre de colonne */
 .footer__title{
   font-family: var(--font-title);
   font-size: 14px;
@@ -924,15 +1074,18 @@
   color: #111;
 }
 
+/* variante plus grosse pour la newsletter */
 .footer__title--big{
   font-size: 16px;
 }
 
+/* stack de liens */
 .footer__col{
   display: grid;
   gap: 8px;
 }
 
+/* liens footer */
 .footer__link{
   text-decoration: none;
   color: var(--gf-slate);
@@ -947,17 +1100,20 @@
   text-underline-offset: 3px;
 }
 
+/* focus visible pour accessibilité clavier */
 .footer__link:focus-visible{
   outline: 2px solid rgba(167,0,0,.85);
   outline-offset: 3px;
 }
 
+/* sous-texte newsletter */
 .footer__sub{
   margin: -6px 0 12px;
   color: var(--gf-slate);
   font-size: 14px;
 }
 
+/* formulaire newsletter */
 .footer__form{
   display: grid;
   grid-template-columns: 1fr auto;
@@ -999,6 +1155,7 @@
   outline-offset: 3px;
 }
 
+/* bas du footer : copyright + liens légaux */
 .footer__bottom{
   margin-top: 28px;
   padding-top: 18px;
@@ -1033,6 +1190,8 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* tablette : footer plus souple */
 @media (max-width: 980px){
   .site-footer{
     padding: 48px 0 20px;
@@ -1075,6 +1234,7 @@
   }
 }
 
+/* mobile standard */
 @media (max-width: 640px){
   .site-footer{
     padding: 38px 0 18px;
@@ -1169,6 +1329,7 @@
   }
 }
 
+/* très petit mobile */
 @media (max-width: 420px){
   .site-footer{
     padding: 32px 0 16px;

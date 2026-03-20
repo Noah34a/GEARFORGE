@@ -698,79 +698,89 @@ document.addEventListener("DOMContentLoaded", () => {
 },
   }
 
-  /* Helpers DOM*/
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  /* raccourcis DOM */
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  /*Selecteurs */
-  const searchInput = $("#q");
-  const cards = $$(".formation-card");
+/* éléments de la page qu’on réutilise ensuite */
+const searchInput = $("#q");
+const cards = $$(".formation-card");
 
-  const detailSection = $("#formation-detail");
-  const detailTitle = $("#f-detail-name");
-  const detailSummary = $("#f-detail-summary");
-  const detailDescription = $("#f-detail-description");
-  const detailDownload = $("#f-detail-download");
-  const closeBtn = $("#f-detail-close");
+const detailSection = $("#formation-detail");
+const detailTitle = $("#f-detail-name");
+const detailSummary = $("#f-detail-summary");
+const detailDescription = $("#f-detail-description");
+const detailDownload = $("#f-detail-download");
+const closeBtn = $("#f-detail-close");
 
-  const modsRows = $("#mods-rows");     
-  const skillsGrid = $("#skills-grid"); 
+const modsRows = $("#mods-rows");
+const skillsGrid = $("#skills-grid");
 
-  /* Utils*/
-  const pad2 = (n) => String(n).padStart(2, "0");
+/* force un numéro sur 2 chiffres pour garder un affichage propre */
+const pad2 = (n) => String(n).padStart(2, "0");
 
-  function showDetail() {
-    if (!detailSection) return;
-    detailSection.hidden = false;
-    detailSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+function showDetail() {
+  if (!detailSection) return;
 
-  function hideDetail() {
-    if (!detailSection) return;
+  detailSection.hidden = false;
+  detailSection.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
-    detailSection.hidden = true;
-    cards.forEach((c) => c.classList.remove("is-selected"));
+function hideDetail() {
+  if (!detailSection) return;
 
-    if (detailTitle) detailTitle.textContent = "";
-    if (detailSummary) detailSummary.textContent = "";
-    if (detailDescription) detailDescription.textContent = "";
-    if (detailDownload) detailDownload.href = "#";
-    if (modsRows) modsRows.innerHTML = "";
-    if (skillsGrid) skillsGrid.innerHTML = "";
-  }
+  /* reset du panneau détail quand on le ferme */
+  detailSection.hidden = true;
+  cards.forEach((c) => c.classList.remove("is-selected"));
 
-  function buildModuleDocHTML(m) {
-    const obj = m.objective
-      ? `<p class="mod-doc__objective"><strong>Objectif :</strong> ${m.objective}</p>`
-      : "";
+  if (detailTitle) detailTitle.textContent = "";
+  if (detailSummary) detailSummary.textContent = "";
+  if (detailDescription) detailDescription.textContent = "";
+  if (detailDownload) detailDownload.href = "#";
+  if (modsRows) modsRows.innerHTML = "";
+  if (skillsGrid) skillsGrid.innerHTML = "";
+}
 
-    const sections = (m.sections || [])
-      .map((s) => {
-        const isSkills = (s.title || "").toLowerCase().includes("compét");
-        const ulClass = `mod-doc__ul ${isSkills ? "is-skills" : ""}`;
-        const bullets = (s.bullets || []).map((b) => `<li>${b}</li>`).join("");
-        return `
-          <h3 class="mod-doc__h3">${s.title || "Section"}</h3>
-          <ul class="${ulClass}">${bullets}</ul>
-        `;
-      })
-      .join("");
+/* construit le contenu interne d’un module */
+function buildModuleDocHTML(m) {
+  const obj = m.objective
+    ? `<p class="mod-doc__objective"><strong>Objectif :</strong> ${m.objective}</p>`
+    : "";
 
-    return `<div class="mod-doc">${obj}${sections}</div>`;
-  }
+  const sections = (m.sections || [])
+    .map((s) => {
+      /* petite variante de style si la section parle de compétences */
+      const isSkills = (s.title || "").toLowerCase().includes("compét");
+      const ulClass = `mod-doc__ul ${isSkills ? "is-skills" : ""}`;
+      const bullets = (s.bullets || []).map((b) => `<li>${b}</li>`).join("");
 
-  function openModuleByNum(moduleNum) {
-    if (!modsRows) return;
+      return `
+        <h3 class="mod-doc__h3">${s.title || "Section"}</h3>
+        <ul class="${ulClass}">${bullets}</ul>
+      `;
+    })
+    .join("");
 
-    const targets = $$(".mod-acc", modsRows);
-    const found = targets.find((d) => ($(".mod-acc__num", d)?.textContent || "").trim() === moduleNum);
-    if (!found) return;
+  return `<div class="mod-doc">${obj}${sections}</div>`;
+}
 
-    found.open = true;
-    found.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+/* permet d’ouvrir le bon accordéon depuis une carte compétence */
+function openModuleByNum(moduleNum) {
+  if (!modsRows) return;
 
-  /*Render modules (image + accordéon + pastille niveau*/
+  const targets = $$(".mod-acc", modsRows);
+  const found = targets.find(
+    (d) => ($(".mod-acc__num", d)?.textContent || "").trim() === moduleNum
+  );
+
+  if (!found) return;
+
+  found.open = true;
+  found.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* génère la liste des modules :
+   image cliquable à gauche + accordéon à droite */
 function renderModules(modules) {
   if (!modsRows) return;
   modsRows.innerHTML = "";
@@ -778,29 +788,27 @@ function renderModules(modules) {
   (modules || []).forEach((m) => {
     const num = pad2(m.num);
 
-    // Ligne
     const row = document.createElement("div");
     row.className = "f-mod-row";
 
-    // Image gauche (bouton)
+    /* l’image sert aussi de bouton d’ouverture */
     const imgBtn = document.createElement("button");
     imgBtn.type = "button";
     imgBtn.className = "mod-img";
     imgBtn.setAttribute("aria-label", `Ouvrir le module ${num}`);
 
-    //Pastille niveau (optionnelle)
-    const levelText = (m.level || "").trim(); // "Essentiel" | "Confirmé" | "Expert"
+    /* niveau optionnel si on veut afficher une pastille type Essentiel / Expert */
+    const levelText = (m.level || "").trim();
     const levelClass = levelText
       ? levelText
           .toLowerCase()
           .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") 
-          .replace(/\s+/g, "-") 
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/\s+/g, "-")
       : "";
 
     imgBtn.innerHTML = `
       ${levelText ? `<span class="mod-level ${levelClass}">${levelText}</span>` : ""}
-
       ${
         m.image
           ? `<img src="${m.image}" alt="Aperçu module ${num}" loading="lazy">`
@@ -808,7 +816,6 @@ function renderModules(modules) {
       }
     `;
 
-    // Accordéon droite
     const details = document.createElement("details");
     details.className = "mod-acc";
 
@@ -830,14 +837,13 @@ function renderModules(modules) {
     details.appendChild(summary);
     details.appendChild(body);
 
-    // Sync open => agrandit l'image de la ligne
+    /* on garde la row synchro avec l’état open du details */
     const syncOpenState = () => {
       row.classList.toggle("is-open", details.open);
     };
 
     details.addEventListener("toggle", syncOpenState);
 
-    // Clic sur image => toggle open/close
     imgBtn.addEventListener("click", () => {
       details.open = !details.open;
       syncOpenState();
@@ -852,9 +858,8 @@ function renderModules(modules) {
   });
 }
 
-
-  /* Render compétences*/
- function renderKeySkills(keySkills) {
+/* affiche les compétences mises en avant au-dessus des modules */
+function renderKeySkills(keySkills) {
   if (!skillsGrid) return;
   skillsGrid.innerHTML = "";
 
@@ -873,24 +878,24 @@ function renderModules(modules) {
     tile.tabIndex = 0;
 
     tile.innerHTML = `
-  <div class="skill-tile__media">
-    ${
-      hasThumb
-        ? `<img class="skill-tile__thumb" src="${thumbSrc}" alt="${s.title || "Compétence"}" loading="lazy">`
-        : `<div class="skill-tile__placeholder">Miniature à venir</div>`
-    }
+      <div class="skill-tile__media">
+        ${
+          hasThumb
+            ? `<img class="skill-tile__thumb" src="${thumbSrc}" alt="${s.title || "Compétence"}" loading="lazy">`
+            : `<div class="skill-tile__placeholder">Miniature à venir</div>`
+        }
 
-    ${
-      hasVideo
-        ? `<video class="skill-tile__video" muted playsinline preload="metadata">
-             <source src="${videoSrc}" type="video/mp4">
-           </video>`
-        : ``
-    }
-  </div>
+        ${
+          hasVideo
+            ? `<video class="skill-tile__video" muted playsinline preload="metadata">
+                 <source src="${videoSrc}" type="video/mp4">
+               </video>`
+            : ``
+        }
+      </div>
 
-  <h4 class="skill-tile__title">${s.title || "Compétence"}</h4>
-`;
+      <h4 class="skill-tile__title">${s.title || "Compétence"}</h4>
+    `;
 
     const video = tile.querySelector(".skill-tile__video");
     const media = tile.querySelector(".skill-tile__media");
@@ -901,6 +906,7 @@ function renderModules(modules) {
       const play = () => {
         tile.classList.add("is-hovered");
         video.currentTime = 0;
+
         const p = video.play();
         if (p && typeof p.catch === "function") p.catch(() => {});
       };
@@ -914,9 +920,11 @@ function renderModules(modules) {
       tile.addEventListener("mouseenter", play);
       tile.addEventListener("mouseleave", stop);
 
+      /* même comportement au clavier */
       tile.addEventListener("focus", play);
       tile.addEventListener("blur", stop);
 
+      /* fallback si la vidéo ne charge pas */
       video.addEventListener("error", () => {
         if (media) {
           media.innerHTML = `
@@ -928,6 +936,7 @@ function renderModules(modules) {
     }
 
     const go = () => openModuleByNum(mod);
+
     tile.addEventListener("click", go);
     tile.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -940,9 +949,8 @@ function renderModules(modules) {
   });
 }
 
-
-  /* Select formation*/
-  function selectFormation(key) {
+/* remplit tout le bloc détail à partir de la formation choisie */
+function selectFormation(key) {
   const data = FORMATIONS[key];
   if (!data) return;
 
@@ -952,9 +960,11 @@ function renderModules(modules) {
 
   if (detailTitle) detailTitle.textContent = data.name || "Formation";
   if (detailSummary) detailSummary.textContent = data.summary || "";
+
+  /* certaines formations utilisent du HTML, d’autres juste du texte */
   if (detailDescription) {
-  detailDescription.innerHTML = data.descriptionHTML || data.description || "";
-}
+    detailDescription.innerHTML = data.descriptionHTML || data.description || "";
+  }
 
   if (detailDownload) {
     detailDownload.href = data.download || "#";
@@ -967,35 +977,38 @@ function renderModules(modules) {
   showDetail();
 }
 
-  /*Events*/
-  cards.forEach((card) => {
-    const key = card.dataset.formation;
+/* interactions sur les cartes */
+cards.forEach((card) => {
+  const key = card.dataset.formation;
 
-    card.addEventListener("click", () => selectFormation(key));
-    card.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        selectFormation(key);
-      }
+  card.addEventListener("click", () => selectFormation(key));
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      selectFormation(key);
+    }
+  });
+});
+
+if (closeBtn) closeBtn.addEventListener("click", hideDetail);
+
+/* recherche simple côté front :
+   on masque juste les cartes qui ne matchent pas */
+if (searchInput) {
+  const form = searchInput.closest("form");
+  if (form) form.addEventListener("submit", (e) => e.preventDefault());
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.trim().toLowerCase();
+
+    cards.forEach((card) => {
+      const key = card.dataset.formation;
+      const data = FORMATIONS[key];
+      const hay = `${data?.name || ""} ${data?.summary || ""}`.toLowerCase();
+
+      card.style.display = hay.includes(q) ? "" : "none";
     });
   });
+}
 
-  if (closeBtn) closeBtn.addEventListener("click", hideDetail);
-
-  // Recherche : filtre cards 
-  if (searchInput) {
-    const form = searchInput.closest("form");
-    if (form) form.addEventListener("submit", (e) => e.preventDefault());
-
-    searchInput.addEventListener("input", () => {
-      const q = searchInput.value.trim().toLowerCase();
-
-      cards.forEach((card) => {
-        const key = card.dataset.formation;
-        const data = FORMATIONS[key];
-        const hay = `${data?.name || ""} ${data?.summary || ""}`.toLowerCase();
-        card.style.display = hay.includes(q) ? "" : "none";
-      });
-    });
-  }
 });
